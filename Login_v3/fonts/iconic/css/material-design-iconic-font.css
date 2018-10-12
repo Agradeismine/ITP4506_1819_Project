@@ -1662,6 +1662,7 @@
 }
 .zmdi-caret-down-circle:before {
   content: '\f2f1';
+    
 }
 .zmdi-caret-down:before {
   content: '\f2f2';
