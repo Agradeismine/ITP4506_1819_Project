@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-      <title>Library System: Student Page</title>
-   	<link rel="stylesheet" type="text/css" href="css/mainpage.css">
+    <title>Library System: Student Page</title>
+    <link rel="stylesheet" type="text/css" href="css/mainpage.css">
 
     <script>
         /* When the user clicks on the button, 
-                toggle between hiding and showing the dropdown content */
+                                        toggle between hiding and showing the dropdown content */
         function showdropdown(id) {
             document.getElementById(id).classList.toggle("show");
         }
@@ -26,10 +27,21 @@
                 }
             }
         }
+
     </script>
 </head>
 
 <body>
+    <?php
+    if(isset($_SERVER["QUERY_STRING"])){
+        extract($_GET);
+
+        if($password=="student"){
+            header("Location: changePassword.php?username=student");
+        }
+    }
+
+    ?>
 
     <div class="navbar">
         <a href="#home">Home</a>
@@ -57,11 +69,11 @@
                 <a href="#">Link 3</a>
             </div>
         </div>
-        
+
         <a style="float:right">Student Name: Yip Yiu Cheung</a>
 
     </div>
 
-
 </body>
+
 </html>

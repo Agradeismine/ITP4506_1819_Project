@@ -281,7 +281,7 @@ iframe {
     color: #fff;
     line-height: 1.2;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: capitalize;
 
     display: block;
 }
