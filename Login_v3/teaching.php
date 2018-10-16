@@ -33,10 +33,10 @@
 
 <body>
     <?php
-    if(isset($_SERVER["QUERY_STRING"])){
+    if (isset($_SERVER["QUERY_STRING"])) {
         extract($_GET);
-        if(isset($password)){
-            if($password=="teaching"){
+        if (isset($password)) {
+            if ($password=="teaching") {
                 header("Location: changePassword.php?username=teaching");
             }
         }
