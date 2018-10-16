@@ -1,25 +1,66 @@
-<style>
 
-
-/* The popup form - hidden by default */
-.form-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
-}
 
 /* Add styles to the form container */
 .form-container {
-  max-width: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 90px;
+  max-width: 70%;
   padding: 10px;
+  /* background-color: #F0F0F0;*/
   background-color: white;
+  font-size: 20px;
+  border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+/* Full-width input fields */
+ .form-container select {
+    font-size: 16px;
+  width: 150px;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input[type=text] {
+  background-color: transparent;
+    color: black;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid  #eeeeee 1px;
+    padding: 3px 10px;
+     font-size: 20px;
+    width: 400px;
 }
 
 
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+#simpleSearch{
+  position: absolute;
+  right: 170px;  
+  top:100px;
+  background-color: #F5E13C;
+  font-size: 16px;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+   border-bottom: none;
+  height: 35px;
+}
+
+#simpleSearch:hover{
+    background-color: #EBD732;
+}
 
 
-
-</style>

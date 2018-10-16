@@ -72,7 +72,13 @@
         $("#simple").hide();
         $("#advanced").show();
         e.preventDefault();
-    });
+    }); 
+          
+       $("#simpleSearch").click(function(e) { 
+        $("#advanced").hide();
+        $("#simple").show();
+        e.preventDefault();
+    });      
           
           
 });
@@ -159,14 +165,40 @@ function topFunction() {
              <button type="submit" style="margin:auto;max-width:50px"><i class="fa fa-search"></i></button>
             <button id="search" style="color:white; width: 180px; height: 42px; background-color:light-blue;">Advanced Search </button> 
          </form></center>
-                  <center>  <form  id="advanced" style="display:none;" class="form-container">
+                   <form  id="advanced" style="display:none;" class="form-container">
                        <br>    <br>    
          Search for:   <input type="radio" name="sorting" value="everything"> Everything
                        <input type="radio" name="sorting" value="books"> Books
                        <input type="radio" name="sorting" value="software"> Software
                        <input type="radio" name="sorting" value="Magazines"> Magazines
-         
-         </form></center>
+                       <br><br>
+                       <hr>
+                       <br>
+                       <select>
+                        <option value="anyfield">Any field</option>
+                        <option value="title">Title</option>
+                        <option value="author">Author</option>
+                        <option value="subject">Subject</option>
+                        <option value="isbn">ISBN</option>
+                      </select> contains
+                       <input type="text"  name="contains" required>
+                       <br>
+                         <select>
+                        <option value="and">AND</option>
+                        <option value="or">OR</option>
+                        <option value="not">NOT</option>
+                      </select> 
+                       
+                        <select>
+                        <option value="anyfield">Any field</option>
+                        <option value="title">Title</option>
+                        <option value="author">Author</option>
+                        <option value="subject">Subject</option>
+                        <option value="isbn">ISBN</option>
+                      </select> contains
+                       <input type="text"  name="contains" required>
+                      <button id="simpleSearch">Simple Search </button> 
+         </form>
          <br>   
         </div>
         
