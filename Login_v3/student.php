@@ -120,15 +120,19 @@
         </div>
 
         <a style="float:right">Student Name: Yip Yiu Cheung</a>
-           <form>
+        <br>
+            <br>    <br>    <br>    <br>   
+         <center>  <form>
       <input type="text" name="search" placeholder="Search..">
-    </form>
+    </form></center>
+         <br>   
 
-    <div class="resizable">
+    
+   </div>
+        <div class="resizable">
 
     
     </div>
-    
 </body>
 
 </html>
