@@ -114,12 +114,10 @@ function topFunction() {
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="CategoryDropdown" >
-                <a href="#">Arts & Music</a>
-                <a href="#">Business</a>
-                <a href="#">Computers & Tech</a>
-                <a href="#">History</a>
-                <a href="#">Edu & Reference</a>
-                <a href="#">Cooking</a>
+                <a href="#">Books</a>
+                <a href="#">Software</a>
+                <a href="#">Magazines</a>
+
             </div>
         </div>
  
@@ -160,10 +158,12 @@ function topFunction() {
   
   <div class="resizable">
   <article>
-    <h1>London</h1>
+    <h1>London</h1><p>
     London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.
-    Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.
-  </article>
+    Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.<br><br></p>
+    <hr></article>
+  <article>
+
   </div>    
 </section>
 

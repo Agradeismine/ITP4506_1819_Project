@@ -1,0 +1,37 @@
+[
+  {
+    "bookname": ["World of History"],
+    "type": ["Magazines"],
+    "year": [2012],
+    "ISBN": [113264791222],
+    "Description": ["Journal of General Internal Medicine, 11/2011, Volume 26, Issue 11"]
+  },
+  {
+    "bookname": ["From Content to Practice: Sharing Educational Practice in Edu-Sharing"],
+    "type": ["Magazines"],
+    "year": [2010],
+    "ISBN": [32679487923],
+    "Description": ["This paper reports on CampusContent, a research project and competence centre for e-learning at FernUniversitat in Hagen that designed."]
+  },
+  {
+    "bookname": ["Magazine Reading Experience and Advertising Engagement: A Uses and Gratifications Perspective"],
+    "type": ["Magazines"],
+    "year": [2013],
+    "ISBN": [],
+    "Description": ["A simple magazine."]
+  },
+  {
+    "bookname": ["Magazine rebound"],
+    "type": ["Magazines"],
+    "year": [2008],
+    "ISBN": [1053823906582],
+    "Description": [".., became publisher of the OA as part of the bailout and said the magazine would now focus on running itself more like a business. The embezzlement was the latest..."]
+  },
+  {
+    "bookname": ["Happy"],
+    "type": ["Magazines"],
+    "year": [2018],
+    "ISBN": [325674692342],
+    "Description": ["I will very happy if I can get A grade."]
+  }
+]
