@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/Search.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="jslib/jquery-1.11.1.js"></script>
-    <script>.
+    <script>
         /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
         function showdropdown(id) {
             document.getElementById(id).classList.toggle("show");
@@ -162,7 +162,6 @@ function topFunction() {
     London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.
     Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.<br><br></p>
     <hr></article>
-  <article>
 
   </div>    
 </section>
