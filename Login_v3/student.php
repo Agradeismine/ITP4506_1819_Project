@@ -91,13 +91,11 @@
         <a href="#home">Home</a>
         <a href="#news">News</a>
 
-<<<<<<< HEAD
         <div class="dropdown" >
             <button class="dropbtn" onmouseover="showdropdown('myDropdown')" onmouseout="showdropdown('myDropdown')">Dropdown
-=======
+
         <div class="dropdown">
             <button class="dropbtn" onclick="showdropdown('CategoryDropdown')">Category
->>>>>>> deb67393eed3bfe3fa0947350be8f79604a94e2b
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="CategoryDropdown" >
