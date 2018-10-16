@@ -5,6 +5,7 @@
 		extract($_GET);
 	}
 ?>
+
 <head>
 	<title>Change the default password</title>
 	<meta charset="UTF-8">
@@ -30,6 +31,7 @@
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/mainpage.css">
 	<!--===============================================================================================-->
 
 	<script type="text/javascript">
@@ -53,6 +55,7 @@
 				window.location.href = "<?php echo $username; ?>.php";
 			}
 		}
+
 	</script>
 
 </head>
@@ -72,7 +75,7 @@
 				</span>
 
 				<div class="wrap-input100 validate-input" data-validate="Enter username">
-					<input id="username" class="input100" type="text" name="username" disabled value="<?php echo "$username"; ?>">
+					<input id="username" class="input100" type="text" name="username" disabled value="<?php echo " $username"; ?>">
 					<span class="focus-input100" data-placeholder="&#xf207;"></span>
 				</div>
 				<div class="wrap-input100 validate-input" data-validate="Input password">
@@ -84,13 +87,91 @@
 					<span class="focus-input100" data-placeholder="&#xf191;"></span>
 				</div>
 
-				<div class="container-login100-form-btn">
+				<!-- <div class="container-login100-form-btn">
 					<center>
 						<font color="white">As you are login with default password, you are required to reset the password.
 						</font>
 					</center>
-				</div>
+				</div> -->
 
+				<div class="container-login100-form-btn">
+					<div id="message">
+						<font color="white">
+							Password must contain the following:
+							<p id="number" class="invalid"><b>A number</b></p>
+							<p id="letter" class="invalid"><b>A lowercase</b> letter</p>
+							<p id="capital" class="invalid"><b>A capital (uppercase) letter</b></p>
+							<p id="length" class="invalid"><b>Minimum 8 characters</b></p>
+						</font>
+					</div>
+				</div>
+<script>
+		var myInput = document.getElementById("newPassword");
+		var pwInput2 = document.getElementById("newPasswordAgain");
+		
+		var letter = document.getElementById("letter");
+		var capital = document.getElementById("capital");
+		var number = document.getElementById("number");
+		var length = document.getElementById("length");
+
+		// When the user clicks on the password field, show the message box
+		myInput.onfocus = function () {
+			document.getElementById("message").style.display = "block";
+		}
+		pwInput2.onfocus = function () {
+			document.getElementById("message").style.display = "block";
+		}
+
+		// When the user clicks outside of the password field, hide the message box
+		myInput.onblur = function () {
+			document.getElementById("message").style.display = "none";
+		}
+		pwInput2.onblur = function () {
+			document.getElementById("message").style.display = "none";
+		}
+
+		// When the user starts to type something inside the password field
+		myInput.onkeyup = function () {
+			// Validate lowercase letters
+			var lowerCaseLetters = /[a-z]/g;
+			if (myInput.value.match(lowerCaseLetters)) {
+				letter.classList.remove("invalid");
+				letter.classList.add("valid");
+			} else {
+				letter.classList.remove("valid");
+				letter.classList.add("invalid");
+			}
+
+			// Validate capital letters
+			var upperCaseLetters = /[A-Z]/g;
+			if (myInput.value.match(upperCaseLetters)) {
+				capital.classList.remove("invalid");
+				capital.classList.add("valid");
+			} else {
+				capital.classList.remove("valid");
+				capital.classList.add("invalid");
+			}
+
+			// Validate numbers
+			var numbers = /[0-9]/g;
+			if (myInput.value.match(numbers)) {
+				number.classList.remove("invalid");
+				number.classList.add("valid");
+			} else {
+				number.classList.remove("valid");
+				number.classList.add("invalid");
+			}
+
+			// Validate length
+			if (myInput.value.length >= 8) {
+				length.classList.remove("invalid");
+				length.classList.add("valid");
+			} else {
+				length.classList.remove("valid");
+				length.classList.add("invalid");
+			}
+		}
+		</script>
 				<br>
 
 				<div class="container-login100-form-btn">
