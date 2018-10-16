@@ -34,10 +34,14 @@
 
 	<script type="text/javascript">
 		function comfirmChgPw() {
+
 			var txt;
 			var r = confirm("Are you really want to change the password?");
 			if (r == true) {
 				alert("Password changed!");
+				<?php
+					setcookie("$username", "pwChged", time() + (60 * 30), "/"); // 86400 = 1 day
+				?>
 				window.location.href = "<?php echo $username; ?>.php";
 			}
 
@@ -73,16 +77,16 @@
 				</div>
 				<div class="wrap-input100 validate-input" data-validate="Input password">
 					<input id="newPassword" class="input100" type="password" name="username" placeholder="Input new password">
-					<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					<span class="focus-input100" data-placeholder="&#xf191;"></span>
 				</div>
 				<div class="wrap-input100 validate-input" data-validate="Input password">
 					<input id="newPasswordAgain" class="input100" type="password" name="username" placeholder="Input new password again">
-					<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					<span class="focus-input100" data-placeholder="&#xf191;"></span>
 				</div>
 
 				<div class="container-login100-form-btn">
 					<center>
-						<font color="white">As you are login with default password, it is highly recommended to change password.
+						<font color="white">As you are login with default password, you are required to reset the password.
 						</font>
 					</center>
 				</div>
@@ -95,9 +99,9 @@
 					</button>
 					&nbsp;
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<button class="login100-form-btn" onclick="myFunction2()">
+					<!-- <button class="login100-form-btn" onclick="myFunction2()">
 						Change it Later
-					</button>
+					</button> -->
 				</div>
 
 			</div>
