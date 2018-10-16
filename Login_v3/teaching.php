@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD:Login_v3/teaching.php
 <html>
 
 <head>
@@ -28,9 +29,15 @@
             }
         }
     </script>
+=======
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+>>>>>>> parent of 079d3ec... .:Login_v3/teaching.html
 </head>
-
 <body>
+<<<<<<< HEAD:Login_v3/teaching.php
     <?php
     if(isset($_SERVER["QUERY_STRING"])){
         extract($_GET);
@@ -77,4 +84,8 @@
 
 </body>
 
+=======
+  Teaching Main page
+</body>
+>>>>>>> parent of 079d3ec... .:Login_v3/teaching.html
 </html>
