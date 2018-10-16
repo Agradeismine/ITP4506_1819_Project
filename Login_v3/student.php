@@ -57,11 +57,16 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="CategoryDropdown" >
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a href="#">Arts & Music</a>
+                <a href="#">Business</a>
+                <a href="#">Computers & Tech</a>
+                <a href="#">Cooking</a>
+                <a href="#">Computers & Tech</a>
+                <a href="#">Computers & Tech</a>
             </div>
         </div>
+
+        <a href="#news">Search...</a>
 
 
         <div class="dropdown" style="float:right">
