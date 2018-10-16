@@ -113,8 +113,8 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="MenuDropdown">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
+                <a href="#">Profile</a>
+                <a href="#">Preferences</a>
                 <a href="#" onclick="alert('Do you want to logout?');">Logout</a>
             </div>
         </div>
@@ -123,7 +123,7 @@
         <br>
             <br>    <br>    <br>    <br>   
          <center>  <form>
-      <input type="text" name="search" placeholder="Search..">
+      <input type="text" name="search" placeholder="Search...">
     </form></center>
          <br>   
 
