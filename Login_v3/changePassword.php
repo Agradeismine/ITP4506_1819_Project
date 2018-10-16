@@ -34,10 +34,14 @@
 
 	<script type="text/javascript">
 		function comfirmChgPw() {
+
 			var txt;
 			var r = confirm("Are you really want to change the password?");
 			if (r == true) {
 				alert("Password changed!");
+				<?php
+					setcookie("$username", "pwChged", time() + (60 * 30), "/"); // 86400 = 1 day
+				?>
 				window.location.href = "<?php echo $username; ?>.php";
 			}
 

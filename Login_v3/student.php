@@ -14,7 +14,12 @@
         // Close the dropdown if the user clicks outside of it
         window.onclick = function(e) {
             if (!e.target.matches('.dropbtn')) {
+                var CategoryDropdown = document.getElementById("CategoryDropdown");
                 var MenuDropdown = document.getElementById("MenuDropdown");
+
+                if (CategoryDropdown.classList.contains('show')) {
+                    CategoryDropdown.classList.remove('show');
+                }
 
                 if (MenuDropdown.classList.contains('show')) {
                     MenuDropdown.classList.remove('show');
@@ -25,7 +30,7 @@
         function alert(msg) {
             var r = confirm(msg);
 			if (r == true) {
-				window.location.href = "index.html";
+				window.location.href = "index.php";
 			}
         }
 
@@ -36,7 +41,7 @@
     <?php
     if(isset($_SERVER["QUERY_STRING"])){
         extract($_GET);
-        if(isset($_COOKIE['student'])) {
+        if(!isset($_COOKIE['student'])) {
             header("Location: changePassword.php?username=student");
         }
     }
@@ -48,10 +53,10 @@
         <a href="#news">News</a>
 
         <div class="dropdown">
-            <button class="dropbtn" onmouseover="showdropdown('myDropdown')" onmouseout="showdropdown('myDropdown')">Dropdown
+            <button class="dropbtn" onclick="showdropdown('CategoryDropdown')">Category
                 <i class="fa fa-caret-down"></i>
             </button>
-            <div class="dropdown-content" id="myDropdown" >
+            <div class="dropdown-content" id="CategoryDropdown" >
                 <a href="#">Link 1</a>
                 <a href="#">Link 2</a>
                 <a href="#">Link 3</a>

@@ -38,9 +38,6 @@
                 } else if (username == "nonTeaching" && password == "nonTeaching") {
                     window.location.href = "nonTeaching.php?username=nonTeaching&password=nonTeaching";
                 } else if (username == "student" && password == "student") {
-                    <?php
-                        setcookie("student", "havePw", time() + (60 * 30), "/"); // 86400 = 1 day
-                    ?>
                     window.location.href = "student.php?username=student";
                 } else if (username == "alumni" && password == "alumni") {
                     window.location.href = "alumni.php?username=alumni&password=alumni";
