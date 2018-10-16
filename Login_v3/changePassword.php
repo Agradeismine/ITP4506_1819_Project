@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+	if(isset($_SERVER["QUERY_STRING"])){
+		extract($_GET);
+	}
+?>
 <head>
 	<title>Change the default password</title>
 	<meta charset="UTF-8">
@@ -29,15 +33,20 @@
 	<!--===============================================================================================-->
 
 	<script type="text/javascript">
-		function myFunction() {
-			if (document.getElementById('username').value != null) {
-				window.location.href = "verificationE.html";
+		function comfirmChgPw() {
+			var txt;
+			var r = confirm("Are you really want to change the password?");
+			if (r == true) {
+				alert("Password changed!");
+				window.location.href = "<?php echo $username; ?>.php";
 			}
+
 		}
 
 		function myFunction2() {
-			if (document.getElementById('username').value != null) {
-				window.location.href = "verificationS.html";
+			var r = confirm("Change the password later?");
+			if (r == true) {
+				window.location.href = "<?php echo $username; ?>.php";
 			}
 		}
 	</script>
@@ -59,27 +68,29 @@
 				</span>
 
 				<div class="wrap-input100 validate-input" data-validate="Enter username">
-					<input id="username" class="input100" type="text" name="username" disabled value="">
+					<input id="username" class="input100" type="text" name="username" disabled value="<?php echo "$username"; ?>">
 					<span class="focus-input100" data-placeholder="&#xf207;"></span>
 				</div>
 				<div class="wrap-input100 validate-input" data-validate="Input password">
-					<input id="newPassword" class="input100" type="text" name="username" placeholder="Input new password">
+					<input id="newPassword" class="input100" type="password" name="username" placeholder="Input new password">
 					<span class="focus-input100" data-placeholder="&#xf207;"></span>
 				</div>
 				<div class="wrap-input100 validate-input" data-validate="Input password">
-					<input id="newPasswordAgain" class="input100" type="text" name="username" placeholder="Input new password again">
+					<input id="newPasswordAgain" class="input100" type="password" name="username" placeholder="Input new password again">
 					<span class="focus-input100" data-placeholder="&#xf207;"></span>
 				</div>
 
-				<div class="container-login100-form-btn" >
-					<center><font color="white">As you are login with default password, it is highly recommended to change password.
-					</font></center>
+				<div class="container-login100-form-btn">
+					<center>
+						<font color="white">As you are login with default password, it is highly recommended to change password.
+						</font>
+					</center>
 				</div>
 
 				<br>
 
 				<div class="container-login100-form-btn">
-					<button class="login100-form-btn" onclick="myFunction()">
+					<button class="login100-form-btn" onclick="comfirmChgPw()">
 						Change Password
 					</button>
 					&nbsp;

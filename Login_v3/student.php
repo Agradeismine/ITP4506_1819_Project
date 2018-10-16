@@ -35,9 +35,10 @@
     <?php
     if(isset($_SERVER["QUERY_STRING"])){
         extract($_GET);
-
-        if($password=="student"){
-            header("Location: changePassword.php?username=student");
+        if(isset($password)){
+            if($password=="student"){
+                header("Location: changePassword.php?username=student");
+            }
         }
     }
 

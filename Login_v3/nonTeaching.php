@@ -30,6 +30,16 @@
 </head>
 
 <body>
+<?php
+    if(isset($_SERVER["QUERY_STRING"])){
+        extract($_GET);
+
+        if($password=="nonTeaching"){
+            header("Location: changePassword.php?username=nonTeaching");
+        }
+    }
+
+    ?>
 
     <div class="navbar">
         <a href="#home">Home</a>

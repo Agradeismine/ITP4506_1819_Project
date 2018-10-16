@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-      <title>Library System: Alumni Page</title>
-   	<link rel="stylesheet" type="text/css" href="css/mainpage.css">
+    <title>Library System: Alumni Page</title>
+    <link rel="stylesheet" type="text/css" href="css/mainpage.css">
 
     <script>
         /* When the user clicks on the button, 
@@ -12,7 +13,7 @@
         }
 
         // Close the dropdown if the user clicks outside of it
-        window.onclick = function(e) {
+        window.onclick = function (e) {
             if (!e.target.matches('.dropbtn')) {
                 var myDropdown = document.getElementById("myDropdown");
                 var MenuDropdown = document.getElementById("MenuDropdown");
@@ -30,6 +31,16 @@
 </head>
 
 <body>
+    <?php
+    if(isset($_SERVER["QUERY_STRING"])){
+        extract($_GET);
+
+        if($password=="alumni"){
+            header("Location: changePassword.php?username=alumni");
+        }
+    }
+
+    ?>
 
     <div class="navbar">
         <a href="#home">Home</a>
@@ -57,11 +68,12 @@
                 <a href="#">Link 3</a>
             </div>
         </div>
-        
+
         <a style="float:right">Alumni Name: Cindy Hung</a>
 
     </div>
 
 
 </body>
+
 </html>
