@@ -38,6 +38,7 @@
         }
 
         $(document).ready(function(){
+                  $("#advanced").hide();
   var resize = new Array('.resizable');
   resize = resize.join(',');
   
@@ -66,6 +67,16 @@
     return false;
   });
   
+     $("#search").click(function(){
+       
+        $("#simple").hide();
+        $("#advanced").show();
+       
+     });     
+          
+          
+          
+          
 });
         
         window.onscroll = function() {scrollFunction()};
@@ -99,11 +110,7 @@ function topFunction() {
 
     ?>
     
-     <div id="resize">
-              <a class="increase" style="font-size:20px; opacity: 0.8;">A</a> 
-              <a class="decrease" style="font-size:12px; opacity: 0.8;">A</a> 
-              <a class="reset" style="opacity: 0.8;">R</a>
-            </div>
+
     <div class="navbar">
         <a href="#home">Home</a>
         <a href="#news">News</a>
@@ -135,17 +142,45 @@ function topFunction() {
         </div>
 
         <a style="float:right">Student Name: Yip Yiu Cheung</a>
-        <br>
-            <br>    <br>    <br>    <br>   
+   </div>
+    
+        
+        <div id="advanced"  style="background-color: #F5E13C;">
+         <div id="resize">
+              <a class="increase" style="font-size:20px; opacity: 0.9;">A</a> 
+              <a class="decrease" style="font-size:12px; opacity: 0.9;">A</a> 
+              <a class="reset" style="opacity: 0.9;">R</a>
+            </div>
+     <div>
+        <br> 
          <center>  <form class="example">
+                       <br>    <br>    
             <input type="search" placeholder="Search..."/>
              <button type="submit" style="margin:auto;max-width:50px"><i class="fa fa-search"></i></button>
-            <a href="url" style="color:white; height: 14px;">Advanced Search </a>
+            <button id="search" style="color:white; width: 180px; height: 42px; background-color:light-blue;">Advanced Search </button> 
          </form></center>
          <br>   
-
+        </div>
+    </div>
     
-   </div>
+           <div id="simple"  style="background-color: #F5E13C;">
+         <div id="resize">
+              <a class="increase" style="font-size:20px; opacity: 0.9;">A</a> 
+              <a class="decrease" style="font-size:12px; opacity: 0.9;">A</a> 
+              <a class="reset" style="opacity: 0.9;">R</a>
+            </div>
+     <div>
+        <br> 
+         <center>  <form class="example">
+                       <br>    <br>    
+            <input type="search" placeholder="Search..."/>
+             <button type="submit" style="margin:auto;max-width:50px"><i class="fa fa-search"></i></button>
+            <button id="search" style="color:white; width: 180px; height: 42px; background-color:light-blue;">Advanced Search </button> 
+         </form></center>
+         <br>   
+        </div>
+    </div>
+    
     
    <section>
   <nav>
