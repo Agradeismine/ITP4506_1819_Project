@@ -91,31 +91,19 @@
         <a href="#home">Home</a>
         <a href="#news">News</a>
 
-        <div class="dropdown" >
-            <button class="dropbtn" onmouseover="showdropdown('myDropdown')" onmouseout="showdropdown('myDropdown')">Dropdown
 
         <div class="dropdown">
             <button class="dropbtn" onclick="showdropdown('CategoryDropdown')">Category
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="CategoryDropdown" >
-                <a href="#">Arts & Music</a>
-                <a href="#">Business</a>
-                <a href="#">Computers & Tech</a>
-                <a href="#">Cooking</a>
-                <a href="#">Computers & Tech</a>
-                <a href="#">Computers & Tech</a>
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
             </div>
         </div>
-
-<<<<<<< HEAD
-        <a href="#news">Search...</a>
-
-=======
-           <form>
-      <input type="text" name="search" placeholder="Search..">
-    </form>
->>>>>>> a9660eef7f946bce370d66e9452948c06518682d
+ 
+            
 
         <div class="dropdown" style="float:right">
             <button class="dropbtn" onclick="showdropdown('MenuDropdown')">Menu
@@ -129,8 +117,9 @@
         </div>
 
         <a style="float:right">Student Name: Yip Yiu Cheung</a>
-
-    </div>
+           <form>
+      <input type="text" name="search" placeholder="Search..">
+    </form>
 
     <div class="resizable">
 
