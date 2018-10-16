@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/mainpage.css">
     <link rel="stylesheet" type="text/css" href="css/fontSize.css"> 
     <link rel="stylesheet" type="text/css" href="css/Search.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="jslib/jquery-1.11.1.js"></script>
     <script>
         /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
@@ -67,6 +68,22 @@
   
 });
         
+        window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+        
         
     </script>
 </head>
@@ -113,8 +130,8 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="MenuDropdown">
-                <a href="#">Profile</a>
-                <a href="#">Preferences</a>
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
                 <a href="#" onclick="alert('Do you want to logout?');">Logout</a>
             </div>
         </div>
@@ -122,17 +139,35 @@
         <a style="float:right">Student Name: Yip Yiu Cheung</a>
         <br>
             <br>    <br>    <br>    <br>   
-         <center>  <form>
-      <input type="text" name="search" placeholder="Search...">
-    </form></center>
+         <center>  <form class="example">
+            <input type="search" placeholder="Search..."/>
+             <button type="submit" style="margin:auto;max-width:50px"><i class="fa fa-search"></i></button>
+            <a href="url" style="color:white; height: 14px;">Advanced Search </a>
+         </form></center>
          <br>   
 
     
    </div>
-        <div class="resizable">
-
     
-    </div>
+   <section>
+  <nav>
+    <ul>
+      <li><a href="#">London</a></li>
+      <li><a href="#">Paris</a></li>
+      <li><a href="#">Tokyo</a></li>
+    </ul>
+  </nav>
+  
+  <div class="resizable">
+  <article>
+    <h1>London</h1>
+    London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.
+    Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.
+  </article>
+  </div>    
+</section>
+
+    <img src="arrow.png" onclick="topFunction()" id="myBtn" title="Go to top" style="width:25px; height=25px">
 </body>
 
 </html>
