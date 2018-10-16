@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
+      <title>Library System: Staff Page</title>
+   	<link rel="stylesheet" type="text/css" href="css/mainpage.css">
+
+    <script>
+        /* When the user clicks on the button, 
+                toggle between hiding and showing the dropdown content */
+        function showdropdown(id) {
+            document.getElementById(id).classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                var MenuDropdown = document.getElementById("MenuDropdown");
+
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+
+                if (MenuDropdown.classList.contains('show')) {
+                    MenuDropdown.classList.remove('show');
+                }
+            }
+        }
+    </script>
 </head>
+
 <body>
-<<<<<<< HEAD:Login_v3/nonTeaching.php
 <?php
     if(isset($_SERVER["QUERY_STRING"])){
         extract($_GET);
@@ -49,8 +73,5 @@
     </div>
 
 
-=======
-  Non teaching main page
->>>>>>> parent of 079d3ec... .:Login_v3/nonTeaching.html
 </body>
 </html>
