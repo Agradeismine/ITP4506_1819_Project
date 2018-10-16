@@ -38,7 +38,6 @@
         }
 
         $(document).ready(function(){
-                  $("#advanced").hide();
   var resize = new Array('.resizable');
   resize = resize.join(',');
   
@@ -67,14 +66,11 @@
     return false;
   });
   
-     $("#search").click(function(){
-       
+          
+  $("#search").click(function(e) { 
         $("#simple").hide();
-        $("#advanced").show();
-       
-     });     
-          
-          
+        e.preventDefault();
+    });
           
           
 });
@@ -94,7 +90,8 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
-        
+  
+
         
     </script>
 </head>
@@ -145,7 +142,8 @@ function topFunction() {
    </div>
     
         
-        <div id="advanced"  style="background-color: #F5E13C;">
+  
+           <div  style="background-color: #F5E13C;">
          <div id="resize">
               <a class="increase" style="font-size:20px; opacity: 0.9;">A</a> 
               <a class="decrease" style="font-size:12px; opacity: 0.9;">A</a> 
@@ -153,34 +151,25 @@ function topFunction() {
             </div>
      <div>
         <br> 
-         <center>  <form class="example">
+         <center>  <form class="example" id="simple">
                        <br>    <br>    
             <input type="search" placeholder="Search..."/>
              <button type="submit" style="margin:auto;max-width:50px"><i class="fa fa-search"></i></button>
             <button id="search" style="color:white; width: 180px; height: 42px; background-color:light-blue;">Advanced Search </button> 
          </form></center>
-         <br>   
-        </div>
-    </div>
-    
-           <div id="simple"  style="background-color: #F5E13C;">
-         <div id="resize">
-              <a class="increase" style="font-size:20px; opacity: 0.9;">A</a> 
-              <a class="decrease" style="font-size:12px; opacity: 0.9;">A</a> 
-              <a class="reset" style="opacity: 0.9;">R</a>
-            </div>
-     <div>
-        <br> 
-         <center>  <form class="example">
+                  <center>  <form class="example" id="advanced" style="display:none;">
                        <br>    <br>    
-            <input type="search" placeholder="Search..."/>
-             <button type="submit" style="margin:auto;max-width:50px"><i class="fa fa-search"></i></button>
-            <button id="search" style="color:white; width: 180px; height: 42px; background-color:light-blue;">Advanced Search </button> 
+         Search for:   <input type="radio" name="sorting" value="everything"> Everything<br>
+                       <input type="radio" name="sorting" value="books"> Books<br>
+                       <input type="radio" name="sorting" value="software"> Software<br>
+                       <input type="radio" name="sorting" value="Magazines"> Magazines<br>
+         
          </form></center>
          <br>   
         </div>
+        
     </div>
-    
+ 
     
    <section>
   <nav>
