@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/Search.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="jslib/jquery-1.11.1.js"></script>
-    <script>
+    <script>.
         /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
         function showdropdown(id) {
             document.getElementById(id).classList.toggle("show");
