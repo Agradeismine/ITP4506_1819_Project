@@ -4,7 +4,9 @@
 <head>
     <title>Library System: Student Page</title>
     <link rel="stylesheet" type="text/css" href="css/mainpage.css">
-
+    <link rel="stylesheet" type="text/css" href="css/fontSize.css"> 
+    <link rel="stylesheet" type="text/css" href="css/Search.css"> 
+    <script src="jslib/jquery-1.11.1.js"></script>
     <script>
         /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
         function showdropdown(id) {
@@ -34,6 +36,38 @@
 			}
         }
 
+        $(document).ready(function(){
+  var resize = new Array('.resizable');
+  resize = resize.join(',');
+  
+  //resets the font size when "reset" is clicked
+  var resetFont = $(resize).css('font-size');
+    $(".reset").click(function(){
+      $(resize).css('font-size', resetFont);
+    });
+  
+  //increases font size when "+" is clicked
+  $(".increase").click(function(){
+    var originalFontSize = $(resize).css('font-size');
+    var originalFontNumber = parseFloat(originalFontSize, 10);
+    var newFontSize = originalFontNumber*1.2;
+    $(resize).css('font-size', newFontSize);
+    return false;
+  });
+  
+  //decrease font size when "-" is clicked
+  
+  $(".decrease").click(function(){
+    var originalFontSize = $(resize).css('font-size');
+    var originalFontNumber = parseFloat(originalFontSize, 10);
+    var newFontSize = originalFontNumber*0.8;
+    $(resize).css('font-size', newFontSize);
+    return false;
+  });
+  
+});
+        
+        
     </script>
 </head>
 
@@ -47,13 +81,23 @@
     }
 
     ?>
-
+    
+     <div id="resize">
+              <a class="increase" style="font-size:20px; opacity: 0.8;">A</a> 
+              <a class="decrease" style="font-size:12px; opacity: 0.8;">A</a> 
+              <a class="reset" style="opacity: 0.8;">R</a>
+            </div>
     <div class="navbar">
         <a href="#home">Home</a>
         <a href="#news">News</a>
 
+<<<<<<< HEAD
+        <div class="dropdown" >
+            <button class="dropbtn" onmouseover="showdropdown('myDropdown')" onmouseout="showdropdown('myDropdown')">Dropdown
+=======
         <div class="dropdown">
             <button class="dropbtn" onclick="showdropdown('CategoryDropdown')">Category
+>>>>>>> deb67393eed3bfe3fa0947350be8f79604a94e2b
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="CategoryDropdown" >
@@ -66,8 +110,14 @@
             </div>
         </div>
 
+<<<<<<< HEAD
         <a href="#news">Search...</a>
 
+=======
+           <form>
+      <input type="text" name="search" placeholder="Search..">
+    </form>
+>>>>>>> a9660eef7f946bce370d66e9452948c06518682d
 
         <div class="dropdown" style="float:right">
             <button class="dropbtn" onclick="showdropdown('MenuDropdown')">Menu
@@ -84,6 +134,11 @@
 
     </div>
 
+    <div class="resizable">
+
+    
+    </div>
+    
 </body>
 
 </html>
