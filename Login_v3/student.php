@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/mainpage.css">
     <link rel="stylesheet" type="text/css" href="css/fontSize.css"> 
     <link rel="stylesheet" type="text/css" href="css/Search.css"> 
+        <link rel="stylesheet" type="text/css" href="css/advancedForm.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="jslib/jquery-1.11.1.js"></script>
     <script>
@@ -69,6 +70,7 @@
           
   $("#search").click(function(e) { 
         $("#simple").hide();
+        $("#advanced").show();
         e.preventDefault();
     });
           
@@ -157,12 +159,12 @@ function topFunction() {
              <button type="submit" style="margin:auto;max-width:50px"><i class="fa fa-search"></i></button>
             <button id="search" style="color:white; width: 180px; height: 42px; background-color:light-blue;">Advanced Search </button> 
          </form></center>
-                  <center>  <form class="example" id="advanced" style="display:none;">
+                  <center>  <form  id="advanced" style="display:none;" class="form-container">
                        <br>    <br>    
-         Search for:   <input type="radio" name="sorting" value="everything"> Everything<br>
-                       <input type="radio" name="sorting" value="books"> Books<br>
-                       <input type="radio" name="sorting" value="software"> Software<br>
-                       <input type="radio" name="sorting" value="Magazines"> Magazines<br>
+         Search for:   <input type="radio" name="sorting" value="everything"> Everything
+                       <input type="radio" name="sorting" value="books"> Books
+                       <input type="radio" name="sorting" value="software"> Software
+                       <input type="radio" name="sorting" value="Magazines"> Magazines
          
          </form></center>
          <br>   
