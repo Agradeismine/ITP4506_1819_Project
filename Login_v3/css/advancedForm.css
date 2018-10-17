@@ -15,11 +15,20 @@
 /* Full-width input fields */
  .form-container select {
     font-size: 16px;
-  width: 150px;
-  padding: 10px;
+  width: 130px;
+  padding: 5px;
   margin: 10px 0 22px 0;
   border: none;
   background: white;
+}
+
+#operator{
+    width: 100px;
+}
+
+#first{
+    width:450px;
+    
 }
 
 .form-container input[type=text] {
@@ -30,10 +39,10 @@
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: solid  #eeeeee 1px;
+    border-bottom: solid  #D0D0D0 1px;
     padding: 3px 10px;
      font-size: 20px;
-    width: 400px;
+    width: 348px;
 }
 
 
@@ -45,7 +54,7 @@
 
 #simpleSearch{
   position: absolute;
-  right: 170px;  
+  right: 130px;  
   top:100px;
   background-color: #F5E13C;
   font-size: 16px;

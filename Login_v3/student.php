@@ -167,7 +167,7 @@ function topFunction() {
          </form></center>
                    <form  id="advanced" style="display:none;" class="form-container">  
                        <br>
-         Search for:   <input type="radio" name="sorting" value="everything"> Everything
+         Search for:   <input type="radio" name="sorting" value="everything" checked> Everything
                        <input type="radio" name="sorting" value="books"> Books
                        <input type="radio" name="sorting" value="software"> Software
                        <input type="radio" name="sorting" value="Magazines"> Magazines
@@ -181,9 +181,9 @@ function topFunction() {
                         <option value="subject">Subject</option>
                         <option value="isbn">ISBN</option>
                       </select> contains
-                       <input type="text"  name="contains" required>
+                       <input type="text"  name="contains" id="first" required >
                        <br>
-                         <select>
+                         <select id="operator">
                         <option value="and">AND</option>
                         <option value="or">OR</option>
                         <option value="not">NOT</option>
