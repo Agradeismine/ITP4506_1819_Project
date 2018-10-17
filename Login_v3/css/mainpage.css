@@ -90,7 +90,7 @@
     position: relative;
     left: -20px;
     content: "✖";
-}
+}.
 
 section {
     display: -webkit-flex;
