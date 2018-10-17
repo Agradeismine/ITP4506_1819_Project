@@ -165,8 +165,8 @@ function topFunction() {
              <button type="submit" style="margin:auto;max-width:50px"><i class="fa fa-search"></i></button>
             <button id="search" style="color:white; width: 180px; height: 42px; background-color:light-blue;">Advanced Search </button> 
          </form></center>
-                   <form  id="advanced" style="display:none;" class="form-container">
-                       <br>    <br>    
+                   <form  id="advanced" style="display:none;" class="form-container">  
+                       <br>
          Search for:   <input type="radio" name="sorting" value="everything"> Everything
                        <input type="radio" name="sorting" value="books"> Books
                        <input type="radio" name="sorting" value="software"> Software
@@ -218,9 +218,11 @@ function topFunction() {
   <article>
     <img src="jslib/images/1.jpg" title="Book name" style="width:75px; height=100px">
     <h1>London</h1>
+
     London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.
-    Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.<br><br></p>
-    <hr></article>
+    Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.<br><br>
+    <hr>
+  </article>
 
   </div>    
 </section>
