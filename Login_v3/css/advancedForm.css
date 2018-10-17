@@ -1,65 +1,83 @@
-
-
 /* Add styles to the form container */
 .form-container {
   font-family: Arial, Helvetica, sans-serif;
-  margin-left:  250px;
-  max-width: 60%;
+  margin-left: 90px;
+  max-width: 65%;
   padding: 10px;
   /* background-color: #F0F0F0;*/
   background-color: white;
-  font-size: 16px;
-  border: 5px solid #f1f1f1;
+  font-size: 20px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
 }
 
 /* Full-width input fields */
- .form-container select {
-    font-size: 16px;
-  width: 150px;
-  padding: 10px;
+.form-container select {
+  font-size: 14px;
+  width: 136px;
+  padding: 3px;
   margin: 10px 0 22px 0;
   border: none;
-  background: white;
+  background: #f1f1f1;
+  height: 30px;
 }
+
+#first {
+  width: 450px;
+
+  width: 400px;
+}
+
+#language {
+  font-size: 11px;
+  position: absolute;
+  top: 185px;
+  right: 215px;
+
+}
+
+#date {
+  font-size: 11px;
+}
+
 
 .form-container input[type=text] {
   background-color: transparent;
-    color: black;
-    outline: none;
-    outline-style: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: solid  #eeeeee 1px;
-    padding: 3px 10px;
-     font-size: 20px;
-    width: 400px;
+  color: black;
+  outline: none;
+  outline-style: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid #eeeeee 1px;
+  padding: 3px 10px;
+  font-size: 20px;
+  width: 300px;
 }
 
 
 /* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
 
-#simpleSearch{
+#simpleSearch {
   position: absolute;
-  right: 170px;  
-  top:100px;
+  right: 60px;
+  top: 100px;
   background-color: #F5E13C;
   font-size: 16px;
-    outline: none;
-    outline-style: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-   border-bottom: none;
+  outline: none;
+  outline-style: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
   height: 35px;
 }
 
-#simpleSearch:hover{
-    background-color: #EBD732;
+#simpleSearch:hover {
+  background-color: #EBD732;
 }
-
-
