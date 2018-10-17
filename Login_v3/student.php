@@ -180,8 +180,19 @@ function topFunction() {
                         <option value="author">Author</option>
                         <option value="subject">Subject</option>
                         <option value="isbn">ISBN</option>
-                      </select> contains
+                      </select> contains 
                        <input type="text"  name="contains" id="first" required >
+                       &nbsp;
+                       <span id="language">Language 
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                         <select>
+                        <option value="anyLanguage">Any language</option>
+                        <option value="english">English</option>
+                        <option value="chinese">Chinese</option>
+                        <option value="french">French</option>
+                        <option value="german">German</option>
+                      </select></span>
+                       
                        <br>
                          <select id="operator">
                         <option value="and">AND</option>
@@ -197,12 +208,27 @@ function topFunction() {
                         <option value="isbn">ISBN</option>
                       </select> contains
                        <input type="text"  name="contains" required>
+                        &nbsp;&nbsp;
+                              <span id="date">Publication Date 
+                         <select>
+                        <option value="anyYear">Any year</option>
+                        <option value="specific">specific date</option>
+                        <option value="last">Last year</option>
+                        <option value="last2">Last 2 years</option>
+                        <option value="last5">Last 5 years</option>
+                       <option value="last10">Last 10 years</option>
+                         <option value="last20">Last 20 years</option>     
+                      </select></span>
+                       
+                       
+                       
+                       
+                       
                       <button id="simpleSearch">Simple Search </button> 
          </form>
          <br>   
         </div>
         
-    </div>
  
     
    <section>
