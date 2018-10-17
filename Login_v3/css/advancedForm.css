@@ -1,14 +1,13 @@
 /* Add styles to the form container */
 .form-container {
   font-family: Arial, Helvetica, sans-serif;
-  margin-left: 90px;
-  max-width: 65%;
-  padding: 10px;
+  margin-left: 250px;
+  max-width: 68%;
+  padding: 15px;
   /* background-color: #F0F0F0;*/
   background-color: white;
   font-size: 20px;
   border: 3px solid #f1f1f1;
-  z-index: 9;
 }
 
 /* Full-width input fields */
@@ -24,20 +23,58 @@
 
 #first {
   width: 450px;
-
-  width: 400px;
 }
 
 #language {
-  font-size: 11px;
+  font-size: 15px;
   position: absolute;
-  top: 185px;
-  right: 215px;
-
+  top: 200px;
+  right: 197.5px;
 }
 
 #date {
-  font-size: 11px;
+  font-size: 15px;
+  position: absolute;
+  top: 263px;
+  right: 195px;
+}
+
+#startDate{
+  display:none;
+}
+
+#endDate{
+   display:none;
+}
+
+#end{
+   position: absolute;
+  top: 360px;
+  right: 188px;
+  font-size: 14px;
+  height: 20px;
+}
+
+
+
+#start{
+   position: absolute;
+  top: 310px;
+  right: 191px;
+  font-size: 14px;
+  height: 20px;
+}
+#day{
+  width: 53px;
+}
+
+#month{
+  width: 68px;
+}
+
+#year{
+    font-size: 14px;
+    width: 40px;
 }
 
 
@@ -49,10 +86,10 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: solid #eeeeee 1px;
+  border-bottom: solid #B8B8B8 1px;
   padding: 3px 10px;
   font-size: 20px;
-  width: 300px;
+  width: 310px;
 }
 
 
@@ -65,7 +102,7 @@
 
 #simpleSearch {
   position: absolute;
-  right: 60px;
+  right: 50px;
   top: 100px;
   background-color: #F5E13C;
   font-size: 16px;

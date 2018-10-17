@@ -80,6 +80,22 @@
                 e.preventDefault();
             });  
 
+          $('#checkDate').change(function() {
+              var date = $('#checkDate').val();
+              if(date == "specific"){
+                $("#startDate").show();
+                $("#endDate").show();
+              }
+            else{
+              $("#startDate").hide();
+              $("#endDate").hide();
+            }
+          });
+          
+          
+          
+          
+          
             $("#searchBtn").click(function(event) { 
                 $.getJSON('jslib/book.json', function(rs) {
                     for (var i = 0; i < rs.length; i++) {
@@ -119,12 +135,12 @@ function topFunction() {
 
 <body>
     <?php
-        // if (!isset($_COOKIE['student'])) {
-        //     header("Location: changePassword.php?username=student");
-        // }
-        // if (isset($_SERVER["QUERY_STRING"])) {
-        //     extract($_GET);
-        // }
+         if (!isset($_COOKIE['student'])) {
+             header("Location: changePassword.php?username=student");
+         }
+         if (isset($_SERVER["QUERY_STRING"])) {
+             extract($_GET);
+         }
 
     ?>
 
@@ -182,8 +198,8 @@ function topFunction() {
                 </form>
             </center>
             <form id="advanced" style="display:none;" class="form-container">
-                <br> <br>
-                Search for: <input type="radio" name="sorting" value="everything"> Everything
+                <br>
+                Search for: <input type="radio" name="sorting" value="everything" checked> Everything
                 <input type="radio" name="sorting" value="books"> Books
                 <input type="radio" name="sorting" value="software"> Software
                 <input type="radio" name="sorting" value="Magazines"> Magazines
@@ -197,10 +213,10 @@ function topFunction() {
                     <option value="subject">Subject</option>
                     <option value="isbn">ISBN</option>
                 </select> contains
-                <input type="text" name="contains" required>
+                <input id="first" type="text" name="contains" required>
                 &nbsp;
                 <span id="language">Language
-                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
                     <select>
                         <option value="anyLanguage">Any language</option>
                         <option value="english">English</option>
@@ -224,9 +240,9 @@ function topFunction() {
                     <option value="isbn">ISBN</option>
                 </select> contains
                 <input type="text" name="contains" required>
-                &nbsp;&nbsp;
+           
                 <span id="date">Publication Date
-                    <select>
+                    <select id="checkDate">
                         <option value="anyYear">Any year</option>
                         <option value="specific">specific date</option>
                         <option value="last">Last year</option>
@@ -235,10 +251,128 @@ function topFunction() {
                         <option value="last10">Last 10 years</option>
                         <option value="last20">Last 20 years</option>
                     </select></span>
+                    
+                 <div id="startDate">
+                 <br><br>
+                 <span id="start">
+                      Start Date:
+                        <select id="day" name="day">
+          <option value="day">Day</option>              
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+     </select>
+                   
+                    <select id="month" name="month">
+        <option value="month">Month</option>              
+        <option value="January">01</option>
+        <option value="February">02</option>
+        <option value="March">03</option>
+        <option value="April">04</option>
+        <option value="May">05</option>
+        <option value="June">06</option>
+        <option value="July">07</option>
+        <option value="August">08</option>
+        <option value="September">09</option>
+        <option value="October">10</option>
+        <option value="November">11</option>
+        <option value="December">12</option>
+     </select>
+                <input type="text" name="year" id="year" placeholder="Year">
+        </span>
+              </div>   
+                
+                        <div id="endDate">
+                 <br><br>
+                 <span id="end">
+                      End Date: &nbsp;
+                        <select id="day" name="day">
+          <option value="day">Day</option>              
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+     </select>
+                   
+                    <select id="month" name="month">
+        <option value="month">Month</option>              
+        <option value="January">01</option>
+        <option value="February">02</option>
+        <option value="March">03</option>
+        <option value="April">04</option>
+        <option value="May">05</option>
+        <option value="June">06</option>
+        <option value="July">07</option>
+        <option value="August">08</option>
+        <option value="September">09</option>
+        <option value="October">10</option>
+        <option value="November">11</option>
+        <option value="December">12</option>
+     </select>
+                <input type="text" name="year" id="year" placeholder="Year">
+        </span>
+              </div>    
+                    
+                      
+                        
+                            
 
-
-
-                <button id="simpleSearch">Simple Search </button>
+                <button id="simpleSearch" >Simple Search </button>
             </form>
             <br>
         </div>
