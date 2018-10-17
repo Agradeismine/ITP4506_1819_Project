@@ -5,7 +5,8 @@
     "year": [2018],
     "OS": ["Windows"],
     "Language": ["English"],
-    "Description": ["Corrigendum to Delaunay Hodge star [Comput. Aided Des. 45 (2013) 540–544]"]
+    "Description": ["Corrigendum to Delaunay Hodge star [Comput. Aided Des. 45 (2013) 540–544]"],
+    "img": "jslib/images/15.jpg"
   },
   {
     "bookname": ["International Journal of Computer Mathematics"],
@@ -13,7 +14,8 @@
     "year": [2017],
     "OS": ["Windows"],
     "Language": ["English"],
-    "Description": ["In this article, similarity between time series obtained from chaotic systems is considered as a measure of similarity between them; however, it is well known that this method is not suitable for chaotic systems."]
+    "Description": ["In this article, similarity between time series obtained from chaotic systems is considered as a measure of similarity between them; however, it is well known that this method is not suitable for chaotic systems."],
+    "img": "jslib/images/16.jpg"
   },
   {
     "bookname": ["Image and Vision Computing"],
@@ -21,7 +23,8 @@
     "year": [2010],
     "OS": ["MacOS"],
     "Language": ["English"],
-    "Description": ["Vision-based human action recognition is the process of labeling image sequences with action labels."]
+    "Description": ["Vision-based human action recognition is the process of labeling image sequences with action labels."],
+    "img": "jslib/images/17.jpg"
   },
   {
     "bookname": ["Information Systems history: What is history? What is IS history? What IS history?"],
@@ -29,7 +32,8 @@
     "year": [2013],
     "OS": ["Windows"],
     "Language": ["English"],
-    "Description": ["The philosophy of history is concerned neither with 'the past by itself' nor..."]
+    "Description": ["The philosophy of history is concerned neither with 'the past by itself' nor..."],
+    "img": "jslib/images/18.jpg"
   },
   {
     "bookname": ["The software model checker Blast: Applications to software engineering"],
@@ -37,7 +41,8 @@
     "year": [2007],
     "OS": ["Windows"],
     "Language": ["English"],
-    "Description": ["Blast is an automatic verification tool for checking temporal safety properties of C programs. Given a C program and a temporal safety property, Blast either statically proves that the program satisfies the safety property"]
+    "Description": ["Blast is an automatic verification tool for checking temporal safety properties of C programs. Given a C program and a temporal safety property, Blast either statically proves that the program satisfies the safety property"],
+    "img": "jslib/images/19.jpg"
   },
   {
     "bookname": ["Biological imaging software tools"],
@@ -45,7 +50,8 @@
     "year": [2012],
     "OS": ["MacOS"],
     "Language": ["English"],
-    "Description": ["Few technologies are more widespread in modern biological laboratories than imaging. Recent advances in optical technologies and instrumentation are providing hitherto unimagined capabilities."]
+    "Description": ["Few technologies are more widespread in modern biological laboratories than imaging. Recent advances in optical technologies and instrumentation are providing hitherto unimagined capabilities."],
+    "img": "jslib/images/20.jpg"
   },
   {
     "bookname": ["Java Treeview--extensible visualization of microarray data"],
@@ -53,7 +59,8 @@
     "year": [2004],
     "OS": ["Windows"],
     "Language": ["English"],
-    "Description": ["Open source software encourages innovation by allowing users to extend the functionality of existing applications. Treeview is a popular application for the visualization of microarray data, but is closed-source and platform-specific, which limits both its current utility and suitability as a platform for further development."]
+    "Description": ["Open source software encourages innovation by allowing users to extend the functionality of existing applications."],
+    "img": "jslib/images/21.jpg"
   },
   {
     "bookname": ["jMetal: A Java framework for multi-objective optimization"],
@@ -61,7 +68,8 @@
     "year": [2011],
     "OS": ["MacOS"],
     "Language": ["English"],
-    "Description": ["Advances in Engineering Software, 2011, Volume 42, Issue 10"]
+    "Description": ["Advances in Engineering Software, 2011, Volume 42, Issue 10"],
+    "img": "jslib/images/22.jpg"
   },
   {
     "bookname": ["系統生命週期"],
@@ -69,6 +77,7 @@
     "year": [2014],
     "OS": ["Windows"],    
     "Language": ["Chinese"],
-    "Description": ["系統發展生命周期，也稱軟體生命周期，是系統工程、資訊系統和軟體工程中的術語，用於描述一個資訊系統從規劃、建立、測試到最終完成部署的全過程。系統開發生命周期的概念對於硬體和軟體系統都是適用的，這些系統可能只由硬體或軟體組成，也可能兩者都有。"]
+    "Description": ["系統發展生命周期，也稱軟體生命周期，是系統工程、資訊系統和軟體工程中的術語，用於描述一個資訊系統從規劃、建立、測試到最終完成部署的全過程。系統開發生命周期的概念對於硬體和軟體系統都是適用的，這些系統可能只由硬體或軟體組成，也可能兩者都有。"],
+    "img": "jslib/images/23.jpg"
   }
 ]
