@@ -39,49 +39,64 @@
         }
 
         $(document).ready(function(){
-  var resize = new Array('.resizable');
-  resize = resize.join(',');
+            var resize = new Array('.resizable');
+            resize = resize.join(',');
   
-  //resets the font size when "reset" is clicked
-  var resetFont = $(resize).css('font-size');
-    $(".reset").click(function(){
-      $(resize).css('font-size', resetFont);
-    });
+            //resets the font size when "reset" is clicked
+            var resetFont = $(resize).css('font-size');
+                $(".reset").click(function(){
+                $(resize).css('font-size', resetFont);
+                });
+    
+            //increases font size when "+" is clicked
+            $(".increase").click(function(){
+                var originalFontSize = $(resize).css('font-size');
+                var originalFontNumber = parseFloat(originalFontSize, 10);
+                var newFontSize = originalFontNumber*1.2;
+                $(resize).css('font-size', newFontSize);
+                return false;
+            });
   
-  //increases font size when "+" is clicked
-  $(".increase").click(function(){
-    var originalFontSize = $(resize).css('font-size');
-    var originalFontNumber = parseFloat(originalFontSize, 10);
-    var newFontSize = originalFontNumber*1.2;
-    $(resize).css('font-size', newFontSize);
-    return false;
-  });
-  
-  //decrease font size when "-" is clicked
-  
-  $(".decrease").click(function(){
-    var originalFontSize = $(resize).css('font-size');
-    var originalFontNumber = parseFloat(originalFontSize, 10);
-    var newFontSize = originalFontNumber*0.8;
-    $(resize).css('font-size', newFontSize);
-    return false;
-  });
+            //decrease font size when "-" is clicked
+            
+            $(".decrease").click(function(){
+                var originalFontSize = $(resize).css('font-size');
+                var originalFontNumber = parseFloat(originalFontSize, 10);
+                var newFontSize = originalFontNumber*0.8;
+                $(resize).css('font-size', newFontSize);
+                return false;
+            });
   
           
-  $("#search").click(function(e) { 
-        $("#simple").hide();
-        $("#advanced").show();
-        e.preventDefault();
-    }); 
+            $("#search").click(function(e) { 
+                    $("#simple").hide();
+                    $("#advanced").show();
+                    e.preventDefault();
+            }); 
+                    
+            $("#simpleSearch").click(function(e) { 
+                $("#advanced").hide();
+                $("#simple").show();
+                e.preventDefault();
+            });  
+
+            $("#searchBtn").click(function(event) { 
+                $.getJSON('jslib/book.json', function(rs) {
+                    for (var i = 0; i < rs.length; i++) {
+                        $('#bookResults').append('<article> <img src="jslib/images/1.jpg" title="Book name" style="width:120px; height=150px; float: left; margin-right: 15px; margin-bottom: 10px;"> <h3>Book Name</h3>'+
+                        '<table width="600" >'+
+                        '<tr><td>Type: Music</td><td>Year: 2018</td><td>ISBN: 21796247</td></tr>'+
+                        '<tr><td>Language: English</td><td>Author: Author A</td><td>Publisher: University of California Press</td></tr>'+
+                        '</table><br>'+
+                        'Description:&emsp;London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants. Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.<br><br><hr>'+
+                        '</article>');
+                        //$('#bookResults').append('<p>Year : ' + '\t' + rs.birthday[i].year + '</p>');
+                        //$('#bookResults').append('<p>Sex: ' + '\t' + rs[i].bookname[i] + '</p><br>');
+                    };
+                });
+            });  
           
-       $("#simpleSearch").click(function(e) { 
-        $("#advanced").hide();
-        $("#simple").show();
-        e.preventDefault();
-    });      
-          
-          
-});
+        });
         
         window.onscroll = function() {scrollFunction()};
 
@@ -98,20 +113,18 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
-  
-
         
     </script>
 </head>
 
 <body>
     <?php
-    if (isset($_SERVER["QUERY_STRING"])) {
-        extract($_GET);
         if (!isset($_COOKIE['student'])) {
             header("Location: changePassword.php?username=student");
         }
-    }
+        if (isset($_SERVER["QUERY_STRING"])) {
+            extract($_GET);
+        }
 
     ?>
 
@@ -186,16 +199,16 @@ function topFunction() {
                 </select> contains
                 <input type="text" name="contains" required>
                 &nbsp;
-                       <span id="language">Language 
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                         <select>
+                <span id="language">Language
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <select>
                         <option value="anyLanguage">Any language</option>
                         <option value="english">English</option>
                         <option value="chinese">Chinese</option>
                         <option value="french">French</option>
                         <option value="german">German</option>
-                      </select></span>
-                       
+                    </select></span>
+
                 <br>
                 <select id="operator">
                     <option value="and">AND</option>
@@ -212,19 +225,19 @@ function topFunction() {
                 </select> contains
                 <input type="text" name="contains" required>
                 &nbsp;&nbsp;
-                <span id="date">Publication Date 
-                        <select>
-                    <option value="anyYear">Any year</option>
-                    <option value="specific">specific date</option>
-                    <option value="last">Last year</option>
-                    <option value="last2">Last 2 years</option>
-                    <option value="last5">Last 5 years</option>
-                    <option value="last10">Last 10 years</option>
-                        <option value="last20">Last 20 years</option>     
+                <span id="date">Publication Date
+                    <select>
+                        <option value="anyYear">Any year</option>
+                        <option value="specific">specific date</option>
+                        <option value="last">Last year</option>
+                        <option value="last2">Last 2 years</option>
+                        <option value="last5">Last 5 years</option>
+                        <option value="last10">Last 10 years</option>
+                        <option value="last20">Last 20 years</option>
                     </select></span>
-                       
-                        
-                       
+
+
+
                 <button id="simpleSearch">Simple Search </button>
             </form>
             <br>
@@ -242,11 +255,11 @@ function topFunction() {
             </ul>
         </nav>
 
-        <div class="resizable">
+        <div id="bookResults" class="resizable">
             <article>
                 <img src="jslib/images/1.jpg" title="Book name" style="width:120px; height=150px; float: left; margin-right: 15px; margin-bottom: 10px;">
                 <h3>Book Name</h3>
-                <table width="600" >
+                <table width="600">
                     <tr>
                         <td>Type: Music</td>
                         <td>Year: 2018</td>
