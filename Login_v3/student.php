@@ -164,17 +164,6 @@
         </div>
 
         <a style="float:right">Student Name: Yip Yiu Cheung</a>
-<<<<<<< HEAD
-    </div>
-
-
-
-    <div style="background-color: #F5E13C;">
-        <div id="resize">
-            <a class="increase" style="font-size:20px; opacity: 0.9;">A</a>
-            <a class="decrease" style="font-size:12px; opacity: 0.9;">A</a>
-            <a class="reset" style="opacity: 0.9;">R</a>
-=======
    </div>
     
         
@@ -228,7 +217,6 @@
                       <button id="simpleSearch">Simple Search </button> 
          </form>
          <br>   
->>>>>>> 64402ea61d8fbc0b49e27d02344525d85ac6edda
         </div>
         <div>
             <br>
