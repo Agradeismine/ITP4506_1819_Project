@@ -106,9 +106,9 @@ function topFunction() {
 
 <body>
     <?php
-    if(isset($_SERVER["QUERY_STRING"])){
+    if (isset($_SERVER["QUERY_STRING"])) {
         extract($_GET);
-        if(!isset($_COOKIE['student'])) {
+        if (!isset($_COOKIE['student'])) {
             header("Location: changePassword.php?username=student");
         }
     }
@@ -132,7 +132,8 @@ function topFunction() {
 
             </div>
         </div>
-       
+ 
+            
 
         <div class="dropdown" style="float:right">
             <button class="dropbtn" onclick="showdropdown('MenuDropdown')">Menu
@@ -215,7 +216,8 @@ function topFunction() {
   
   <div class="resizable">
   <article>
-    <h1>London</h1><p>
+    <img src="jslib/images/1.jpg" title="Book name" style="width:75px; height=100px">
+    <h1>London</h1>
     London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.
     Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.<br><br></p>
     <hr></article>
