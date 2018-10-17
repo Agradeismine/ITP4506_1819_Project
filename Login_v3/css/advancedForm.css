@@ -4,7 +4,7 @@
 .form-container {
   font-family: Arial, Helvetica, sans-serif;
   margin-left:  250px;
-  max-width: 65%;
+  max-width: 60%;
   padding: 10px;
   /* background-color: #F0F0F0;*/
   background-color: white;
@@ -14,13 +14,12 @@
 
 /* Full-width input fields */
  .form-container select {
-    font-size: 14px;
-  width: 136px;
-  padding: 3px;
+    font-size: 16px;
+  width: 130px;
+  padding: 5px;
   margin: 10px 0 22px 0;
   border: none;
   background: white;
-     height: 30px;
 }
 
 #operator{
@@ -28,22 +27,8 @@
 }
 
 #first{
-    width:400px;
-}
-
-#language{
-    font-size: 11px;
-    position: absolute;
-    top:185px;
-    right:215px;
-        
-}
-#date{
-     font-size: 11px;
-}
-
-#word{
-
+    width:450px;
+    
 }
 
 .form-container input[type=text] {
@@ -57,7 +42,7 @@
     border-bottom: solid  #D0D0D0 1px;
     padding: 3px 10px;
      font-size: 20px;
-    width: 300px;
+    width: 348px;
 }
 
 
@@ -69,7 +54,7 @@
 
 #simpleSearch{
   position: absolute;
-  right: 60px;  
+  right: 130px;  
   top:100px;
   background-color: #F5E13C;
   font-size: 16px;
