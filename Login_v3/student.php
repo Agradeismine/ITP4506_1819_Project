@@ -31,7 +31,7 @@
             }
         }
 
-        function alert(msg) {
+        function alert(msg) {   //logout alert
             var r = confirm(msg);
 			if (r == true) {
 				window.location.href = "index.php";
@@ -132,8 +132,7 @@ function topFunction() {
 
             </div>
         </div>
- 
-            
+       
 
         <div class="dropdown" style="float:right">
             <button class="dropbtn" onclick="showdropdown('MenuDropdown')">Menu

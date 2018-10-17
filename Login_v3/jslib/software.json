@@ -1,65 +1,74 @@
 [
   {
     "bookname": ["Computer-Aided Design"],
-    "type": ["Software"],
+    "type": ["Technology"],
     "year": [2018],
-    "ISBN": [9781285860222],
+    "OS": ["Windows"],
+    "Language": ["English"],
     "Description": ["Corrigendum to Delaunay Hodge star [Comput. Aided Des. 45 (2013) 540–544]"]
   },
   {
     "bookname": ["International Journal of Computer Mathematics"],
-    "type": ["Software"],
+    "type": ["Technology"],
     "year": [2017],
-    "ISBN": [9779485860222],
+    "OS": ["Windows"],
+    "Language": ["English"],
     "Description": ["In this article, similarity between time series obtained from chaotic systems is considered as a measure of similarity between them; however, it is well known that this method is not suitable for chaotic systems."]
   },
   {
     "bookname": ["Image and Vision Computing"],
-    "type": ["Software"],
+    "type": ["Technology"],
     "year": [2010],
-    "ISBN": [9381485860222],
+    "OS": ["MacOS"],
+    "Language": ["English"],
     "Description": ["Vision-based human action recognition is the process of labeling image sequences with action labels."]
   },
   {
     "bookname": ["Information Systems history: What is history? What is IS history? What IS history?"],
-    "type": ["Software"],
+    "type": ["Technology"],
     "year": [2013],
-    "ISBN": [11326479360222],
+    "OS": ["Windows"],
+    "Language": ["English"],
     "Description": ["The philosophy of history is concerned neither with 'the past by itself' nor..."]
   },
   {
     "bookname": ["The software model checker Blast: Applications to software engineering"],
-    "type": ["Software"],
+    "type": ["Technology"],
     "year": [2007],
-    "ISBN": [91846282362],
+    "OS": ["Windows"],
+    "Language": ["English"],
     "Description": ["Blast is an automatic verification tool for checking temporal safety properties of C programs. Given a C program and a temporal safety property, Blast either statically proves that the program satisfies the safety property"]
   },
   {
     "bookname": ["Biological imaging software tools"],
-    "type": ["Software"],
+    "type": ["Technology"],
     "year": [2012],
-    "ISBN": [6281938473248],
+    "OS": ["MacOS"],
+    "Language": ["English"],
     "Description": ["Few technologies are more widespread in modern biological laboratories than imaging. Recent advances in optical technologies and instrumentation are providing hitherto unimagined capabilities."]
   },
   {
     "bookname": ["Java Treeview--extensible visualization of microarray data"],
-    "type": ["Software"],
+    "type": ["Technology"],
     "year": [2004],
-    "ISBN": [91835378265124],
+    "OS": ["Windows"],
+    "Language": ["English"],
     "Description": ["Open source software encourages innovation by allowing users to extend the functionality of existing applications. Treeview is a popular application for the visualization of microarray data, but is closed-source and platform-specific, which limits both its current utility and suitability as a platform for further development."]
   },
   {
     "bookname": ["jMetal: A Java framework for multi-objective optimization"],
-    "type": ["Software"],
+    "type": ["Technology"],
     "year": [2011],
-    "ISBN": [9287462384923],
+    "OS": ["MacOS"],
+    "Language": ["English"],
     "Description": ["Advances in Engineering Software, 2011, Volume 42, Issue 10"]
   },
   {
-    "bookname": ["Managing the life cycle of Java Card applets in other Java virtual machines"],
-    "type": ["Software"],
+    "bookname": ["系統生命週期"],
+    "type": ["Technology"],
     "year": [2014],
-    "ISBN": [658372366592],
-    "Description": ["The purpose of this paper is to address the design, implementation, performance and limitations of an environment that emulates a secure element for rapid prototyping and debugging."]
+    "OS": ["Windows"],    
+    "Language": ["Chinese"],
+    "Description": ["系統發展生命周期，也稱軟體生命周期，是系統工程、資訊系統和軟體工程中的術語，用於描述一個資訊系統從規劃、建立、測試到最終完成部署的全過程。系統開發生命周期的概念對於硬體和軟體系統都是適用的，這些系統可能只由硬體或軟體組成，也可能兩者都有。"]
   }
 ]

@@ -1,64 +1,91 @@
 [{
     "bookname": ["Best romance songs : 49 timeless love classics"],
-    "type": ["Books"],
+    "type": ["Music"],
     "year": [2016],
     "ISBN": [9781470632366],
+    "Language": ["English"],
+    "Author": ["Author A"],
+    "Publisher": ["University of California Press"],
     "Description": ["Piano, vocal, guitar. Includes notation, tablature, chord symbols, chord diagrams, and lyrics."]
   },
   {
     "bookname": ["She's the one: 7 smash hits"],
-    "type": ["Books"],
+    "type": ["Music"],
     "year": [2004],
     "ISBN": [21796247],
+    "Language": ["English"],
+    "Author": ["Author A"],
+    "Publisher": ["University of California Press"],
     "Description": ["This is a music book."]
   },
   {
     "bookname": ["Essential musicianship for band: ensemble concepts, fundamental"],
-    "type": ["Books"],
+    "type": ["Music"],
     "year": [2017],
     "ISBN": [9780634094637],
+    "Language": ["English"],
+    "Author": ["Author A"],
+    "Publisher": ["University of California Press"],
     "Description": ["The highly acclaimed ensemble method by Eddie Green, John Benzer and David Bertman is now available for beginning and intermediate musicians. Ensemble Concepts Fundamental Level is designed to help young ensembles (1st to 2nd year) acquire solid performance skills while also developing overall musicianship. Every aspect of ensemble development is introduced individually, in developmental order, then combined for more advanced practice. The exercises fit easily into your warm-up routine, saving you precious rehearsal time."]
   },
   {
     "bookname": ["Business law: text and cases"],
-    "type": ["Books"],
+    "type": ["Business"],
     "year": [2015],
     "ISBN": [9781285185248],
+    "Language": ["English"],
+    "Author": ["Chris Wong"],
+    "Publisher": ["Thei"],
     "Description": ["Comprehensive, authoritative, and student-friendly, longtime market-leader BUSINESS LAW"]
   },
   {
     "bookname": ["Business law: the ethical, global, and e-commerce environment"],
-    "type": ["Books"],
+    "type": ["Business"],
     "year": [2013],
     "ISBN": [9780071317658],
+    "Language": ["English"],
+    "Author": ["Author T"],
+    "Publisher": ["Thei"],
     "Description": ["Suitable for the two-term business law course, this title includes a mix of actual and hypothetical cases."]
   },
   {
     "bookname": ["Introduction to business law"],
-    "type": ["Books"],
+    "type": ["Business"],
     "year": [2016],
     "ISBN": [9781285860398],
+    "Language": ["English"],
+    "Author": ["Alex Yip"],
+    "Publisher": ["City University"],
     "Description": ["Using an innovative storytelling style that brings cases and legal concepts to life, INTRODUCTION TO BUSINESS LAW, 5E presents a full range of business law topics in a series of brief, quick-reading chapters."]
   },
   {
     "bookname": ["Newly ReleasedAccess Contested: Security, Identity and Resistance in Asian..."],
-    "type": ["Books"],
+    "type": ["Business"],
     "year": [2018],
     "ISBN": [623946237916],
+    "Language": ["English"],
+    "Author": ["Alex"],
+    "Publisher": ["University of California Press"],
     "Description": ["Contemporary Sociology: A Journal of Reviews, 01/2013, Volume 42, Issue 1"]
   },
   {
-    "bookname": ["Dog"],
-    "type": ["Books"],
+    "bookname": ["狗"],
+    "type": ["Comic"],
     "year": [2010],
     "ISBN": [62895789100],
+    "Language": ["Chinese"],
+    "Author": ["Author C"],
+    "Publisher": ["Publisher C"],
     "Description": ["七八月份是一年中最热的时候,也就是我们常说的‘三伏天＇,在英语中,‘三伏天＇有一个特殊的表达方式dog days（of sum-mer），如Dog days are the hottest days in summer，（三伏天是夏季最热的时候），那么，这个习语又和狗有什么关系呢？”洋博士的习语课开始了!"]
   },
   {
-    "bookname": ["Smart Cities in Europe"],
-    "type": ["Books"],
+    "bookname": ["智慧城市"],
+    "type": ["Technology"],
     "year": [2009],
     "ISBN": [76569863765451],
-    "Description": ["Against this background, the concept of the smart city has recently been introduced as a strategic device to encompass modern urban production factors in a common framework"]
+    "Language": ["Chinese"],
+    "Author": ["Author C"],
+    "Publisher": ["Publisher C"],
+    "Description": ["智慧城市是指利用各種資訊科技或創新意念，整合都市的組成系統和服務，以提昇資源運用的效率，優化都市管理和服務，以及改善市民生活品質。"]
   }
 ]
