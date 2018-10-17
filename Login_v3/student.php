@@ -164,6 +164,7 @@
         </div>
 
         <a style="float:right">Student Name: Yip Yiu Cheung</a>
+<<<<<<< HEAD
     </div>
 
 
@@ -173,6 +174,61 @@
             <a class="increase" style="font-size:20px; opacity: 0.9;">A</a>
             <a class="decrease" style="font-size:12px; opacity: 0.9;">A</a>
             <a class="reset" style="opacity: 0.9;">R</a>
+=======
+   </div>
+    
+        
+  
+           <div  style="background-color: #F5E13C;">
+         <div id="resize">
+              <a class="increase" style="font-size:20px; opacity: 0.9;">A</a> 
+              <a class="decrease" style="font-size:12px; opacity: 0.9;">A</a> 
+              <a class="reset" style="opacity: 0.9;">R</a>
+            </div>
+     <div>
+        <br> 
+         <center>  <form class="example" id="simple">
+                       <br>    <br>    
+            <input type="search" placeholder="Search..."/>
+             <button type="submit" style="margin:auto;max-width:50px"><i class="fa fa-search"></i></button>
+            <button id="search" style="color:white; width: 180px; height: 42px; background-color:light-blue;">Advanced Search </button> 
+         </form></center>
+                   <form  id="advanced" style="display:none;" class="form-container">  
+                       <br>
+         Search for:   <input type="radio" name="sorting" value="everything"> Everything
+                       <input type="radio" name="sorting" value="books"> Books
+                       <input type="radio" name="sorting" value="software"> Software
+                       <input type="radio" name="sorting" value="Magazines"> Magazines
+                       <br><br>
+                       <hr>
+                       <br>
+                       <select>
+                        <option value="anyfield">Any field</option>
+                        <option value="title">Title</option>
+                        <option value="author">Author</option>
+                        <option value="subject">Subject</option>
+                        <option value="isbn">ISBN</option>
+                      </select> contains
+                       <input type="text"  name="contains" required>
+                       <br>
+                         <select>
+                        <option value="and">AND</option>
+                        <option value="or">OR</option>
+                        <option value="not">NOT</option>
+                      </select> 
+                       
+                        <select>
+                        <option value="anyfield">Any field</option>
+                        <option value="title">Title</option>
+                        <option value="author">Author</option>
+                        <option value="subject">Subject</option>
+                        <option value="isbn">ISBN</option>
+                      </select> contains
+                       <input type="text"  name="contains" required>
+                      <button id="simpleSearch">Simple Search </button> 
+         </form>
+         <br>   
+>>>>>>> 64402ea61d8fbc0b49e27d02344525d85ac6edda
         </div>
         <div>
             <br>
@@ -223,6 +279,29 @@
         </div>
 
     </div>
+<<<<<<< HEAD
+=======
+ 
+    
+   <section>
+  <nav>
+    <ul>
+      <li><a href="#">London</a></li>
+      <li><a href="#">Paris</a></li>
+      <li><a href="#">Tokyo</a></li>
+    </ul>
+  </nav>
+  
+  <div class="resizable">
+  <article>
+    <img src="jslib/images/1.jpg" title="Book name" style="width:75px; height=100px">
+    <h1>London</h1>
+
+    London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.
+    Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.<br><br>
+    <hr>
+  </article>
+>>>>>>> 64402ea61d8fbc0b49e27d02344525d85ac6edda
 
 
     <section>
