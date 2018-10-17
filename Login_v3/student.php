@@ -68,15 +68,41 @@
             });
   
           
+          
+          
+              $("#add").click(function(){
+                
+//                $( "#addOper" ).append(
+//                  "<select id="' +operator +'"> <br><option value="'+and+'">AND</option><option value="'+or+ '">OR</option><option value="'+not'">NOT</option></select><select><option value="'+ anyfield +'">Any field</option><option value="'+title+ '">Title</option><option value="'+author+'">Author</option><option value="'+subject+'">Subject</option> <option value="'+isbn='">ISBN</option></select> contains<input type="'+text+'" name="'+contains+'" required>");
+      
+              });
+    
+                  $('#first').keyup(function()
+                  {
+                         if($('#first').val() != ''){
+                            $("#forSearch").fadeIn("slow");
+                         }
+                      else{
+                         $("#forSearch").fadeOut("slow");
+                      }
+                  });
+          
             $("#search").click(function(e) { 
-                    $("#simple").hide();
-                    $("#advanced").show();
+                    //$("#simple").hide();
+                    //$("#advanced").show();
+//                $( "#simple" ).fadeOut( 500, function() {
+//                $( "#advanced" ).fadeIn( 1000 );
+//              });
+              
+              
+                   $( "#simple" ).fadeOut( "fast" );
+                    $( "#advanced" ).fadeIn( "slow" );
                     e.preventDefault();
             }); 
-                    
+        
             $("#simpleSearch").click(function(e) { 
-                $("#advanced").hide();
-                $("#simple").show();
+                $( "#advanced" ).fadeOut( "fast" );
+                $( "#simple" ).fadeIn( "slow" );
                 e.preventDefault();
             });  
 
@@ -93,6 +119,10 @@
           });
           
           
+                $("#clear").click(function(e) { 
+                        $("#startDate").hide();
+              $("#endDate").hide();
+            });  
           
           
           
@@ -198,6 +228,7 @@ function topFunction() {
                 </form>
             </center>
             <form id="advanced" style="display:none;" class="form-container">
+              <div id="header">
                 <br>
                 Search for: <input type="radio" name="sorting" value="everything" checked> Everything
                 <input type="radio" name="sorting" value="books"> Books
@@ -205,6 +236,7 @@ function topFunction() {
                 <input type="radio" name="sorting" value="Magazines"> Magazines
                 <br><br>
                 <hr>
+                </div>
                 <br>
                 <select>
                     <option value="anyfield">Any field</option>
@@ -251,6 +283,14 @@ function topFunction() {
                         <option value="last10">Last 10 years</option>
                         <option value="last20">Last 20 years</option>
                     </select></span>
+                    
+                <div id="addOper">
+                     
+                  
+               </div>
+                    
+                    
+                    
                     
                  <div id="startDate">
                  <br><br>
@@ -367,11 +407,27 @@ function topFunction() {
                 <input type="text" name="year" id="year" placeholder="Year">
         </span>
               </div>    
-                    
-                      
-                        
-                            
-
+              <div>
+            <button id="add" >Add a New Line </button>  
+                         
+            <button id="clear" type="reset" >Clear </button> 
+                     <div id="forSearch"> <br><br><hr>    <br>
+                        <span id="final">
+                      <button type="submit" style="float: left;
+    width: 65px;
+    padding: 10px;
+    position: absolute;
+    right:200px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;"><i class="fa fa-search"></i></button>        
+              </span>
+                          <br><br><br> </div></div>                   
+        
+                 
                 <button id="simpleSearch" >Simple Search </button>
             </form>
             <br>

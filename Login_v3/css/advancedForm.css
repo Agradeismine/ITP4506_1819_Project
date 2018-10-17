@@ -8,7 +8,13 @@
   background-color: white;
   font-size: 20px;
   border: 3px solid #f1f1f1;
+  
 }
+
+#header{
+
+}
+
 
 /* Full-width input fields */
 .form-container select {
@@ -50,7 +56,7 @@
 #end{
    position: absolute;
   top: 360px;
-  right: 188px;
+  right: 187px;
   font-size: 14px;
   height: 20px;
 }
@@ -117,4 +123,9 @@
 
 #simpleSearch:hover {
   background-color: #EBD732;
+}
+
+
+#forSearch{
+  display: none;
 }
