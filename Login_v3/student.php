@@ -83,7 +83,7 @@
             $("#searchBtn").click(function(event) { 
                 $.getJSON('jslib/book.json', function(rs) {
                     for (var i = 0; i < rs.length; i++) {
-                        $('#bookResults').append('<article> <img src="jslib/images/1.jpg" title="Book name" style="width:120px; height=150px; float: left; margin-right: 15px; margin-bottom: 10px;"> <h3>Book Name</h3>'+
+                        $('#bookResults').append('<article> <img src="'+rs[i].img+'" title="Book name" style="width:100px; height=120px; float: left; margin-right: 15px; margin-bottom: 10px;"> <h3>Book Name</h3>'+
                         '<table width="600" >'+
                         '<tr><td>Type: Music</td><td>Year: 2018</td><td>ISBN: 21796247</td></tr>'+
                         '<tr><td>Language: English</td><td>Author: Author A</td><td>Publisher: University of California Press</td></tr>'+
