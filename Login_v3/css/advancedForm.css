@@ -35,14 +35,14 @@
   font-size: 15px;
   position: absolute;
   top: 200px;
-  right: 197.5px;
+  right: 250.5px;
 }
 
 #date {
   font-size: 15px;
   position: absolute;
   top: 263px;
-  right: 195px;
+  right: 250.5px;
 }
 
 #startDate{
@@ -56,7 +56,7 @@
 #end{
    position: absolute;
   top: 360px;
-  right: 187px;
+  right: 242.5px;
   font-size: 14px;
   height: 20px;
 }
@@ -66,7 +66,7 @@
 #start{
    position: absolute;
   top: 310px;
-  right: 191px;
+  right: 244.5px;
   font-size: 14px;
   height: 20px;
 }

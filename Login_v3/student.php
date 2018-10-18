@@ -31,7 +31,7 @@
             }
         }
 
-        function alert(msg) {   //logout alert
+        function logoutAlert(msg) {   //logout alert
             var r = confirm(msg);
 			if (r == true) {
 				window.location.href = "index.php";
@@ -67,14 +67,19 @@
                 return false;
             });
   
-          
-          
+            var count=0;
           
               $("#add").click(function(){
-                
-//                $( "#addOper" ).append(
-//                  "<select id="' +operator +'"> <br><option value="'+and+'">AND</option><option value="'+or+ '">OR</option><option value="'+not'">NOT</option></select><select><option value="'+ anyfield +'">Any field</option><option value="'+title+ '">Title</option><option value="'+author+'">Author</option><option value="'+subject+'">Subject</option> <option value="'+isbn='">ISBN</option></select> contains<input type="'+text+'" name="'+contains+'" required>");
-      
+                count+=1;
+                if(count<5){
+               $( "#addOper" ).append(
+                //$("#clear").show();
+                 "<select> <option value='and'>AND</option><option value='or'>OR</option><option value='not'>NOT</option></select> <select><option value=' anyfield '>Any field</option><option value='title'>Title</option><option value='author'>Author</option><option value='subject'>Subject</option> <option value='isbn'>ISBN</option></select> contains <input type='text' name='contains' required><br>");
+                }
+                 else{
+                     $(this).hide();
+                 }   
+
               });
     
                   $('#first').keyup(function()
@@ -124,24 +129,75 @@
               $("#endDate").hide();
             });  
           
-          
-          
-            $("#searchBtn").click(function(event) { 
-                $.getJSON('jslib/book.json', function(rs) {
-                    for (var i = 0; i < rs.length; i++) {
-                        $('#bookResults').append('<article> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=120px; float: left; margin-right: 15px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+
+
+            // $('#bookResults').html("");
+            $.getJSON('jslib/book.json', function(rs) {
+                for (var i = 0; i < rs.length; i++) {
+                        $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
                         '<table width="600" >'+
-                        '<tr><td>Type: Music</td><td>Year: 2018</td><td>ISBN: 21796247</td></tr>'+
-                        '<tr><td>Language: English</td><td>Author: Author A</td><td>Publisher: University of California Press</td></tr>'+
+                        '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td><td>ISBN: '+rs[i].ISBN+'</td></tr>'+
+                        '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
                         '</table><br>'+
-                        'Description:&emsp;London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants. Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.<br><br><hr>'+
-                        '</article>');
-                        //$('#bookResults').append('<p>Year : ' + '\t' + rs.birthday[i].year + '</p>');
-                        //$('#bookResults').append('<p>Sex: ' + '\t' + rs[i].bookname[i] + '</p><br>');
-                    };
-                });
+                        'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                        '</div>');
+
+                };
+            });
+            $.getJSON('jslib/Magazines.json', function(rs) {
+                for (var i = 0; i < (rs.length); i++) {
+                        $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                        '<table width="600" >'+
+                        '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                        '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                        '</table><br>'+
+                        'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                        '</div>');
+                };
+            });
+            $.getJSON('jslib/software.json', function(rs) {
+                for (var i = 0; i < (rs.length); i++) {
+                        $('#bookResults').append('<div class="filter'+(i+14)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                        '<table width="300" >'+
+                        '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                        '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>OS: '+rs[i].OS+'</td></tr>'+
+                        '</table><br>'+
+                        'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                        '</div>');
+                };
+            });
+
+
+          
+            $("#searchBtn").click(function(event) {
+                var value = $("#keywords").val().toLowerCase();
+
+                for(var i = 0; i<=23; i++){
+                    var filterClass = ".filter"+i+" *";
+                    var filter = ".filter"+i;
+                    //alert(filterClass+", "+filter);
+                    $(filterClass).filter(function() {
+                        $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
+                    });
+                }
+
             });  
           
+              $(window).scroll(function () {
+                    var top =  $("#myBtn");
+                        if ( $('body').height() <= (    $(window).height() + $(window).scrollTop() + 200 )) {
+                top.animate({"margin-left": "0px"},1500);
+                        } else {
+                            top.animate({"margin-left": "-100%"},1500);
+                        }
+                });
+
+                $("#myBtn").on('click', function () {
+                    $("html, body").animate({scrollTop: 0}, 400);
+                });     
+
+
+
         });
         
         window.onscroll = function() {scrollFunction()};
@@ -201,7 +257,7 @@ function topFunction() {
             <div class="dropdown-content" id="MenuDropdown">
                 <a href="#">Link 1</a>
                 <a href="#">Link 2</a>
-                <a href="#" onclick="alert('Do you want to logout?');">Logout</a>
+                <a href="#" onclick="logoutAlert('Do you want to logout?');">Logout</a>
             </div>
         </div>
 
@@ -221,7 +277,7 @@ function topFunction() {
             <center>
                 <form class="example" id="simple">
                     <br> <br>
-                    <input type="search" placeholder="Search..." />
+                    <input id="keywords" type="search" placeholder="Search..." />
                     <button id="searchBtn" type="button" style="margin:auto;max-width:50px"><i class="fa fa-search"></i></button>
                     <button id="search" style="color:white; width: 180px; height: 42px; background-color:light-blue;">Advanced
                         Search </button>
@@ -245,7 +301,7 @@ function topFunction() {
                     <option value="subject">Subject</option>
                     <option value="isbn">ISBN</option>
                 </select> contains
-                <input id="first" type="text" name="contains" required>
+                <input id="first" type="text" name="contains" >
                 &nbsp;
                 <span id="language">Language
                     &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
@@ -258,7 +314,7 @@ function topFunction() {
                     </select></span>
 
                 <br>
-                <select id="operator">
+                <select>
                     <option value="and">AND</option>
                     <option value="or">OR</option>
                     <option value="not">NOT</option>
@@ -271,7 +327,7 @@ function topFunction() {
                     <option value="subject">Subject</option>
                     <option value="isbn">ISBN</option>
                 </select> contains
-                <input type="text" name="contains" required>
+                <input type="text" name="contains" >
            
                 <span id="date">Publication Date
                     <select id="checkDate">
@@ -283,9 +339,10 @@ function topFunction() {
                         <option value="last10">Last 10 years</option>
                         <option value="last20">Last 20 years</option>
                     </select></span>
-                    
+                    <br>
+                
                 <div id="addOper">
-                     
+            
                   
                </div>
                     
@@ -445,12 +502,13 @@ function topFunction() {
             </ul>
         </nav>
 
-        <div id="bookResults" class="resizable">
-            <article>
-                <img src="jslib/images/1.jpg" title="Book name" style="width:120px; height=150px; float: left; margin-right: 15px; margin-bottom: 10px;">
+        <div class="resizable">
+            <article id="bookResults">
+            <!--<div class="filter">
+                <img src="jslib/images/1.jpg" title="Book name" style="width:100px; height=125px; float: left; margin-right: 15px; margin-bottom: 10px;">
                 <h3>Book Name</h3>
                 <table width="600">
-                    <tr>
+                    <tr class="item">
                         <td>Type: Music</td>
                         <td>Year: 2018</td>
                         <td>ISBN: 21796247</td>
@@ -466,12 +524,13 @@ function topFunction() {
                 Standing on the River Thames, London has been a major settlement for two millennia, its history going
                 back to its founding by the Romans, who named it Londinium.<br><br>
                 <hr>
+            </div>-->
             </article>
 
         </div>
     </section>
 
-    <img src="arrow.png" onclick="topFunction()" id="myBtn" title="Go to top" style="width:25px; height=25px">
+    <img src="arrow.png"  id="myBtn" title="Go to top" style="width:25px; height=25px">
 </body>
 
 </html>

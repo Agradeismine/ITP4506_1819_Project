@@ -105,11 +105,11 @@ section {
 
 /* Style the navigation menu */
 nav {
-    -webkit-flex: 1;
+    /* -webkit-flex: 1;
     -ms-flex: 1;
-    flex: 1;
+    flex: 1; */
     background: #ccc;
-    padding: 100px;
+    width:400px;
     min-height:  500px;
 }
 
@@ -121,11 +121,12 @@ nav ul {
 
 /* Style the content */
 article {
-    -webkit-flex: 3;
+    /* -webkit-flex: 3;
     -ms-flex: 3;
-    flex: 3;
+    flex: 3; */
     background-color: #f1f1f1;
-    padding: 10px;
+    padding: 14px 0px  0px 0px;
+    width:100%;
 }
 
 #myBtn {
@@ -143,8 +144,8 @@ article {
   border-radius: 4px;
 }
 
-div #addOper{
-  display: none;
+#clear{
+    display:none;
 }
 
 
