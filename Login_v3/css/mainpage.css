@@ -108,19 +108,18 @@ section {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    background-color: #ccc;
+    background-color: #E5E4E2;
     min-height:  800px;
     width: 500px;
     /* float: left; */
     /* text-align: left; */
-
 }
 
 #margin{
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 16px;
-
+    margin-left: 38px;
+    margin-right: 38px;
+    font-size: 16px;   
+    height: 100%;
 }
 
 /* Style the list inside the menu */

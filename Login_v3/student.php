@@ -22,7 +22,31 @@
         function showdropdown(id) {
             document.getElementById(id).classList.toggle("show");
         }
+        var myVar;
 
+        function myFunction() {
+            myVar = setTimeout(showPage, 1000);
+        }
+
+        function showPage() {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("main").style.display = "block";
+        }
+      
+              var myVar2;
+
+        function myFunction2() {
+            myVar2 = setTimeout(showPage2, 2000);
+        }
+
+        function showPage2() {
+          document.getElementById("loader2").style.display = "none";
+          document.getElementById("data").style.display = "block";
+        }
+      
+
+    
+      
         // Close the dropdown if the user clicks outside of it
         window.onclick = function(e) {
             if (!e.target.matches('.dropbtn')) {
@@ -192,8 +216,7 @@
                 $( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
                 " - " + $( "#slider-range" ).slider( "values", 1 ) );
             });
-
-          
+ 
             $("#searchBtn").click(function(event) {
                 var value = $("#keywords").val().toLowerCase();
 
@@ -205,6 +228,8 @@
                         $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
                     });
                 }
+              
+              
             });
 
             $("#AdvSearchBtn").click(function(event) {
@@ -267,8 +292,8 @@ function topFunction() {
         
     </script>
 </head>
-
-<body>
+<body onload="myFunction()" >
+      <img src="test.png"  onload="myFunction2()" style="display:none; ">
     <?php
          if (!isset($_COOKIE['student'])) {
              header("Location: changePassword.php?username=student");
@@ -278,7 +303,8 @@ function topFunction() {
          }
 
     ?>
-
+    <div id="loader"></div>
+    <div id="main" style="display:none">
     <div class="navbar">
         <a href="#home">Home</a>
         <a href="#news">News</a>
@@ -541,8 +567,8 @@ function topFunction() {
         </div>
 
     </div>
-
-    
+     <div id="loader2" ></div>
+    <div id="data" style="display: none">
     <section>
         <div id="nav">
         <span id="margin">
@@ -575,7 +601,7 @@ function topFunction() {
             </p>
             
             <div id="slider-range"></div>
-            <div class="loader"></div>
+         
 
 
 
@@ -608,8 +634,11 @@ function topFunction() {
             <article>That's all the data</article>
         </div>
     </section>
-
+    </div>
+    
     <img src="arrow.png"  id="myBtn" title="Go to top" style="width:25px; height=25px">
+    
+    </div>
 </body>
 
 </html>
