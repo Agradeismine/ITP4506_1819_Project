@@ -6,7 +6,7 @@
     "Language": ["English"],
     "Author": ["Author A"],
     "Publisher": ["University of California Press"],
-    "Description": ["Piano, vocal, guitar. Includes notation, tablature, chord symbols, chord diagrams, and lyrics."],
+    "Description": ["Piano, vocal, guitar. Includes notation, tablature, chord symbols, chord diagrams, and lyrics. If you're in the mood for romance and your boyfriend/girlfriend/Tinder/chocolate isn't doing it for you, please enjoy this handy list of loved-up songs that will make you turn into a literal puddle. And we're not talking basics."],
     "img": "jslib/images/1.jpg"
   },
   {
@@ -17,7 +17,7 @@
     "Language": ["English"],
     "Author": ["Author A"],
     "Publisher": ["University of California Press"],
-    "Description": ["This is a music book."],
+    "Description": ["This is a music book. This is a music book. This is a music book. This is a music book. This is a music book. This is a music book. This is a music book. This is a music book. This is a music book. This is a music book. This is a music book."],
     "img": "jslib/images/2.jpg"
   },
   {
@@ -39,7 +39,7 @@
     "Language": ["English"],
     "Author": ["Chris Wong"],
     "Publisher": ["Thei"],
-    "Description": ["Comprehensive, authoritative, and student-friendly, longtime market-leader BUSINESS LAW"],
+    "Description": ["Comprehensive, authoritative, and student-friendly, longtime market-leader BUSINESS LAW. Comprehensive, authoritative, and student-friendly, longtime market-leader BUSINESS LAW."],
     "img": "jslib/images/4.jpg"
   },
   {
@@ -50,7 +50,7 @@
     "Language": ["English"],
     "Author": ["Author T"],
     "Publisher": ["Thei"],
-    "Description": ["Suitable for the two-term business law course, this title includes a mix of actual and hypothetical cases."],
+    "Description": ["Suitable for the two-term business law course, this title includes a mix of actual and hypothetical cases. Suitable for the two-term business law course, this title includes a mix of actual and hypothetical cases."],
     "img": "jslib/images/5.jpg"
   },
   {

@@ -6,7 +6,7 @@
     "Language": ["English"],
     "Author": ["Author A"],
     "Publisher": ["Editorial Projects in Education, Inc"],
-    "Description": ["Journal of General Internal Medicine, 11/2011, Volume 26, Issue 11"],
+    "Description": ["Journal of General Internal Medicine, 11/2011, Volume 26, Issue 11. Journal of General Internal Medicine, 11/2011, Volume 26, Issue 11."],
     "img": "jslib/images/10.jpg"
   },
   {
@@ -26,7 +26,7 @@
     "Language": ["English"],
     "Author": ["Author B"],
     "Publisher": ["Oxford University Press"],
-    "Description": ["A simple magazine."],
+    "Description": ["A simple magazine. A magazine is a publication, usually a periodical publication, which is printed or electronically published Magazines are generally published on a regular ..."],
     "img": "jslib/images/12.jpg"
   },
   {
@@ -46,7 +46,7 @@
     "Language": ["English"],
     "Author": ["Author B"],
     "Publisher": ["University of California Press"],
-    "Description": ["I will very happy if I can get A grade."],
+    "Description": ["I will very happy if I can get A grade. I will very happy if I can get A grade. Hey Hey Tomas Leung, give me A grade yoyoyo~"],
     "img": "jslib/images/14.jpg"
   }
 ]
