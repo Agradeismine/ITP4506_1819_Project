@@ -272,13 +272,13 @@ function topFunction() {
 
 
 
-    <div style="background-color: #F5E13C;">
+    <div style="background-color: white;">
         <div id="resize">
             <a class="increase" style="font-size:20px; opacity: 0.9;">A</a>
             <a class="decrease" style="font-size:12px; opacity: 0.9;">A</a>
             <a class="reset" style="opacity: 0.9;">R</a>
         </div>
-        <div>
+        <div style="background-image: url('images/bg-01.jpg'); ">
             <br>
             <center>
                 <form class="example" id="simple">
@@ -491,7 +491,8 @@ function topFunction() {
                           <br><br><br> </div></div>                   
         
                  
-                <button id="simpleSearch" >Simple Search </button>
+                <button id="simpleSearch">Simple Search </button>
+
             </form>
             <br>
         </div>
