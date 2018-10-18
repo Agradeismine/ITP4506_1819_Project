@@ -70,13 +70,13 @@
             var count=0;
           
               $("#add").click(function(){
-                count+=1;
+                  $("#clear").show();
                 if(count<5){
+                          count+=1;
                $( "#addOper" ).append(
-                //$("#clear").show();
                  "<select> <option value='and'>AND</option><option value='or'>OR</option><option value='not'>NOT</option></select> <select><option value=' anyfield '>Any field</option><option value='title'>Title</option><option value='author'>Author</option><option value='subject'>Subject</option> <option value='isbn'>ISBN</option></select> contains <input type='text' name='contains' required><br>");
                 }
-                 else{
+                 if(count>3){
                      $(this).hide();
                  }   
 
@@ -126,8 +126,11 @@
           
                 $("#clear").click(function(e) { 
                         $("#startDate").hide();
-              $("#endDate").hide();
-            });  
+                        $("#endDate").hide();
+                        jQuery('#addOper').html('');
+                        $("#add").show();
+                    count = 0;
+                });  
           
 
 
