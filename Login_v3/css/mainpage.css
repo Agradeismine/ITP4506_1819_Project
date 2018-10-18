@@ -109,10 +109,10 @@ section {
     -ms-flex: 1;
     flex: 1;
     background-color: #ccc;
-    min-height:  500px;
-    min-width: 275px;
+    min-height:  800px;
+    width: 500px;
     /* float: left; */
-    text-align: left;
+    /* text-align: left; */
 
 }
 

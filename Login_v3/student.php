@@ -10,8 +10,13 @@
     <link rel="stylesheet" type="text/css" href="css/fontSize.css">
     <link rel="stylesheet" type="text/css" href="css/Search.css">
     <link rel="stylesheet" type="text/css" href="css/advancedForm.css">
+    <link rel="stylesheet" type="text/css" href="css/loading.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="jslib/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+    <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+    <!--<script src="jslib/jquery-1.11.1.js"></script>-->
     <script>
         /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
         function showdropdown(id) {
@@ -71,13 +76,15 @@
             });
   
             var count=0;
-          
+            var addcount = 1;   //id AdvKeyword2,3,4,5
+            var AndOrNotField = 1;
+            var TypeField = 1;
+
               $("#add").click(function(){
                   $("#clear").show();
                 if(count<5){
-                          count+=1;
-               $( "#addOper" ).append(
-                 "<select> <option value='and'>AND</option><option value='or'>OR</option><option value='not'>NOT</option></select> <select><option value=' anyfield '>Any field</option><option value='title'>Title</option><option value='author'>Author</option><option value='subject'>Subject</option> <option value='isbn'>ISBN</option></select> contains <input type='text' name='contains' required><br>");
+                    count+=1;   addcount+=1;    AndOrNotField+=1;   TypeField+=1;
+                    $( "#addOper" ).append("<select id='AndOrNotField"+AndOrNotField+"'> <option value='and'>AND</option><option value='or'>OR</option><option value='not'>NOT</option></select> <select id='TypeField"+TypeField+"'><option value=' anyfield '>Any field</option><option value='title'>Title</option><option value='author'>Author</option><option value='subject'>Subject</option> <option value='isbn'>ISBN</option></select> contains <input id='AdvKeyword"+addcount+"'type='text' name='contains' required><br>");
                 }
                  if(count>3){
                      $(this).hide();
@@ -172,7 +179,19 @@
                         '</div>');
                 };
             });
-
+            $(function() {      //2 side range
+                $( "#slider-range" ).slider({
+                    range: true,
+                    min: 2000,
+                    max: 2018,
+                    values: [ 2000, 2018 ],
+                    slide: function( event, ui ) {
+                        $( "#amount" ).val( "" + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                    }
+                });
+                $( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
+                " - " + $( "#slider-range" ).slider( "values", 1 ) );
+            });
 
           
             $("#searchBtn").click(function(event) {
@@ -186,8 +205,32 @@
                         $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
                     });
                 }
+            });
 
-            });  
+            $("#AdvSearchBtn").click(function(event) {
+                //alert("Test AdvSearchBtn");     //test
+                var firstField = $("#firstField").val();
+                var AdvKeyword0 = $("#first").val().toLowerCase();  //must be input
+                var LanguageField = $("#LanguageField").val();
+                var checkDate = $("#checkDate").val();
+
+                var AndOrNotField1 = $("#AndOrNotField1").val();    //1,2,3,4,5
+                var TypeField1 = $("#TypeField1").val();
+                var AdvKeyword1 = $("#AdvKeyword1").val().toLowerCase();    //may not be input
+
+                
+
+                // for(var i = 0; i<=23; i++){
+                //     var filterClass = ".filter"+i+" *";
+                //     var filter = ".filter"+i;
+                    // alert(filterClass+", "+filter);
+                //     $(filterClass).filter(function() {
+                //         $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
+                //     });
+                // }
+            });
+
+            
           
               $(window).scroll(function () {
                     var top =  $("#myBtn");
@@ -236,7 +279,6 @@ function topFunction() {
 
     ?>
 
-
     <div class="navbar">
         <a href="#home">Home</a>
         <a href="#news">News</a>
@@ -261,8 +303,8 @@ function topFunction() {
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="MenuDropdown">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
+                <a href="#">Profile</a>
+                <a href="#">Setting</a>
                 <a href="#" onclick="logoutAlert('Do you want to logout?');">Logout</a>
             </div>
         </div>
@@ -300,7 +342,7 @@ function topFunction() {
                 <hr>
                 </div>
                 <br>
-                <select>
+                <select id="firstField">
                     <option value="anyfield">Any field</option>
                     <option value="title">Title</option>
                     <option value="author">Author</option>
@@ -311,29 +353,27 @@ function topFunction() {
                 &nbsp;
                 <span id="language">Language
                     &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; 
-                    <select>
+                    <select id="LanguageField">
                         <option value="anyLanguage">Any language</option>
-                        <option value="english">English</option>
-                        <option value="chinese">Chinese</option>
-                        <option value="french">French</option>
-                        <option value="german">German</option>
+                        <option value="English">English</option>
+                        <option value="Chinese">Chinese</option>
                     </select></span>
 
                 <br>
-                <select>
+                <select id="AndOrNotField1">
                     <option value="and">AND</option>
                     <option value="or">OR</option>
                     <option value="not">NOT</option>
                 </select>
 
-                <select>
+                <select id="TypeField1">
                     <option value="anyfield">Any field</option>
                     <option value="title">Title</option>
                     <option value="author">Author</option>
                     <option value="subject">Subject</option>
                     <option value="isbn">ISBN</option>
                 </select> contains
-                <input type="text" name="contains" >
+                <input id="AdvKeyword1" type="text" name="contains" >
            
                 <span id="date">Publication Date
                     <select id="checkDate">
@@ -355,44 +395,44 @@ function topFunction() {
                     
                     
                     
-                 <div id="startDate">
-                 <br><br>
-                 <span id="start">
-                      Start Date:
-                        <select id="day" name="day">
-          <option value="day">Day</option>              
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
-          <option value="16">16</option>
-          <option value="17">17</option>
-          <option value="18">18</option>
-          <option value="19">19</option>
-          <option value="20">20</option>
-          <option value="21">21</option>
-          <option value="22">22</option>
-          <option value="23">23</option>
-          <option value="24">24</option>
-          <option value="25">25</option>
-          <option value="26">26</option>
-          <option value="27">27</option>
-          <option value="28">28</option>
-          <option value="29">29</option>
-          <option value="30">30</option>
-          <option value="31">31</option>
-     </select>
+            <div id="startDate">
+            <br><br>
+            <span id="start">
+                Start Date:
+                <select id="day" name="day">
+                    <option value="day">Day</option>              
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
                    
                     <select id="month" name="month">
         <option value="month">Month</option>              
@@ -470,28 +510,31 @@ function topFunction() {
                 <input type="text" name="year" id="year" placeholder="Year">
         </span>
               </div>    
-              <div>
+            <div>
             <button id="add" >Add a New Line </button>  
                          
             <button id="clear" type="reset" >Clear </button> 
-                     <div id="forSearch"> <br><br><hr>    <br>
-                        <span id="final">
-                      <button type="submit" style="float: left;
-    width: 65px;
-    padding: 10px;
-    position: absolute;
-    right:200px;
-    background: #2196F3;
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none;
-    cursor: pointer;"><i class="fa fa-search"></i></button>        
-              </span>
-                          <br><br><br> </div></div>                   
+                <div id="forSearch"> <br><br><hr>    <br>
+                <span id="final">
+                <button id="AdvSearchBtn" type="button" style="float: left;
+                    width: 65px;
+                    padding: 10px;
+                    position: absolute;
+                    right:200px;
+                    background: #2196F3;
+                    color: white;
+                    font-size: 17px;
+                    border: 1px solid grey;
+                    border-left: none;
+                    cursor: pointer;"><i class="fa fa-search"></i>
+                </button>        
+                </span>
+                <br><br><br>
+                </div>
+            </div>                   
         
                  
-                <button id="simpleSearch">Simple Search </button>
+                <button id="simpleSearch">Simple Search</button>
 
             </form>
             <br>
@@ -511,21 +554,32 @@ function topFunction() {
             </div>
             <h2>Discipline</h2>
             <div id="Discipline">
-                    Technology<br>
-                    History<br>
-                    Education<br>
-                    Leisure<br>
-                    Music<br>
-                    Business<br>
-                    Comic<br>
+                Technology<br>
+                History<br>
+                Education<br>
+                Leisure<br>
+                Music<br>
+                Business<br>
+                Comic<br>
             </div>
             <h2>Language</h2>
             <div id="Language">
-                    Chinese<br>
-                    English<br>
+                Chinese<br>
+                English<br>
             </div>
+
             <h2>Publication Date</h2>
-            </span>
+            <p>
+            <label for="amount">Range：</label>
+            <input type="text" id="amount" style="font-weight:bold;">
+            </p>
+            
+            <div id="slider-range"></div>
+            <div class="loader"></div>
+
+
+
+        </span>
         </div>
         <div class="resizable">
             <article id="bookResults">
@@ -551,7 +605,7 @@ function topFunction() {
                 <hr>
             </div>-->
             </article>
-
+            <article>That's all the data</article>
         </div>
     </section>
 

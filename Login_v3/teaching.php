@@ -25,7 +25,7 @@
         function alert(msg) {
             var r = confirm(msg);
 			if (r == true) {
-				window.location.href = "index.html";
+				window.location.href = "index.php";
 			}
         }
     </script>
