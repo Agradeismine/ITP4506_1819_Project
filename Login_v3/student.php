@@ -503,11 +503,28 @@ function topFunction() {
     <section>
         <div id="nav">
         <span id="margin">
-            <ul>
-                <li><a href="#">London</a></li>
-                <li><a href="#">Paris</a></li>
-                <li><a href="#">Tokyo</a></li>
-            </ul>
+            <h2>CONTENT TYPE</h2>
+            <div id="contentType">
+                    <a href="">Magazine Article</a><br>
+                    Software<br>
+                    Book / eBook<br>
+            </div>
+            <h2>Discipline</h2>
+            <div id="Discipline">
+                    Technology<br>
+                    History<br>
+                    Education<br>
+                    Leisure<br>
+                    Music<br>
+                    Business<br>
+                    Comic<br>
+            </div>
+            <h2>Language</h2>
+            <div id="Language">
+                    Chinese<br>
+                    English<br>
+            </div>
+            <h2>Publication Date</h2>
             </span>
         </div>
         <div class="resizable">

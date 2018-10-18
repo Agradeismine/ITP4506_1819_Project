@@ -105,15 +105,22 @@ section {
 
 /* Style the navigation menu */
 #nav {
-    /* -webkit-flex: 1;
+    -webkit-flex: 1;
     -ms-flex: 1;
-    flex: 1; */
+    flex: 1;
     background-color: #ccc;
     min-height:  500px;
+    min-width: 275px;
+    /* float: left; */
+    text-align: left;
+
 }
 
 #margin{
+    margin-left: 10px;
     margin-right: 10px;
+    font-size: 16px;
+
 }
 
 /* Style the list inside the menu */

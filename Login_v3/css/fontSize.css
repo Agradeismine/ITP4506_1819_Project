@@ -21,7 +21,7 @@ span{
   font-size:25px;
   float:right;
   display:block;
-  font-weight:bold;
+  /* font-weight:bold; */
 }
 
 a{
