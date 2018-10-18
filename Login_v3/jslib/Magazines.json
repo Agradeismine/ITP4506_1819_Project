@@ -16,7 +16,7 @@
     "Language": ["English"],
     "Author": ["Author A"],
     "Publisher": ["University of California Press"],
-    "Description": ["This paper reports on CampusContent, a research project and competence centre for e-learning at FernUniversitat in Hagen that designed."],
+    "Description": ["This paper reports on CampusContent, a research project and competence centre for e-learning at FernUniversitat in Hagen that designed. This paper reports on CampusContent, a research project and competence centre for e-learning at FernUniversitat in Hagen that designed."],
     "img": "jslib/images/11.jpg"
   },
   {
@@ -26,7 +26,7 @@
     "Language": ["English"],
     "Author": ["Author B"],
     "Publisher": ["Oxford University Press"],
-    "Description": ["A simple magazine. A magazine is a publication, usually a periodical publication, which is printed or electronically published Magazines are generally published on a regular ..."],
+    "Description": ["A simple magazine. A magazine is a publication, usually a periodical publication, which is printed or electronically published Magazines are generally published on a regular ... A simple magazine. A magazine is a publication, usually a periodical publication, which is printed or electronically published Magazines are generally published on a regular ..."],
     "img": "jslib/images/12.jpg"
   },
   {

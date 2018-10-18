@@ -104,13 +104,16 @@ section {
 }
 
 /* Style the navigation menu */
-nav {
+#nav {
     /* -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1; */
-    background: #ccc;
-    width:400px;
+    background-color: #ccc;
     min-height:  500px;
+}
+
+#margin{
+    margin-right: 10px;
 }
 
 /* Style the list inside the menu */

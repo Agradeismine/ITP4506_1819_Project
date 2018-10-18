@@ -499,16 +499,17 @@ function topFunction() {
 
     </div>
 
-
+    
     <section>
-        <nav>
+        <div id="nav">
+        <span id="margin">
             <ul>
                 <li><a href="#">London</a></li>
                 <li><a href="#">Paris</a></li>
                 <li><a href="#">Tokyo</a></li>
             </ul>
-        </nav>
-
+            </span>
+        </div>
         <div class="resizable">
             <article id="bookResults">
             <!--<div class="filter">
