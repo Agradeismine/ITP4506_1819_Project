@@ -2,6 +2,9 @@
 <html>
 
 <head>
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
     <title>Library System: Student Page</title>
     <link rel="stylesheet" type="text/css" href="css/mainpage.css">
     <link rel="stylesheet" type="text/css" href="css/fontSize.css">
