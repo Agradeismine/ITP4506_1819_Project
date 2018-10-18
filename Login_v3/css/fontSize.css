@@ -1,12 +1,13 @@
 #resize{
-     font-family:helvetica; sans-serif;
+     font-family:helvetica; 
   max-width:500px;
   margin:5px;
   color:#666666;
   top: 55px;
-  right: 30px;
+  right: 23px;
   position: absolute;
 }
+
 
 p{
   clear:right;
@@ -23,9 +24,17 @@ span{
   display:block;
   /* font-weight:bold; */
 }
+#big, #small,#average{
+  
+  color:  greenyellow;
+}
+
+
+
 
 a{
   color:    #E9967A;
+ 
 }
 
 a:hover{

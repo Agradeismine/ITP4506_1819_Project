@@ -165,6 +165,12 @@
                         $("#add").show();
                     count = 0;
                 });  
+//          
+//          $("input:[checkbox]").click(function(e) { 
+//                       
+//                });  
+            
+          
           
 
 
@@ -342,9 +348,9 @@ function topFunction() {
 
     <div style="background-color: white;">
         <div id="resize">
-            <a class="increase" style="font-size:20px; opacity: 0.9;">A</a>
-            <a class="decrease" style="font-size:12px; opacity: 0.9;">A</a>
-            <a class="reset" style="opacity: 0.9;">R</a>
+            <a id="big" class="increase" style="font-size:20px; opacity: 0.9;">A</a>
+            <a id="small" class="decrease" style="font-size:12px; opacity: 0.9;">A</a>
+            <a id="average" class="reset" style="opacity: 0.9;">R</a>
         </div>
         <div style="background-image: url('images/bg-01.jpg'); ">
             <br>
@@ -537,9 +543,9 @@ function topFunction() {
         </span>
               </div>    
             <div>
-            <button id="add" >Add a New Line </button>  
+            <button id="add" class="filter" >Add a New Line </button>  
                          
-            <button id="clear" type="reset" >Clear </button> 
+            <button id="clear" type="reset" class="clean">Clear </button> 
                 <div id="forSearch"> <br><br><hr>    <br>
                 <span id="final">
                 <button id="AdvSearchBtn" type="button" style="float: left;
@@ -574,24 +580,30 @@ function topFunction() {
         <span id="margin">
             <h2>CONTENT TYPE</h2>
             <div id="contentType">
-                    <a href="">Magazine Article</a><br>
-                    Software<br>
-                    Book / eBook<br>
+                  <form action="">
+                   <input type="checkbox" name="contentType" value="Magazine"> <a href="">Magazine Article</a><br>
+                   <input type="checkbox" name="contentType" value="Software"><a href="">Software</a><br>
+                    <input type="checkbox" name="contentType" value="Book"><a href="">Book / eBook</a><br>
+                    </form>
             </div>
             <h2>Discipline</h2>
             <div id="Discipline">
-                Technology<br>
-                History<br>
-                Education<br>
-                Leisure<br>
-                Music<br>
-                Business<br>
-                Comic<br>
+               <form action="">
+                <input type="checkbox" name="Discipline" value="Technology"> <a href="">Technology</a><br>
+                <input type="checkbox" name="Discipline" value="History"> <a href="">History</a><br>
+                <input type="checkbox" name="Discipline" value="Education"> <a href="">Education</a><br>
+                <input type="checkbox" name="Discipline" value="Leisure"> <a href="">Leisure</a><br>
+                <input type="checkbox" name="Discipline" value="Music"> <a href="">Music</a><br>
+                <input type="checkbox" name="Discipline" value="Business"> <a href="">Business</a><br>
+                <input type="checkbox" name="Discipline" value="Comic"> <a href="">Comic</a><br>
+                </form>
             </div>
             <h2>Language</h2>
             <div id="Language">
-                Chinese<br>
-                English<br>
+                <form action="">
+                <input type="checkbox" name="Language" value="Chinese">  <a href="">Chinese</a><br>
+                 <input type="checkbox" name="Language" value="English"> <a href="">English</a><br>
+                  </form>
             </div>
 
             <h2>Publication Date</h2>
@@ -599,11 +611,15 @@ function topFunction() {
             <label for="amount">Range：</label>
             <input type="text" id="amount" style="font-weight:bold;">
             </p>
-            
+          
             <div id="slider-range"></div>
          
-
-
+          <div id="zone">
+             <br>
+              <input class="filter" type="submit" value="APPLYFILTERS">
+               <input class="clean" type="reset" value="CLEAR">
+               </div>
+            
 
         </span>
         </div>
