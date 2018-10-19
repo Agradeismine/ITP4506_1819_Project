@@ -114,7 +114,7 @@
                   $("#clear").show();
                 if(count<5){
                     count+=1;   addcount+=1;    AndOrNotField+=1;   TypeField+=1;
-                    $( "#addOper" ).append("<select id='AndOrNotField"+AndOrNotField+"'> <option value='and'>AND</option><option value='or'>OR</option><option value='not'>NOT</option></select> <select id='TypeField"+TypeField+"'><option value=' anyfield '>Any field</option><option value='title'>Title</option><option value='author'>Author</option><option value='subject'>Subject</option> <option value='isbn'>ISBN</option></select> contains <input id='AdvKeyword"+addcount+"'type='text' name='contains' required><br>");
+                    $( "#addOper" ).append("<select id='AndOrNotField"+AndOrNotField+"'> <option value='and'>AND</option><option value='or'>OR</option><option value='not'>NOT</option></select> <select id='TypeField"+TypeField+"'><option value=' anyfield '>Any field</option><option value='title'>Title</option><option value='author'>Author</option><option value='subject'>Subject</option> <option value='isbn'>ISBN</option>  <option value='os'>OS</option>  <option value='Publisher'>Publisher</option> </select> contains <input id='AdvKeyword"+addcount+"'type='text' name='contains' required><br>");
                 }
                  if(count>3){
                      $(this).hide();
@@ -217,8 +217,15 @@
                 
                 
             });
-
             
+                  $("#cancel").click(function(e) {
+         
+                $('.reseter').trigger("reset");
+                
+            });
+            
+            
+
 
             $(function() {      //2 side range
                 $( "#slider-range" ).slider({
@@ -227,28 +234,14 @@
                     max: 2018,
                     values: [ 2000, 2018 ],
                     slide: function( event, ui ) {
-                        $( "#range" ).val( "" + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-                        document.getElementById("loader2").style.display = "block";
-                        document.getElementById("bookResults").style.opacity = "0";
-                        setTimeout(function(){
-                            document.getElementById("bookResults").style.opacity = "1";
-                            document.getElementById("loader2").style.display = "none";
-                        }, 3000);
+                        $( "#amount" ).val( "" + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
                     }
                 });
-                $( "#range" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
+                $( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
                 " - " + $( "#slider-range" ).slider( "values", 1 ) );
             });
  
             $("#searchBtn").click(function(event) {
-                document.getElementById("loader2").style.display = "block";
-                document.getElementById("bookResults").style.opacity = "0";
-
-                setTimeout(function(){
-                    document.getElementById("bookResults").style.opacity = "1";
-                    document.getElementById("loader2").style.display = "none";
-                }, 1500);
-                                
                 var value = $("#keywords").val().toLowerCase();
                 if(value!=""){  //show all
                     for(var i = 0; i<=30; i++){
@@ -287,33 +280,16 @@
                 var TypeField1 = $("#TypeField1").val();
                 var AdvKeyword1 = $("#AdvKeyword1").val().toLowerCase();    //may not be input
 
+                
 
-                document.getElementById("loader2").style.display = "block";         //simple search
-                document.getElementById("bookResults").style.opacity = "0";
-                setTimeout(function(){
-                    document.getElementById("bookResults").style.opacity = "1";
-                    document.getElementById("loader2").style.display = "none";
-                }, 1500);      
-                var value = $("#first").val().toLowerCase();
-                if(value!=""){  //show all
-                    for(var i = 0; i<=30; i++){
-                        var filterClass = ".filter"+i+" *";
-                        var filter = ".filter"+i;
-                        $(filterClass).filter(function() {
-                            $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
-                        });
-                    }
-                }else{  //hide the load more and search
-                    //$(".hiddenRs").show(); 
-                    for(var i = 0; i<=30; i++){
-                        var filterClass = ".filter"+i+" *";
-                        var filter = ".filter"+i;
-                        $(filterClass).filter(function() {
-                            $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
-                        });
-                    }
-                    $("#loadMoreBtn").hide(); 
-                }       //simple search end
+                for(var i = 0; i<=30; i++){
+                    var filterClass = ".filter"+i+" *";
+                    var filter = ".filter"+i;
+                    alert(filterClass+", "+filter);
+                    $(filterClass).filter(function() {
+                        $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
+                    });
+                }
             });
 
             
@@ -344,7 +320,6 @@ function scrollFunction() {
         document.getElementById("myBtn").style.display = "none";
     }
 }
-
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
@@ -583,7 +558,7 @@ function topFunction() {
             </div>
         </div>
         <a style="float:right">Student Name: Yip Yiu Cheung</a>
-        <img src="images/studentIcon.png" style="float:right; width:45px; height:45px;">
+        <img src="images/studentIcon.png" style="float:right; width:15px; height:8px;">
 
     </div>
 
@@ -623,6 +598,7 @@ function topFunction() {
                     <option value="author">Author</option>
                     <option value="subject">Subject</option>
                     <option value="isbn">ISBN</option>
+                     <option value="os">OS</option>
                 </select> contains
                 <input id="first" type="text" name="contains" >
                 &nbsp;
@@ -647,6 +623,7 @@ function topFunction() {
                     <option value="author">Author</option>
                     <option value="subject">Subject</option>
                     <option value="isbn">ISBN</option>
+                    <option value="os">OS</option>
                 </select> contains
                 <input id="AdvKeyword1" type="text" name="contains" >
            
@@ -850,13 +827,16 @@ function topFunction() {
             </div>
 
             <h2>Publication Date</h2>
+              <form >
             <p>
-            <label for="range">Range：</label>
-            <input type="text" id="range" style="font-weight:bold;">
+              
+            <label for="amount">Range：</label>
+            <input type="text" id="amount" style="font-weight:bold;">
+                      
             </p>
-          
+              
             <div id="slider-range"></div>
-         
+         </form>
          <h2>COURSE NAME AND NUMBER</h2>
          <div id="course">
              
@@ -898,7 +878,7 @@ function topFunction() {
           <div id="zone">
              <br>
               <input class="filter" type="submit" value="APPLYFILTERS">
-               <input class="clean" type="reset" value="CLEAR">
+               <input class="clean" type="reset" value="CLEAR" id="cancel">
                </div>
             
 
