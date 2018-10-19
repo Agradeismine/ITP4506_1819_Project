@@ -784,9 +784,9 @@ function topFunction() {
             <h2>CONTENT TYPE</h2>
             <div id="contentType">
                   <form action="">
-                   <input type="checkbox" name="contentType" value="Magazine"> <a href="student.php?Magazine">Magazine Article</a><br>
-                   <input type="checkbox" name="contentType" value="Software"><a href="student.php?Software">Software</a><br>
-                    <input type="checkbox" name="contentType" value="Book"><a href="student.php?Book">Book / eBook</a><br>
+                   <input type="checkbox" name="contentType" value="Magazine"> <a href="student.php?Magazine">Magazine Article (8)</a><br>
+                   <input type="checkbox" name="contentType" value="Software"><a href="student.php?Software">Software (8)</a><br> 
+                    <input type="checkbox" name="contentType" value="Book"><a href="student.php?Book">Book / eBook (8)</a><br>
                     </form>
             </div>
             <h2>Discipline</h2>
@@ -820,7 +820,7 @@ function topFunction() {
          <h2>COURSE NAME AND NUMBER</h2>
          <div id="course">
                 <form action="">
-                <input type="checkbox" name="course" value="Software">  <a href="">HD in Software Engineering IT114105</a><br>
+                <input type="checkbox" name="course" value="Software">  <a href="">HD in Software Engineering IT114105</a> <br>
                  <input type="checkbox" name="course" value="English"> <a href="">HD in Corporate Administration BA124008</a><br>
                 <input type="checkbox" name="course" value="English"> <a href="">Diploma of Foundation Studies (Information Technology) FS123002N </a><br> 
                  <input type="checkbox" name="course" value="English"> <a href="">Diploma of Foundation Studies (Business) FS123002B </a><br> 
