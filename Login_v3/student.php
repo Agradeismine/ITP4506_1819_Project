@@ -72,7 +72,7 @@
         function logoutAlert(msg) {   //logout alert
             var r = confirm(msg);
 			if (r == true) {
-				window.location.href = "index.php";
+				window.location.href = "main.php";
 			}
         }
 
