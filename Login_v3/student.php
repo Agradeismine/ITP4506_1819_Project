@@ -114,7 +114,7 @@
                   $("#clear").show();
                 if(count<5){
                     count+=1;   addcount+=1;    AndOrNotField+=1;   TypeField+=1;
-                    $( "#addOper" ).append("<select id='AndOrNotField"+AndOrNotField+"'> <option value='and'>AND</option><option value='or'>OR</option><option value='not'>NOT</option></select> <select id='TypeField"+TypeField+"'><option value=' anyfield '>Any field</option><option value='title'>Title</option><option value='author'>Author</option><option value='subject'>Subject</option> <option value='isbn'>ISBN</option></select> contains <input id='AdvKeyword"+addcount+"'type='text' name='contains' required><br>");
+                    $( "#addOper" ).append("<select id='AndOrNotField"+AndOrNotField+"'> <option value='and'>AND</option><option value='or'>OR</option><option value='not'>NOT</option></select> <select id='TypeField"+TypeField+"'><option value=' anyfield '>Any field</option><option value='title'>Title</option><option value='author'>Author</option><option value='subject'>Subject</option> <option value='isbn'>ISBN</option>  <option value='os'>OS</option>  <option value='Publisher'>Publisher</option> </select> contains <input id='AdvKeyword"+addcount+"'type='text' name='contains' required><br>");
                 }
                  if(count>3){
                      $(this).hide();
@@ -217,7 +217,14 @@
                 
                 
             });
-
+            
+                  $("#cancel").click(function(e) {
+         
+                $('.reseter').trigger("reset");
+                
+            });
+            
+            
 
 
             $(function() {      //2 side range
@@ -591,6 +598,7 @@ function topFunction() {
                     <option value="author">Author</option>
                     <option value="subject">Subject</option>
                     <option value="isbn">ISBN</option>
+                     <option value="os">OS</option>
                 </select> contains
                 <input id="first" type="text" name="contains" >
                 &nbsp;
@@ -615,6 +623,7 @@ function topFunction() {
                     <option value="author">Author</option>
                     <option value="subject">Subject</option>
                     <option value="isbn">ISBN</option>
+                    <option value="os">OS</option>
                 </select> contains
                 <input id="AdvKeyword1" type="text" name="contains" >
            
@@ -791,7 +800,7 @@ function topFunction() {
         <span id="margin">
             <h2>CONTENT TYPE</h2>
             <div id="contentType">
-                  <form action="">
+                  <form class="reseter">
                    <input type="checkbox" name="contentType" value="Magazine"> <a href="student.php?Magazine">Magazine Article </a><br>
                    <input type="checkbox" name="contentType" value="Software"><a href="student.php?Software">Software </a><br> 
                     <input type="checkbox" name="contentType" value="Book"><a href="student.php?Book">Book / eBook </a><br>
@@ -799,7 +808,7 @@ function topFunction() {
             </div>
             <h2>Discipline</h2>
             <div id="Discipline">
-               <form action="">
+               <form class="reseter">
                 <input type="checkbox" name="Discipline" value="Technology"> <a href="student.php?Technology">Technology</a><br>
                 <input type="checkbox" name="Discipline" value="History"> <a href="student.php?History">History</a><br>
                 <input type="checkbox" name="Discipline" value="Education"> <a href="student.php?Education">Education</a><br>
@@ -811,20 +820,23 @@ function topFunction() {
             </div>
             <h2>Language</h2>
             <div id="Language">
-                <form action="">
+                <form class="reseter">
                 <input type="checkbox" name="Language" value="Chinese">  <a href="">Chinese</a><br>
                  <input type="checkbox" name="Language" value="English"> <a href="">English</a><br>
                   </form>
             </div>
 
             <h2>Publication Date</h2>
+              <form >
             <p>
+              
             <label for="amount">Range：</label>
             <input type="text" id="amount" style="font-weight:bold;">
+                      
             </p>
-          
+              
             <div id="slider-range"></div>
-         
+         </form>
          <h2>COURSE NAME AND NUMBER</h2>
          <div id="course">
              
@@ -866,7 +878,7 @@ function topFunction() {
           <div id="zone">
              <br>
               <input class="filter" type="submit" value="APPLYFILTERS">
-               <input class="clean" type="reset" value="CLEAR">
+               <input class="clean" type="reset" value="CLEAR" id="cancel">
                </div>
             
 
