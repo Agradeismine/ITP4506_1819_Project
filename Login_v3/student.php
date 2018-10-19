@@ -441,6 +441,7 @@ function topFunction() {
                         var searchRsCount = 0;
                         //alert("searchRsCount: "+searchRsCount);     //test
                         $('#bookResults').html("");
+                        $('#bookResults').append('&ensp;<b>Page 1</b>');
                         // $('#bookResults').html("");
                         $.getJSON('jslib/book.json', function(rs) {
                             for (var i = 0; i < rs.length; i++) {
@@ -468,6 +469,9 @@ function topFunction() {
                                     searchRsCount++;
                                 }
                                 else{
+                                    if(searchRsCount==10){
+                                        $('#bookResults').append('&ensp;<div style=" display: none;" class="hiddenRs">&ensp;<b>Page 2</b></div>');
+                                    }
                                     $('#bookResults').append('<div style=" display: none;" class="hiddenRs filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
                                     '<table width="600" >'+
                                     '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
@@ -475,6 +479,7 @@ function topFunction() {
                                     '</table><br>'+
                                     'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
                                     '</div>');
+                                    searchRsCount++;
                                 }
                             };
                         });
@@ -497,6 +502,8 @@ function topFunction() {
                                     '</table><br>'+
                                     'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
                                     '</div>');
+                                    searchRsCount++;
+
                                 }
                             };
                         });
@@ -543,8 +550,9 @@ function topFunction() {
                 <a href="#" onclick="logoutAlert('Do you want to logout?');">Logout</a>
             </div>
         </div>
-
         <a style="float:right">Student Name: Yip Yiu Cheung</a>
+        <img src="images/studentIcon.png" style="float:right; width:15px; height:8px;">
+
     </div>
 
 
