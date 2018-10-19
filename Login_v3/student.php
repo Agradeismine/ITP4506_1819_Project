@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="css/Search.css">
     <link rel="stylesheet" type="text/css" href="css/advancedForm.css">
     <link rel="stylesheet" type="text/css" href="css/loading.css">
+    <link rel="stylesheet" type="text/css" href="css/moreResultLoading.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
     <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -186,10 +188,30 @@
                 });
             });  
 
+        //     setTimeout(showPage, 1000);
+        // }
+
+        // function showPage() {
+        //   document.getElementById("loader").style.display = "none";
+        //   document.getElementById("main").style.display = "block";
+        // }
+
+
             
             $("#loadMoreBtn").click(function(e) {
-                $(".hiddenRs").show();
+                document.getElementById("moreResultLoader").style.display = "block";
+                setTimeout(function(){
+                    $(".hiddenRs").show();
+                    document.getElementById("moreResultLoader").style.display = "none";
+                    document.getElementById("loadMoreBtn").style.display = "none";
+                    document.getElementById("noResultNotice").style.opacity = "1";
+                    
+                }, 1500);
+                
+                
             });  
+
+
 
             $(function() {      //2 side range
                 $( "#slider-range" ).slider({
@@ -802,9 +824,12 @@ function topFunction() {
             </div>-->
             </article>
             <article>
-                <button id="loadMoreBtn" type="button" style="padding: 8px 16px; text-align:center; background-color: #0058b1; color: white; border: 1px;">Load More...</button>
+                <center>
+                    <button id="loadMoreBtn" type="button" style="padding: 8px 16px; text-align:center; background-color: #0058b1; color: white; border: 1px;">Load More...</button>
+                    <p><div id="moreResultLoader" style="display: none"></div></p>
+                </center>
+                <img id="noResultNotice"src="images/notice.png" title="That's all the related data" style="opacity: 0;">
             </article>
-            <article><img src="images/notice.png" title="That's all the related data"></article>
             
         </div>
     </section>
