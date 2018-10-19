@@ -163,6 +163,7 @@
                         $("#endDate").hide();
                         jQuery('#addOper').html('');
                         $("#add").show();
+                        $(this).hide();
                     count = 0;
                 });  
 //          
@@ -581,7 +582,7 @@ function topFunction() {
                     
                     
             <div id="startDate">
-            <br><br>
+            <br>
             <span id="start">
                 Start Date:
                 <select id="day" name="day">
@@ -639,7 +640,7 @@ function topFunction() {
               </div>   
                 
                         <div id="endDate">
-                 <br><br>
+                 <br>
                  <span id="end">
                       End Date: &nbsp;
                         <select id="day" name="day">
