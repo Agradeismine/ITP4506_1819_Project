@@ -218,7 +218,7 @@
                 
             });
 
-
+            
 
             $(function() {      //2 side range
                 $( "#slider-range" ).slider({
@@ -227,14 +227,28 @@
                     max: 2018,
                     values: [ 2000, 2018 ],
                     slide: function( event, ui ) {
-                        $( "#amount" ).val( "" + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                        $( "#range" ).val( "" + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                        document.getElementById("loader2").style.display = "block";
+                        document.getElementById("bookResults").style.opacity = "0";
+                        setTimeout(function(){
+                            document.getElementById("bookResults").style.opacity = "1";
+                            document.getElementById("loader2").style.display = "none";
+                        }, 3000);
                     }
                 });
-                $( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
+                $( "#range" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
                 " - " + $( "#slider-range" ).slider( "values", 1 ) );
             });
  
             $("#searchBtn").click(function(event) {
+                document.getElementById("loader2").style.display = "block";
+                document.getElementById("bookResults").style.opacity = "0";
+
+                setTimeout(function(){
+                    document.getElementById("bookResults").style.opacity = "1";
+                    document.getElementById("loader2").style.display = "none";
+                }, 1500);
+                                
                 var value = $("#keywords").val().toLowerCase();
                 if(value!=""){  //show all
                     for(var i = 0; i<=30; i++){
@@ -273,16 +287,33 @@
                 var TypeField1 = $("#TypeField1").val();
                 var AdvKeyword1 = $("#AdvKeyword1").val().toLowerCase();    //may not be input
 
-                
 
-                for(var i = 0; i<=30; i++){
-                    var filterClass = ".filter"+i+" *";
-                    var filter = ".filter"+i;
-                    alert(filterClass+", "+filter);
-                    $(filterClass).filter(function() {
-                        $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
-                    });
-                }
+                document.getElementById("loader2").style.display = "block";         //simple search
+                document.getElementById("bookResults").style.opacity = "0";
+                setTimeout(function(){
+                    document.getElementById("bookResults").style.opacity = "1";
+                    document.getElementById("loader2").style.display = "none";
+                }, 1500);      
+                var value = $("#first").val().toLowerCase();
+                if(value!=""){  //show all
+                    for(var i = 0; i<=30; i++){
+                        var filterClass = ".filter"+i+" *";
+                        var filter = ".filter"+i;
+                        $(filterClass).filter(function() {
+                            $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    }
+                }else{  //hide the load more and search
+                    //$(".hiddenRs").show(); 
+                    for(var i = 0; i<=30; i++){
+                        var filterClass = ".filter"+i+" *";
+                        var filter = ".filter"+i;
+                        $(filterClass).filter(function() {
+                            $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    }
+                    $("#loadMoreBtn").hide(); 
+                }       //simple search end
             });
 
             
@@ -313,6 +344,7 @@ function scrollFunction() {
         document.getElementById("myBtn").style.display = "none";
     }
 }
+
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
@@ -551,7 +583,7 @@ function topFunction() {
             </div>
         </div>
         <a style="float:right">Student Name: Yip Yiu Cheung</a>
-        <img src="images/studentIcon.png" style="float:right; width:15px; height:8px;">
+        <img src="images/studentIcon.png" style="float:right; width:45px; height:45px;">
 
     </div>
 
@@ -819,8 +851,8 @@ function topFunction() {
 
             <h2>Publication Date</h2>
             <p>
-            <label for="amount">Range：</label>
-            <input type="text" id="amount" style="font-weight:bold;">
+            <label for="range">Range：</label>
+            <input type="text" id="range" style="font-weight:bold;">
             </p>
           
             <div id="slider-range"></div>
