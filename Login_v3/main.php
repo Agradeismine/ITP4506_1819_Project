@@ -206,6 +206,7 @@
             });
  
             $("#searchBtn").click(function(event) {
+
                 var value = $("#keywords").val().toLowerCase();
 
                 for(var i = 0; i<=23; i++){
@@ -399,7 +400,6 @@ function topFunction() {
                         var searchRsCount = 0;
                         //alert("searchRsCount: "+searchRsCount);     //test
                         $('#bookResults').html("");
-                        // $('#bookResults').html("");
                         $.getJSON('jslib/book.json', function(rs) {
                             for (var i = 0; i < rs.length; i++) {
                                 $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
@@ -495,7 +495,7 @@ function topFunction() {
             </div>
         </div>
 
-        <a href="types.php" style="float:right">Account</a>
+        <a href="types.php" style="float:right">Log In</a>
     </div>
 
 
