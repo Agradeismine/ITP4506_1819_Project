@@ -63,7 +63,7 @@
             }
         }
 
-        function logoutAlert(msg) {   //logout alert
+        function loginAlert(msg) {   //login alert
             var r = confirm(msg);
 			if (r == true) {
 				window.location.href = "index.php";
@@ -491,7 +491,7 @@ function topFunction() {
             <div class="dropdown-content" id="MenuDropdown">
                 <a href="#">Profile</a>
                 <a href="#">Setting</a>
-                <a href="#" onclick="logoutAlert('Do you want to logout?');">Logout</a>
+                <a href="types.php" >Log In</a>
             </div>
         </div>
 
