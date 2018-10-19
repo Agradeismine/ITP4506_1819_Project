@@ -34,16 +34,16 @@
             password = document.getElementById('password').value;
             if (username != "" && password != "") {
                 if (username == "teaching" && password == "teaching") {
-                    window.location.href = "teaching.php?username=teaching&password=teaching";
+                    window.location.href = "teaching.php?username=teaching";
                 } else if (username == "nonTeaching" && password == "nonTeaching") {
-                    window.location.href = "nonTeaching.php?username=nonTeaching&password=nonTeaching";
+                    window.location.href = "nonTeaching.php?username=nonTeaching";
                 } else if (username == "student" && password == "student") {
                     window.location.href = "student.php?username=student";
                 } else if (username == "alumni" && password == "alumni") {
-                    window.location.href = "alumni.php?username=alumni&password=alumni";
+                    window.location.href = "alumniMessage.html";
                 }else {
                     alert("Invalid login, please try again!");
-                    window.location.href = "index.html";
+                    window.location.href = "index.php";
                 }
             }
 

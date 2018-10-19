@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V3</title>
+	<title>Verification Through Email</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -29,7 +29,9 @@
 
 <script type="text/javascript">
      function myFunction() {
-        window.location.href = "index.php";
+        if (document.getElementById('code').value != null){
+           window.location.href = "successE.html";
+         }
        }  
        
     
@@ -48,16 +50,16 @@
 					</span>
 
 					<span class="login100-form-title p-b-34 p-t-27">
-						Success!
+						Enter Verification code 
 					</span>
         
-			
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input id="code" class="input100" type="text" name="code" >
+						<span class="focus-input100" ></span>
+					</div>
 	<div class="container-login100-form-btn">
-               You can now use the new password sent in your Email
-               	</div>    
-               			<div class="container-login100-form-btn">
                 <button class="login100-form-btn" onclick="myFunction()">
-                                Back to Main Page
+                                Enter
                             </button>
                	</div>             
 			</div>

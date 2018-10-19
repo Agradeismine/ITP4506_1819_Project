@@ -5,12 +5,14 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <title>Library System: Student Page</title>
+    <title>Library System: Staff Page</title>
     <link rel="stylesheet" type="text/css" href="css/mainpage.css">
     <link rel="stylesheet" type="text/css" href="css/fontSize.css">
     <link rel="stylesheet" type="text/css" href="css/Search.css">
     <link rel="stylesheet" type="text/css" href="css/advancedForm.css">
     <link rel="stylesheet" type="text/css" href="css/loading.css">
+    <link rel="stylesheet" type="text/css" href="css/moreResultLoading.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
     <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -48,25 +50,33 @@
     
       
         // Close the dropdown if the user clicks outside of it
-        window.onclick = function(e) {
+        window.onclick = function(e) {  //drop on off
             if (!e.target.matches('.dropbtn')) {
                 var CategoryDropdown = document.getElementById("CategoryDropdown");
                 var MenuDropdown = document.getElementById("MenuDropdown");
+                var DDDropdown = document.getElementById("DDDropdown");
+                var ReserveDropdown = document.getElementById("ReserveDropdown");
+                
 
                 if (CategoryDropdown.classList.contains('show')) {
                     CategoryDropdown.classList.remove('show');
                 }
-
+                if (ReserveDropdown.classList.contains('show')) {
+                    ReserveDropdown.classList.remove('show');
+                }
                 if (MenuDropdown.classList.contains('show')) {
                     MenuDropdown.classList.remove('show');
+                }
+                if (DDDropdown.classList.contains('show')) {
+                    DDDropdown.classList.remove('show');
                 }
             }
         }
 
-        function loginAlert(msg) {   //login alert
+        function logoutAlert(msg) {   //logout alert
             var r = confirm(msg);
 			if (r == true) {
-				window.location.href = "index.php";
+				window.location.href = "main.php";
 			}
         }
 
@@ -108,7 +118,7 @@
                   $("#clear").show();
                 if(count<5){
                     count+=1;   addcount+=1;    AndOrNotField+=1;   TypeField+=1;
-                    $( "#addOper" ).append("<select id='AndOrNotField"+AndOrNotField+"'> <option value='and'>AND</option><option value='or'>OR</option><option value='not'>NOT</option></select> <select id='TypeField"+TypeField+"'><option value=' anyfield '>Any field</option><option value='title'>Title</option><option value='author'>Author</option><option value='subject'>Subject</option> <option value='isbn'>ISBN</option></select> contains <input id='AdvKeyword"+addcount+"'type='text' name='contains' required><br>");
+                    $( "#addOper" ).append("<select id='AndOrNotField"+AndOrNotField+"'> <option value='and'>AND</option><option value='or'>OR</option><option value='not'>NOT</option></select> <select id='TypeField"+TypeField+"'><option value=' anyfield '>Any field</option><option value='title'>Title</option><option value='author'>Author</option><option value='subject'>Subject</option> <option value='isbn'>ISBN</option>  <option value='os'>OS</option>  <option value='Publisher'>Publisher</option> </select> contains <input id='AdvKeyword"+addcount+"'type='text' name='contains' required><br>");
                 }
                  if(count>3){
                      $(this).hide();
@@ -156,7 +166,10 @@
               $("#endDate").hide();
             }
           });
-          
+           $("#more").click(function(e) { 
+                $("#open").toggle();
+             e.preventDefault();
+                });  
           
                 $("#clear").click(function(e) { 
                         $("#startDate").hide();
@@ -186,10 +199,37 @@
                 });
             });  
 
+        //     setTimeout(showPage, 1000);
+        // }
+
+        // function showPage() {
+        //   document.getElementById("loader").style.display = "none";
+        //   document.getElementById("main").style.display = "block";
+        // }
+
+
             
             $("#loadMoreBtn").click(function(e) {
-                $(".hiddenRs").show();
-            });  
+                document.getElementById("moreResultLoader").style.display = "block";
+                setTimeout(function(){
+                    $(".hiddenRs").show();
+                    document.getElementById("moreResultLoader").style.display = "none";
+                    document.getElementById("loadMoreBtn").style.display = "none";
+                    document.getElementById("noResultNotice").style.opacity = "1";
+                    
+                }, 1500);
+                
+                
+            });
+            
+                  $("#Cancel").click(function(e) {
+         
+                $('.reseter').trigger("reset");
+                
+            });
+            
+            
+
 
             $(function() {      //2 side range
                 $( "#slider-range" ).slider({
@@ -198,25 +238,57 @@
                     max: 2018,
                     values: [ 2000, 2018 ],
                     slide: function( event, ui ) {
-                        $( "#amount" ).val( "" + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                        $( "#range" ).val( "" + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+                        document.getElementById("loader2").style.display = "block";
+                        document.getElementById("bookResults").style.opacity = "0";
+                        setTimeout(function(){
+                            document.getElementById("bookResults").style.opacity = "1";
+                            document.getElementById("loader2").style.display = "none";
+                        }, 3000);
                     }
                 });
-                $( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
+                $( "#range" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
                 " - " + $( "#slider-range" ).slider( "values", 1 ) );
             });
  
             $("#searchBtn").click(function(event) {
+                document.getElementById("loader2").style.display = "block";
+                document.getElementById("bookResults").style.opacity = "0";
+                document.getElementById("noResultNotice").style.opacity = "0";
+                $("article").css("background-color", "white");
+                
+                $("#loadMoreBtn").hide();   //唔知岩唔岩
+                setTimeout(function(){
+                    document.getElementById("bookResults").style.opacity = "1";
+                    document.getElementById("loader2").style.display = "none";
+                    document.getElementById("noResultNotice").style.opacity = "1";
+                    $("article").css("background-color", "#f1f1f1");
+
+                }, 1500);
 
                 var value = $("#keywords").val().toLowerCase();
+                if(value!=""){  //show all
+                    for(var i = 0; i<=30; i++){
+                        var filterClass = ".filter"+i+" *";
+                        var filter = ".filter"+i;
+                        $(filterClass).filter(function() {
+                            $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    }
+                }else{  //hide the load more and search
+                    //$(".hiddenRs").show(); 
+                    for(var i = 0; i<=30; i++){
+                        var filterClass = ".filter"+i+" *";
+                        var filter = ".filter"+i;
+                        $(filterClass).filter(function() {
+                            $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    }
+                    $("#loadMoreBtn").hide(); 
 
-                for(var i = 0; i<=23; i++){
-                    var filterClass = ".filter"+i+" *";
-                    var filter = ".filter"+i;
-                    //alert(filterClass+", "+filter);
-                    $(filterClass).filter(function() {
-                        $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
-                    });
+                    
                 }
+      
               
               
             });
@@ -233,15 +305,32 @@
                 var AdvKeyword1 = $("#AdvKeyword1").val().toLowerCase();    //may not be input
 
                 
-
-                // for(var i = 0; i<=23; i++){
-                //     var filterClass = ".filter"+i+" *";
-                //     var filter = ".filter"+i;
-                    // alert(filterClass+", "+filter);
-                //     $(filterClass).filter(function() {
-                //         $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
-                //     });
-                // }
+                document.getElementById("loader2").style.display = "block";         //simple search
+                document.getElementById("bookResults").style.opacity = "0";
+                setTimeout(function(){
+                    document.getElementById("bookResults").style.opacity = "1";
+                    document.getElementById("loader2").style.display = "none";
+                }, 1500);      
+                var value = $("#first").val().toLowerCase();
+                if(value!=""){  //show all
+                    for(var i = 0; i<=30; i++){
+                        var filterClass = ".filter"+i+" *";
+                        var filter = ".filter"+i;
+                        $(filterClass).filter(function() {
+                            $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    }
+                }else{  //hide the load more and search
+                    //$(".hiddenRs").show(); 
+                    for(var i = 0; i<=30; i++){
+                        var filterClass = ".filter"+i+" *";
+                        var filter = ".filter"+i;
+                        $(filterClass).filter(function() {
+                            $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    }
+                    $("#loadMoreBtn").hide(); 
+                }       //simple search end
             });
 
             
@@ -278,14 +367,18 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+function hrefLink(link) {
+    window.location.href = link;    
+}
         
 </script>
 </head>
 <body onload="myFunction()" >
     <img src="test.png"  onload="myFunction2()" style="display:none; ">
     <?php
-        if (!isset($_COOKIE['student'])) {
-             header("Location: changePassword.php?username=student");
+        if (!isset($_COOKIE['teaching'])) {
+             header("Location: changePassword.php?username=teaching");
         }
         if (isset($_SERVER["QUERY_STRING"])) {
             extract($_GET);
@@ -400,6 +493,8 @@ function topFunction() {
                         var searchRsCount = 0;
                         //alert("searchRsCount: "+searchRsCount);     //test
                         $('#bookResults').html("");
+                        $('#bookResults').append('&ensp;<b>Page 1</b>');
+                        // $('#bookResults').html("");
                         $.getJSON('jslib/book.json', function(rs) {
                             for (var i = 0; i < rs.length; i++) {
                                 $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
@@ -426,6 +521,9 @@ function topFunction() {
                                     searchRsCount++;
                                 }
                                 else{
+                                    if(searchRsCount==10){
+                                        $('#bookResults').append('&ensp;<div style=" display: none;" class="hiddenRs">&ensp;<b>Page 2</b></div>');
+                                    }
                                     $('#bookResults').append('<div style=" display: none;" class="hiddenRs filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
                                     '<table width="600" >'+
                                     '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
@@ -433,6 +531,7 @@ function topFunction() {
                                     '</table><br>'+
                                     'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
                                     '</div>');
+                                    searchRsCount++;
                                 }
                             };
                         });
@@ -455,6 +554,8 @@ function topFunction() {
                                     '</table><br>'+
                                     'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
                                     '</div>');
+                                    searchRsCount++;
+
                                 }
                             };
                         });
@@ -468,8 +569,6 @@ function topFunction() {
     <div class="navbar">
         <a href="#home">Home</a>
         <a href="#news">News</a>
-
-
         <div class="dropdown">
             <button class="dropbtn" onclick="showdropdown('CategoryDropdown')">Category
                 <i class="fa fa-caret-down"></i>
@@ -478,11 +577,28 @@ function topFunction() {
                 <a href="#">Books</a>
                 <a href="#">Software</a>
                 <a href="#">Magazines</a>
-
             </div>
         </div>
 
+        <div class="dropdown">
+            <button class="dropbtn" onclick="showdropdown('DDDropdown')">Teaching Resources 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="DDDropdown">
+                <a href="#">Exam Past Paper Answer</a>
+                <a href="#">Teaching Materials</a>
+            </div>
+        </div>
 
+        <div class="dropdown">
+            <button class="dropbtn" onclick="showdropdown('ReserveDropdown')">Reserve
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="ReserveDropdown">
+                <a href="#">Reserve Meeting Room</a>
+                <a href="#">Reserve Teaching Material</a>
+            </div>
+        </div>
 
         <div class="dropdown" style="float:right">
             <button class="dropbtn" onclick="showdropdown('MenuDropdown')">Menu
@@ -491,11 +607,12 @@ function topFunction() {
             <div class="dropdown-content" id="MenuDropdown">
                 <a href="#">Profile</a>
                 <a href="#">Setting</a>
-                <a href="types.php" >Log In</a>
+                <a href="#" onclick="logoutAlert('Do you want to logout?');">Logout</a>
             </div>
         </div>
+        <a style="float:right">Staff Name: Mr. Chan</a>
+        <img src="images/teacherIcon.png" style="float:right; width:45px; height:45px; margin-right: 5px;">
 
-        <a href="types.php" style="float:right">Log In</a>
     </div>
 
 
@@ -534,6 +651,7 @@ function topFunction() {
                     <option value="author">Author</option>
                     <option value="subject">Subject</option>
                     <option value="isbn">ISBN</option>
+                     <option value="os">OS</option>
                 </select> contains
                 <input id="first" type="text" name="contains" >
                 &nbsp;
@@ -558,6 +676,7 @@ function topFunction() {
                     <option value="author">Author</option>
                     <option value="subject">Subject</option>
                     <option value="isbn">ISBN</option>
+                    <option value="os">OS</option>
                 </select> contains
                 <input id="AdvKeyword1" type="text" name="contains" >
            
@@ -706,7 +825,7 @@ function topFunction() {
                     width: 65px;
                     padding: 10px;
                     position: absolute;
-                    right:200px;
+                    right:253px;
                     background: #2196F3;
                     color: white;
                     font-size: 17px;
@@ -732,46 +851,87 @@ function topFunction() {
     <section>
         <div id="nav">
         <span id="margin">
-            <h2>CONTENT TYPE</h2>
+            <h2>Content Type</h2>
             <div id="contentType">
-                  <form action="">
-                   <input type="checkbox" name="contentType" value="Magazine"> <a href="student.php?Magazine">Magazine Article</a><br>
-                   <input type="checkbox" name="contentType" value="Software"><a href="student.php?Software">Software</a><br>
-                    <input type="checkbox" name="contentType" value="Book"><a href="student.php?Book">Book / eBook</a><br>
+                  <form class="reseter">
+                   <input type="checkbox" name="contentType" value="Magazine"> <a href="teaching.php?Magazine">Magazine Article </a><br>
+                   <input type="checkbox" name="contentType" value="Software"><a href="teaching.php?Software">Software </a><br> 
+                    <input type="checkbox" name="contentType" value="Book"><a href="teaching.php?Book">Book / eBook </a><br>
                     </form>
             </div>
             <h2>Discipline</h2>
             <div id="Discipline">
-               <form action="">
-                <input type="checkbox" name="Discipline" value="Technology"> <a href="student.php?Technology">Technology</a><br>
-                <input type="checkbox" name="Discipline" value="History"> <a href="student.php?History">History</a><br>
-                <input type="checkbox" name="Discipline" value="Education"> <a href="student.php?Education">Education</a><br>
-                <input type="checkbox" name="Discipline" value="Leisure"> <a href="student.php?Leisure">Leisure</a><br>
-                <input type="checkbox" name="Discipline" value="Music"> <a href="student.php?Music">Music</a><br>
-                <input type="checkbox" name="Discipline" value="Business"> <a href="student.php?Business">Business</a><br>
-                <input type="checkbox" name="Discipline" value="Comic"> <a href="student.php?Comic">Comic</a><br>
+               <form class="reseter">
+                <input type="checkbox" name="Discipline" value="Technology"> <a href="teaching.php?Technology">Technology</a><br>
+                <input type="checkbox" name="Discipline" value="History"> <a href="teaching.php?History">History</a><br>
+                <input type="checkbox" name="Discipline" value="Education"> <a href="teaching.php?Education">Education</a><br>
+                <input type="checkbox" name="Discipline" value="Leisure"> <a href="teaching.php?Leisure">Leisure</a><br>
+                <input type="checkbox" name="Discipline" value="Music"> <a href="teaching.php?Music">Music</a><br>
+                <input type="checkbox" name="Discipline" value="Business"> <a href="teaching.php?Business">Business</a><br>
+                <input type="checkbox" name="Discipline" value="Comic"> <a href="teaching.php?Comic">Comic</a><br>
                 </form>
             </div>
             <h2>Language</h2>
             <div id="Language">
-                <form action="">
+                <form class="reseter">
                 <input type="checkbox" name="Language" value="Chinese">  <a href="">Chinese</a><br>
                  <input type="checkbox" name="Language" value="English"> <a href="">English</a><br>
                   </form>
             </div>
 
             <h2>Publication Date</h2>
+              <form >
             <p>
-            <label for="amount">Range：</label>
-            <input type="text" id="amount" style="font-weight:bold;">
+              
+            <label for="range">Range：</label>
+            <input disabled type="text" id="range" style="font-weight:bold;">
+                      
             </p>
-          
+              
             <div id="slider-range"></div>
+         </form>
+         <h2>Teaching Resources</h2>
+         <div id="course">
+             
+                    <div class="space">
+              <a href="">LAN3003_IT Putonghua_Conversation</a> <br>
+                    </div> 
+                    <div class="space">   
+                  <a href="" >ITP4913M_IT Final Year Project</a><br>
+                    </div>
+                    <div class="space"> 
+                <a href="" >ITP4511 Enterprise Systems Development</a><br> 
+                     </div>
+                    <div class="space"> 
+                  <a href="" >ITP4502 Software Project Management</a><br> 
+                      </div>
+                    <div class="space">    
+                 <a href="" >ITP4513 Internet & Multimedia Development</a><br>  
+                   </div>
+              
+                   <a href="" id="more" class="space" style="color: black;">More... </a>
+                               
+                
+                   <div id="open" style="display:none">
+                       
+                           <div class="space">
+                         <a href="" >ITP4501 Programming Techniques</a><br> 
+                            </div>   
+                           <div class="space">
+                      <a href="" >SDD7002 Effective Teamwork</a><br> 
+                            </div>
+                           <div class="space">
+                      <a href="" >ITP9394 KQuery</a><br>  
+                            </div>    
+                       
+                   </div>
+                 
+            </div>
          
           <div id="zone">
              <br>
-              <input class="filter" type="submit" value="APPLYFILTERS">
-               <input class="clean" type="reset" value="CLEAR">
+              <input class="filter" type="button" onclick="hrefLink('teaching.php')" value="Applyfilters">
+               <input class="clean" type="reset" value="Clear" id="Cancel">
                </div>
             
 
@@ -801,18 +961,22 @@ function topFunction() {
                 <hr>
             </div>-->
             </article>
-            <article>
-                <button id="loadMoreBtn" type="button" style="padding: 8px 16px; text-align:center; background-color: #0058b1; color: white; border: 1px;">Load More...</button>
-            </article>
-            <article><img src="images/notice.png" title="That's all the related data"></article>
-            
+            <!-- <div style="background-color: #f1f1f1"> -->
+                <article>
+                    <center>
+                        <button id="loadMoreBtn" type="button" style="padding: 8px 16px; text-align:center; background-color: #0058b1; color: white; border: 1px;">Load More...</button>
+                        <p><div id="moreResultLoader" style="display: none"></div></p>
+                        <img id="noResultNotice"src="images/notice.png" onload="" style="opacity: 0; ">
+                    </center>
+                </article>
+            <!-- </div> -->
         </div>
     </section>
     </div>
     
-    <img src="arrow.png"  id="myBtn" title="Go to top" style="width:25px; height=25px">
+    <img src="arrow.png"  id="myBtn" title="Go to top" style="width:25px; height=25px ">
     
-    </div>
+   
 </body>
 
 </html>
