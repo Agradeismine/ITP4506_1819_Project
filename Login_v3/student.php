@@ -50,17 +50,21 @@
     
       
         // Close the dropdown if the user clicks outside of it
-        window.onclick = function(e) {
+        window.onclick = function(e) {  //drop on off
             if (!e.target.matches('.dropbtn')) {
                 var CategoryDropdown = document.getElementById("CategoryDropdown");
                 var MenuDropdown = document.getElementById("MenuDropdown");
+                var DDDropdown = document.getElementById("DDDropdown");
+                
 
                 if (CategoryDropdown.classList.contains('show')) {
                     CategoryDropdown.classList.remove('show');
                 }
-
                 if (MenuDropdown.classList.contains('show')) {
                     MenuDropdown.classList.remove('show');
+                }
+                if (DDDropdown.classList.contains('show')) {
+                    DDDropdown.classList.remove('show');
                 }
             }
         }
@@ -209,7 +213,7 @@
                 }, 1500);
                 
                 
-            });  
+            });
 
 
 
@@ -229,15 +233,28 @@
  
             $("#searchBtn").click(function(event) {
                 var value = $("#keywords").val().toLowerCase();
+                if(value!=""){  //show all
+                    for(var i = 0; i<=30; i++){
+                        var filterClass = ".filter"+i+" *";
+                        var filter = ".filter"+i;
+                        $(filterClass).filter(function() {
+                            $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    }
+                }else{  //hide the load more and search
+                    //$(".hiddenRs").show(); 
+                    for(var i = 0; i<=30; i++){
+                        var filterClass = ".filter"+i+" *";
+                        var filter = ".filter"+i;
+                        $(filterClass).filter(function() {
+                            $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    }
+                    $("#loadMoreBtn").hide(); 
 
-                for(var i = 0; i<=23; i++){
-                    var filterClass = ".filter"+i+" *";
-                    var filter = ".filter"+i;
-                    //alert(filterClass+", "+filter);
-                    $(filterClass).filter(function() {
-                        $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
-                    });
+                    
                 }
+      
               
               
             });
@@ -255,14 +272,14 @@
 
                 
 
-                // for(var i = 0; i<=23; i++){
-                //     var filterClass = ".filter"+i+" *";
-                //     var filter = ".filter"+i;
-                    // alert(filterClass+", "+filter);
-                //     $(filterClass).filter(function() {
-                //         $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
-                //     });
-                // }
+                for(var i = 0; i<=30; i++){
+                    var filterClass = ".filter"+i+" *";
+                    var filter = ".filter"+i;
+                    alert(filterClass+", "+filter);
+                    $(filterClass).filter(function() {
+                        $(filter).toggle($(filterClass).text().toLowerCase().indexOf(value) > -1)
+                    });
+                }
             });
 
             
@@ -490,7 +507,16 @@ function topFunction() {
     <div class="navbar">
         <a href="#home">Home</a>
         <a href="#news">News</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="showdropdown('DDDropdown')">Learning Resources 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="DDDropdown">
+                <a href="#">Exam Past Paper</a>
+                <a href="#">Programme Materials</a>
 
+            </div>
+        </div>
 
         <div class="dropdown">
             <button class="dropbtn" onclick="showdropdown('CategoryDropdown')">Category
@@ -503,8 +529,6 @@ function topFunction() {
 
             </div>
         </div>
-
-
 
         <div class="dropdown" style="float:right">
             <button class="dropbtn" onclick="showdropdown('MenuDropdown')">Menu
@@ -823,14 +847,15 @@ function topFunction() {
                 <hr>
             </div>-->
             </article>
-            <article>
-                <center>
-                    <button id="loadMoreBtn" type="button" style="padding: 8px 16px; text-align:center; background-color: #0058b1; color: white; border: 1px;">Load More...</button>
-                    <p><div id="moreResultLoader" style="display: none"></div></p>
-                </center>
-                <img id="noResultNotice"src="images/notice.png" title="That's all the related data" style="opacity: 0;">
-            </article>
-            
+            <!-- <div style="background-color: #f1f1f1"> -->
+                <article>
+                    <center>
+                        <button id="loadMoreBtn" type="button" style="padding: 8px 16px; text-align:center; background-color: #0058b1; color: white; border: 1px;">Load More...</button>
+                        <p><div id="moreResultLoader" style="display: none"></div></p>
+                        <img id="noResultNotice"src="images/notice.png" style="opacity: 0;">
+                    </center>
+                </article>
+            <!-- </div> -->
         </div>
     </section>
     </div>
