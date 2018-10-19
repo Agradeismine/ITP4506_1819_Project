@@ -823,7 +823,7 @@ function topFunction() {
         <span id="margin">
             <h2>CONTENT TYPE</h2>
             <div id="contentType">
-                  <form action="">
+                  <form class="reseter">
                    <input type="checkbox" name="contentType" value="Magazine"> <a href="student.php?Magazine">Magazine Article </a><br>
                    <input type="checkbox" name="contentType" value="Software"><a href="student.php?Software">Software </a><br> 
                     <input type="checkbox" name="contentType" value="Book"><a href="student.php?Book">Book / eBook </a><br>
@@ -831,7 +831,7 @@ function topFunction() {
             </div>
             <h2>Discipline</h2>
             <div id="Discipline">
-               <form action="">
+               <form class="reseter">
                 <input type="checkbox" name="Discipline" value="Technology"> <a href="student.php?Technology">Technology</a><br>
                 <input type="checkbox" name="Discipline" value="History"> <a href="student.php?History">History</a><br>
                 <input type="checkbox" name="Discipline" value="Education"> <a href="student.php?Education">Education</a><br>
@@ -843,7 +843,7 @@ function topFunction() {
             </div>
             <h2>Language</h2>
             <div id="Language">
-                <form action="">
+                <form class="reseter">
                 <input type="checkbox" name="Language" value="Chinese">  <a href="">Chinese</a><br>
                  <input type="checkbox" name="Language" value="English"> <a href="">English</a><br>
                   </form>
