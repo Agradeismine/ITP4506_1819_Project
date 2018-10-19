@@ -163,7 +163,7 @@
             }
           });
            $("#more").click(function(e) { 
-                $("#open").show();
+                $("#open").toggle();
              e.preventDefault();
                 });  
           
