@@ -10,6 +10,26 @@
     "img": "jslib/images/10.jpg"
   },
   {
+    "bookname": ["21 Lessons for the 21st Century"],
+    "type": ["History"],
+    "year": [2018],
+    "Language": ["English"],
+    "Author": ["Yuval Noah Harari"],
+    "Publisher": ["Vintage Publishing"],
+    "Description": ["Yuval Noah Harari returns in August 2018 with a new book, 21 Lessons for the 21st Century. In bringing his focus to the here and now, Harari will help us to grapple with a world that is increasingly hard to comprehend, encouraging us to focus our minds on the essential questions we should be asking ourselves today."],
+    "img": "jslib/images/24.jpg"
+  },
+  {
+    "bookname": ["Verneuil 1424: The Second Agincourt : The Battle of the Three Kingdoms"],
+    "type": ["History"],
+    "year": [2015],
+    "Language": ["English"],
+    "Author": ["Richard Wadge"],
+    "Publisher": ["The History Press Ltd"],
+    "Description": ["In August 1424 the armies of England, Scotland and France met in the open fields outside the walls of Verneuil in a battle that would decide the future of the English conquests in France. The hero king, Henry V had been dead for two years and the French felt that this was their chance to avenge their startling defeat at Agincourt."],
+    "img": "jslib/images/25.jpg"
+  },
+  {
     "bookname": ["From Content to Practice: Sharing Educational Practice in Edu-Sharing"],
     "type": ["Education"],
     "year": [2010],

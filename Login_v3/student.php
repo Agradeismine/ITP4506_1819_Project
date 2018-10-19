@@ -185,6 +185,11 @@
                 });
             });  
 
+            
+            $("#loadMoreBtn").click(function(e) {
+                $(".hiddenRs").show();
+            });  
+
             $(function() {      //2 side range
                 $( "#slider-range" ).slider({
                     range: true,
@@ -272,7 +277,7 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
         
-    </script>
+</script>
 </head>
 <body onload="myFunction()" >
     <img src="test.png"  onload="myFunction2()" style="display:none; ">
@@ -338,34 +343,11 @@ function topFunction() {
                         });
                 </script>
             <?php 
-            }else { ?>
+            }else if(isset($Technology)){
+                ?>
                 <script type="text/javascript">
                     $(document).ready(function() {
                         $('#bookResults').html("");
-                        // $('#bookResults').html("");
-                        $.getJSON('jslib/book.json', function(rs) {
-                            for (var i = 0; i < rs.length; i++) {
-                                $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
-                                '<table width="600" >'+
-                                '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td><td>ISBN: '+rs[i].ISBN+'</td></tr>'+
-                                '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
-                                '</table><br>'+
-                                'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
-                                '</div>');
-
-                            };
-                        });
-                        $.getJSON('jslib/Magazines.json', function(rs) {
-                            for (var i = 0; i < (rs.length); i++) {
-                                $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
-                                '<table width="600" >'+
-                                '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
-                                '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
-                                '</table><br>'+
-                                'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
-                                '</div>');
-                            };
-                        });
                         $.getJSON('jslib/software.json', function(rs) {
                             for (var i = 0; i < (rs.length); i++) {
                                 $('#bookResults').append('<div class="filter'+(i+14)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
@@ -377,7 +359,105 @@ function topFunction() {
                                 '</div>');
                             };
                         });
+                        $.getJSON('jslib/book.json', function(rs) {
+                            for (var i = 8; i < rs.length; i++) {
+                                $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                '<table width="600" >'+
+                                '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td><td>ISBN: '+rs[i].ISBN+'</td></tr>'+
+                                '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                '</table><br>'+
+                                'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                                '</div>');
+
+                            };
+                        });
                     });
+                </script>
+                            <?php 
+            }else if(isset($History)){ ?>
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        $('#bookResults').html("");
+                        $.getJSON('jslib/Magazines.json', function(rs) {
+                            for (var i = 0; i < 3; i++) {
+                                $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                '<table width="600" >'+
+                                '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                '</table><br>'+
+                                'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                                '</div>');
+                            };
+                        });
+                    });
+                </script>
+            <?php
+            } else { ?>
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        var searchRsCount = 0;
+                        //alert("searchRsCount: "+searchRsCount);     //test
+                        $('#bookResults').html("");
+                        // $('#bookResults').html("");
+                        $.getJSON('jslib/book.json', function(rs) {
+                            for (var i = 0; i < rs.length; i++) {
+                                $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                '<table width="600" >'+
+                                '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td><td>ISBN: '+rs[i].ISBN+'</td></tr>'+
+                                '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                '</table><br>'+
+                                'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                                '</div>');
+                                searchRsCount++;
+                                
+                            };
+                        });
+                        $.getJSON('jslib/Magazines.json', function(rs) {
+                            for (var i = 0; i < (rs.length); i++) {
+                                if(searchRsCount<10){
+                                    $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                    '<table width="600" >'+
+                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                    '</table><br>'+
+                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
+                                    '</div>');
+                                    searchRsCount++;
+                                }
+                                else{
+                                    $('#bookResults').append('<div style=" display: none;" class="hiddenRs filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                    '<table width="600" >'+
+                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                    '</table><br>'+
+                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
+                                    '</div>');
+                                }
+                            };
+                        });
+                        $.getJSON('jslib/software.json', function(rs) {
+                            for (var i = 0; i < (rs.length); i++) {
+                                if(searchRsCount<10){
+                                    $('#bookResults').append('<div class="filter'+(i+16)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                    '<table width="300" >'+
+                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>OS: '+rs[i].OS+'</td></tr>'+
+                                    '</table><br>'+
+                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
+                                    '</div>');
+                                    searchRsCount++;
+                                }else{
+                                    $('#bookResults').append('<div style=" display: none;" class="hiddenRs filter'+(i+16)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                    '<table width="300" >'+
+                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>OS: '+rs[i].OS+'</td></tr>'+
+                                    '</table><br>'+
+                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
+                                    '</div>');
+                                }
+                            };
+                        });
+                    });     //all rs result
                 </script>
             <?php 
             }
@@ -662,13 +742,13 @@ function topFunction() {
             <h2>Discipline</h2>
             <div id="Discipline">
                <form action="">
-                <input type="checkbox" name="Discipline" value="Technology"> <a href="">Technology</a><br>
-                <input type="checkbox" name="Discipline" value="History"> <a href="">History</a><br>
-                <input type="checkbox" name="Discipline" value="Education"> <a href="">Education</a><br>
-                <input type="checkbox" name="Discipline" value="Leisure"> <a href="">Leisure</a><br>
-                <input type="checkbox" name="Discipline" value="Music"> <a href="">Music</a><br>
-                <input type="checkbox" name="Discipline" value="Business"> <a href="">Business</a><br>
-                <input type="checkbox" name="Discipline" value="Comic"> <a href="">Comic</a><br>
+                <input type="checkbox" name="Discipline" value="Technology"> <a href="student.php?Technology">Technology</a><br>
+                <input type="checkbox" name="Discipline" value="History"> <a href="student.php?History">History</a><br>
+                <input type="checkbox" name="Discipline" value="Education"> <a href="student.php?Education">Education</a><br>
+                <input type="checkbox" name="Discipline" value="Leisure"> <a href="student.php?Leisure">Leisure</a><br>
+                <input type="checkbox" name="Discipline" value="Music"> <a href="student.php?Music">Music</a><br>
+                <input type="checkbox" name="Discipline" value="Business"> <a href="student.php?Business">Business</a><br>
+                <input type="checkbox" name="Discipline" value="Comic"> <a href="student.php?Comic">Comic</a><br>
                 </form>
             </div>
             <h2>Language</h2>
@@ -720,7 +800,11 @@ function topFunction() {
                 <hr>
             </div>-->
             </article>
-            <article><img src="images/notice.png" title="That's all the related data" style=""></article>
+            <article>
+                <button id="loadMoreBtn" type="button" style="padding: 8px 16px; text-align:center; background-color: #0058b1; color: white; border: 1px;">Load More...</button>
+            </article>
+            <article><img src="images/notice.png" title="That's all the related data"></article>
+            
         </div>
     </section>
     </div>
