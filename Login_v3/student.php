@@ -550,8 +550,9 @@ function topFunction() {
                 <a href="#" onclick="logoutAlert('Do you want to logout?');">Logout</a>
             </div>
         </div>
-
         <a style="float:right">Student Name: Yip Yiu Cheung</a>
+        <img src="images/studentIcon.png" style="float:right; width:15px; height:8px;">
+
     </div>
 
 
