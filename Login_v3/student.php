@@ -158,7 +158,10 @@
               $("#endDate").hide();
             }
           });
-          
+           $("#more").click(function(e) { 
+                $("#open").show();
+             e.preventDefault();
+                });  
           
                 $("#clear").click(function(e) { 
                         $("#startDate").hide();
@@ -790,6 +793,26 @@ function topFunction() {
           
             <div id="slider-range"></div>
          
+         <h2>COURSE NAME AND NUMBER</h2>
+         <div id="course">
+                <form action="">
+                <input type="checkbox" name="course" value="Software">  <a href="">HD in Software Engineering IT114105</a><br>
+                 <input type="checkbox" name="course" value="English"> <a href="">HD in Corporate Administration BA124008</a><br>
+                <input type="checkbox" name="course" value="English"> <a href="">Diploma of Foundation Studies (Information Technology) FS123002N </a><br> 
+                 <input type="checkbox" name="course" value="English"> <a href="">Diploma of Foundation Studies (Business) FS123002B </a><br> 
+                 <input type="checkbox" name="course" value="English"> <a href="">Physiology 6870 </a><br>  
+                   <br>
+                   <a href="" id="more">More... </a>
+                   <div id="open" style="display:none">
+                       <input type="checkbox" name="course" value="English"> <a href="">HD in Civil Engineering CN1355456 </a><br> 
+                 <input type="checkbox" name="course" value="English"> <a href="">HD in Mechanical  Engineering ME1233215 </a><br> 
+                 <input type="checkbox" name="course" value="English"> <a href="">HD in Electrical   Engineering EE1258215 </a><br>  
+                   </div>
+                   
+                   
+                  </form>
+            </div>
+         
           <div id="zone">
              <br>
               <input class="filter" type="submit" value="APPLYFILTERS">
@@ -837,7 +860,7 @@ function topFunction() {
     
     <img src="arrow.png"  id="myBtn" title="Go to top" style="width:25px; height=25px">
     
-    </div>
+   
 </body>
 
 </html>
