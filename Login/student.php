@@ -625,7 +625,7 @@ function hrefLink(link) {
             <form id="advanced" style="display:none;" class="form-container">
               <div id="header">
                 <br>
-                Search for: <input type="radio" name="sorting" value="everything" checked> Everything
+                Search for: <input id="everythingRadio" type="radio" name="sorting" value="everything" checked> Everything
                 <input type="radio" name="sorting" value="books"> Books
                 <input type="radio" name="sorting" value="software"> Software
                 <input type="radio" name="sorting" value="Magazines"> Magazines
