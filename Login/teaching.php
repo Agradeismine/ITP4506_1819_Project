@@ -618,10 +618,11 @@ function hrefLink(link) {
 
 
     <div style="background-color: white;">
-        <div id="resize">
+        <div id="resize"><label>
             <a id="big" class="increase" style="font-size:20px; opacity: 0.9;">A</a>
             <a id="small" class="decrease" style="font-size:12px; opacity: 0.9;">A</a>
             <a id="average" class="reset" style="opacity: 0.9;">R</a>
+            </label>
         </div>
         <div style="background-image: url('images/bg-01.jpg'); ">
             <br>
