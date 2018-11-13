@@ -374,67 +374,122 @@ function hrefLink(link) {
     <img src="test.png"  onload="myFunction2()" style="display:none; ">
     <?php
         if (!isset($_COOKIE['student'])) {
-             header("Location: changePassword.php?username=student");
+            header("Location: changePassword.php?username=student");
         }
         if (isset($_SERVER["QUERY_STRING"])) {
             extract($_GET);
-            if(isset($Magazine)){   ?>
+            if (isset($Magazine)) {
+                ?>
                 <script type="text/javascript">
                     $(document).ready(function() {
                         $('#bookResults').html("");
                         $.getJSON('jslib/Magazines.json', function(rs) {
                             for (var i = 0; i < (rs.length); i++) {
-                                $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
-                                '<table width="600" >'+
-                                '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
-                                '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
-                                '</table><br>'+
-                                'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
-                                '</div>');
+                                if(rs[i].bookname=="World of History"){  //hard code this book which has hyperlink, bookDetails3.php
+                                    $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a href="bookDetails3.php">'+rs[i].bookname+'</a></h3>'+
+                                    '<table width="600" >'+
+                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                    '</table><br>'+
+                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                                    '</div>');
+                                }else if(rs[i].bookname=="21 Lessons for the 21st Century"){    ////hard code this book which has hyperlink, bookDetails4.php
+                                    $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a href="bookDetails4.php">'+rs[i].bookname+'</a></h3>'+
+                                    '<table width="600" >'+
+                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                    '</table><br>'+
+                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                                    '</div>');
+                                } else {
+                                    $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                    '<table width="600" >'+
+                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                    '</table><br>'+
+                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                                    '</div>');
+                                }
                             };
                         });
                     });
                 </script>
             <?php
-            }else if(isset($Software)){ ?>
+            } else if (isset($Software)) {
+                ?>
                 <script type="text/javascript">
                     $(document).ready(function() {
                         $('#bookResults').html("");
                         $.getJSON('jslib/software.json', function(rs) {
                             for (var i = 0; i < (rs.length); i++) {
-                                $('#bookResults').append('<div class="filter'+(i+14)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
-                                '<table width="300" >'+
-                                '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
-                                '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>OS: '+rs[i].OS+'</td></tr>'+
-                                '</table><br>'+
-                                'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
-                                '</div>');
+                                if(rs[i].bookname=="Computer-Aided Design"){    //hard code this book which has hyperlink, bookDetails5.php
+                                    $('#bookResults').append('<div class="filter'+(i+14)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a href="bookDetails5.php">'+rs[i].bookname+'</a></h3>'+
+                                    '<table width="300" >'+
+                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>OS: '+rs[i].OS+'</td></tr>'+
+                                    '</table><br>'+
+                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                                    '</div>');
+                                } else if(rs[i].bookname=="International Journal of Computer Mathematics"){ //hard code this book which has hyperlink, bookDetails6.php
+                                    $('#bookResults').append('<div class="filter'+(i+14)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a href="bookDetails6.php">'+rs[i].bookname+'</a></h3>'+
+                                    '<table width="300" >'+
+                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>OS: '+rs[i].OS+'</td></tr>'+
+                                    '</table><br>'+
+                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                                    '</div>');
+                                } else{
+                                    $('#bookResults').append('<div class="filter'+(i+14)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                    '<table width="300" >'+
+                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>OS: '+rs[i].OS+'</td></tr>'+
+                                    '</table><br>'+
+                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                                    '</div>');
+                                }
                             };
                         });
                     });
                 </script>
-            <?php 
-            }else if(isset($Book)){ ?>
+            <?php
+            } elseif (isset($Book)) {
+                ?>
                 <script type="text/javascript">
                     $(document).ready(function() {
                         $('#bookResults').html("");
-                        // $('#bookResults').html("");
                         $.getJSON('jslib/book.json', function(rs) {
                             for (var i = 0; i < rs.length; i++) {
-                                $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
-                                '<table width="600" >'+
-                                '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td><td>ISBN: '+rs[i].ISBN+'</td></tr>'+
-                                '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
-                                '</table><br>'+
-                                'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
-                                '</div>');
-
-                                };
-                            });
+                                if(rs[i].bookname=="Best romance songs : 49 timeless love classics"){   //hard code this book which has hyperlink, bookDetails1.php
+                                    $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a href="bookDetails1.php">'+rs[i].bookname+'</a></h3>'+
+                                    '<table width="600" >'+
+                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td><td>ISBN: '+rs[i].ISBN+'</td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                    '</table><br>'+
+                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                                    '</div>');
+                                }else if(rs[i].bookname=="She's the one: 7 smash hits"){    //hard code this book which has hyperlink, bookDetails2.php
+                                    $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a href="bookDetails2.php">'+rs[i].bookname+'</a></h3>'+
+                                    '<table width="600" >'+
+                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td><td>ISBN: '+rs[i].ISBN+'</td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                    '</table><br>'+
+                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                                    '</div>');
+                                } else{
+                                    $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                    '<table width="600" >'+
+                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td><td>ISBN: '+rs[i].ISBN+'</td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                    '</table><br>'+
+                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                                    '</div>');
+                                }
+                            };
                         });
+                    });
                 </script>
-            <?php 
-            }else if(isset($Technology)){
+            <?php
+            } elseif (isset($Technology)) {
                 ?>
                 <script type="text/javascript">
                     $(document).ready(function() {
@@ -464,8 +519,9 @@ function hrefLink(link) {
                         });
                     });
                 </script>
-                            <?php 
-            }else if(isset($History)){ ?>
+                            <?php
+            } elseif (isset($History)) {
+                ?>
                 <script type="text/javascript">
                     $(document).ready(function() {
                         $('#bookResults').html("");
@@ -483,7 +539,8 @@ function hrefLink(link) {
                     });
                 </script>
             <?php
-            } else { ?>
+            } else {
+                ?>
                 <script type="text/javascript">
                     $(document).ready(function() {
                         var searchRsCount = 0;
@@ -493,41 +550,83 @@ function hrefLink(link) {
                         // $('#bookResults').html("");
                         $.getJSON('jslib/book.json', function(rs) {
                             for (var i = 0; i < rs.length; i++) {
-                                $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
-                                '<table width="600" >'+
-                                '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td><td>ISBN: '+rs[i].ISBN+'</td></tr>'+
-                                '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
-                                '</table><br>'+
-                                'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
-                                '</div>');
-                                searchRsCount++;
-                                
+                                if(rs[i].bookname=="Best romance songs : 49 timeless love classics"){   //hard code this book which has hyperlink, bookDetails1.php
+                                    $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a href="bookDetails1.php">'+rs[i].bookname+'</a></h3>'+
+                                    '<table width="600" >'+
+                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td><td>ISBN: '+rs[i].ISBN+'</td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                    '</table><br>'+
+                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                                    '</div>');
+                                    searchRsCount++;
+                                }else if(rs[i].bookname=="She's the one: 7 smash hits"){    //hard code this book which has hyperlink, bookDetails2.php
+                                    $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a href="bookDetails2.php">'+rs[i].bookname+'</a></h3>'+
+                                    '<table width="600" >'+
+                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td><td>ISBN: '+rs[i].ISBN+'</td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                    '</table><br>'+
+                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                                    '</div>');
+                                    searchRsCount++;
+                                }
+                                else{
+                                    $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                    '<table width="600" >'+
+                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td><td>ISBN: '+rs[i].ISBN+'</td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                    '</table><br>'+
+                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
+                                    '</div>');
+                                    searchRsCount++;
+                                }
                             };
                         });
                         $.getJSON('jslib/Magazines.json', function(rs) {
                             for (var i = 0; i < (rs.length); i++) {
                                 if(searchRsCount<10){
-                                    $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
-                                    '<table width="600" >'+
-                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
-                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
-                                    '</table><br>'+
-                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
-                                    '</div>');
-                                    searchRsCount++;
+                                    if(rs[i].bookname=="World of History"){
+                                        $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a href="bookDetails3.php">'+rs[i].bookname+'</a></h3>'+
+                                        '<table width="600" >'+
+                                        '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                        '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                        '</table><br>'+
+                                        'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
+                                        '</div>');
+                                        searchRsCount++;
+                                    }else {
+                                        $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                        '<table width="600" >'+
+                                        '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                        '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                        '</table><br>'+
+                                        'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
+                                        '</div>');
+                                        searchRsCount++;
+                                    }
                                 }
                                 else{
                                     if(searchRsCount==10){
                                         $('#bookResults').append('&ensp;<div style=" display: none;" class="hiddenRs">&ensp;<b>Page 2</b></div>');
                                     }
-                                    $('#bookResults').append('<div style=" display: none;" class="hiddenRs filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
-                                    '<table width="600" >'+
-                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
-                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
-                                    '</table><br>'+
-                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
-                                    '</div>');
-                                    searchRsCount++;
+                                    if(rs[i].bookname=="21 Lessons for the 21st Century"){
+                                        $('#bookResults').append('<div style=" display: none;" class="hiddenRs filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a href="bookDetails4.php">'+rs[i].bookname+'</a></h3>'+
+                                        '<table width="600" >'+
+                                        '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                        '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                        '</table><br>'+
+                                        'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
+                                        '</div>');
+                                        searchRsCount++;
+                                    }else{
+                                        $('#bookResults').append('<div style=" display: none;" class="hiddenRs filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                        '<table width="600" >'+
+                                        '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                        '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                        '</table><br>'+
+                                        'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
+                                        '</div>');
+                                        searchRsCount++;
+                                    }
                                 }
                             };
                         });
@@ -543,33 +642,52 @@ function hrefLink(link) {
                                     '</div>');
                                     searchRsCount++;
                                 }else{
-                                    $('#bookResults').append('<div style=" display: none;" class="hiddenRs filter'+(i+16)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
-                                    '<table width="300" >'+
-                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
-                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>OS: '+rs[i].OS+'</td></tr>'+
-                                    '</table><br>'+
-                                    'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
-                                    '</div>');
-                                    searchRsCount++;
-
+                                    if(rs[i].bookname=="Computer-Aided Design"){    //hard code this book which has hyperlink, bookDetails5.php
+                                        $('#bookResults').append('<div style=" display: none;" class="hiddenRs filter'+(i+16)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a href="bookDetails5.php">'+rs[i].bookname+'</a></h3>'+
+                                        '<table width="300" >'+
+                                        '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                        '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>OS: '+rs[i].OS+'</td></tr>'+
+                                        '</table><br>'+
+                                        'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
+                                        '</div>');
+                                        searchRsCount++;
+                                    }else if(rs[i].bookname=="International Journal of Computer Mathematics"){  //hard code this book which has hyperlink, bookDetails6.php
+                                        $('#bookResults').append('<div style=" display: none;" class="hiddenRs filter'+(i+16)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a href="bookDetails6.php">'+rs[i].bookname+'</a></h3>'+
+                                        '<table width="300" >'+
+                                        '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                        '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>OS: '+rs[i].OS+'</td></tr>'+
+                                        '</table><br>'+
+                                        'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
+                                        '</div>');
+                                        searchRsCount++;
+                                    }else{
+                                        $('#bookResults').append('<div style=" display: none;" class="hiddenRs filter'+(i+16)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                        '<table width="300" >'+
+                                        '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
+                                        '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>OS: '+rs[i].OS+'</td></tr>'+
+                                        '</table><br>'+
+                                        'Description:&emsp;'+rs[i].Description+'<br><br><br><br><hr>'+
+                                        '</div>');
+                                        searchRsCount++;
+                                    }
                                 }
                             };
                         });
                     });     //all rs result
                 </script>
-            <?php 
+            <?php
             }
-        } //(isset($_SERVER["QUERY_STRING"])) end tag ?>    
+        } //(isset($_SERVER["QUERY_STRING"])) end tag?>    
     <div id="loader"></div>
     <div id="main" style="display:none">
     <div class="navbar">
-        <a href="#home">Home</a>
+        <a href="student.php">Home</a>
         <a href="#news">News</a>
         <div class="dropdown">
-            <button class="dropbtn" onclick="showdropdown('DDDropdown')">Learning Resources 
+            <button class="dropbtn" onclick="showdropdown('DDDropdown')" style="width:200px;">Learning Resources 
                 <i class="fa fa-caret-down"></i>
             </button>
-            <div class="dropdown-content" id="DDDropdown">
+            <div class="dropdown-content" id="DDDropdown" style="width:200px;">
                 <a href="#">Exam Past Paper</a>
                 <a href="#">Programme Materials</a>
 
@@ -577,10 +695,10 @@ function hrefLink(link) {
         </div>
 
         <div class="dropdown">
-            <button class="dropbtn" onclick="showdropdown('CategoryDropdown')">Category
+            <button class="dropbtn" onclick="showdropdown('CategoryDropdown')" style="width:120px;">Category
                 <i class="fa fa-caret-down"></i>
             </button>
-            <div class="dropdown-content" id="CategoryDropdown">
+            <div class="dropdown-content" id="CategoryDropdown" style="width:120px;">
                 <a href="#">Books</a>
                 <a href="#">Software</a>
                 <a href="#">Magazines</a>
@@ -588,14 +706,15 @@ function hrefLink(link) {
             </div>
         </div>
 
-        <div class="dropdown" style="float:right">
-            <button class="dropbtn" onclick="showdropdown('MenuDropdown')">Menu
+        <div class="dropdown" style="float:right" >
+            <button class="dropbtn" onclick="showdropdown('MenuDropdown')" style="width:115px;">Menu
                 <i class="fa fa-caret-down"></i>
             </button>
-            <div class="dropdown-content" id="MenuDropdown">
-                <a href="#">Profile</a>
-                <a href="#">Setting</a>
-                <a href="#" onclick="logoutAlert('Do you want to logout?');">Logout</a>
+            <div class="dropdown-content" id="MenuDropdown" style="width:115px;">
+                <a href="#"><img src="images/profile.png" style="float:left; width:20px; height=20px; ">Profile</a>
+                <a href="studentDiscovery.php"><img src="images/requests.png" style="float:left; width:20px; height=20px; ">Requests</a>
+                <a href="#"><img src="images/setting.png" style="float:left; width:20px; height=20px; ">Setting</a> 
+                <a href="#" onclick="logoutAlert('Do you want to logout?');"><img src="images/logout.png" style="float:left; width:20px; height=20px; ">Logout</a>
             </div>
         </div>
         <a style="float:right">Student Name: Yip Yiu Cheung</a>
@@ -603,14 +722,7 @@ function hrefLink(link) {
 
     </div>
 
-
-
     <div style="background-color: white;">
-        <div id="resize">
-            <!-- <a id="big" class="increase" style="font-size:20px; opacity: 0.9;">A</a>
-            <a id="small" class="decrease" style="font-size:12px; opacity: 0.9;">A</a>
-            <a id="average" class="reset" style="opacity: 0.9;">R</a> -->
-        </div>
         <div style="background-image: url('images/bg-01.jpg'); ">
             <br>
             <center>
@@ -927,29 +1039,7 @@ function hrefLink(link) {
         </div>
         <div class="resizable">
             <article id="bookResults">
-            <!--<div class="filter">
-                <img src="jslib/images/1.jpg" title="Book name" style="width:100px; height=125px; float: left; margin-right: 15px; margin-bottom: 10px;">
-                <h3>Book Name</h3>
-                <table width="600">
-                    <tr class="item">
-                        <td>Type: Music</td>
-                        <td>Year: 2018</td>
-                        <td>ISBN: 21796247</td>
-                    </tr>
-                    <tr>
-                        <td>Language: English</td>
-                        <td>Author: Author A</td>
-                        <td>Publisher: University of California Press</td>
-                    </tr>
-                </table><br>
-                Description:&emsp;London is the capital city of England. It is the most populous city in the United
-                Kingdom, with a metropolitan area of over 13 million inhabitants.
-                Standing on the River Thames, London has been a major settlement for two millennia, its history going
-                back to its founding by the Romans, who named it Londinium.<br><br>
-                <hr>
-            </div>-->
             </article>
-            <!-- <div style="background-color: #f1f1f1"> -->
                 <article>
                     <center>
                         <button id="loadMoreBtn" type="button" style="padding: 8px 16px; text-align:center; background-color: #0058b1; color: white; border: 1px;">Load More...</button>
@@ -957,7 +1047,6 @@ function hrefLink(link) {
                         <img id="noResultNotice"src="images/notice.png" onload="" style="opacity: 0; ">
                     </center>
                 </article>
-            <!-- </div> -->
         </div>
     </section>
     </div>
