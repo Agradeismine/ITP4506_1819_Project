@@ -1,0 +1,44 @@
+body{
+    background-color: gainsboro;
+}
+
+
+#details{
+    background-color: white;
+    margin-top: 25px;
+    margin-left: 60px;
+    margin-bottom: 25px;
+    margin-right: 25px;
+    width: auto;
+    height: auto;
+        
+    padding: 25px 15px 15px 25px;
+}
+
+#image{
+    margin-left: 10px;
+    float:left;
+    width: 200px;
+    height: 2000px;
+}
+
+#title{
+     font-size: 20px;
+     color:lightblue;
+    
+}
+
+#id{
+    margin-top: 50px;
+}
+
+#send{
+    margin-top: 25px;
+    font-size: 25px;
+    color: grey;
+    
+}
+
+#button{
+    
+}
