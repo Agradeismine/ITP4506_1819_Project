@@ -17,6 +17,26 @@
     <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 </head>
+   <script>
+        $(function(){
+            
+          var elementPosition = $('#button').offset();
+
+        $(window).scroll(function(){
+            
+                if($(window).scrollTop() > elementPosition.top){
+                      $('#button').css('position','fixed').css('top','30px');
+                } else {
+                    $('#button').css('position','static');
+                }    
+            
+            
+        });
+            
+    });
+  
+      
+   </script>
 <body>
      <div class="navbar">
         <a href="#home">Home</a>
@@ -63,7 +83,7 @@
     <div id="details">
      
       <span id="image">
-       <img src="1.jpg" height="150px"> 
+       <img src="1.jpg" height="150px" width="120px" style="margin-left:10px;"> 
        
        <div id="button">
           
@@ -89,7 +109,7 @@
        <div id="send">
            Get It &nbsp;&nbsp;<hr style='display:inline-block; width:650px; opacity:0.5;' />
            <p>
-           No requests
+               <b style="color:black"> No requests</b>
            </p>
            <p style="color:green;">
             Available   <br>
@@ -110,58 +130,108 @@
               <br>
                    View content page &nbsp;&nbsp;<hr style='display:inline-block; width:650px; opacity:0.5;' />
                     <br>
-                    <ol style="padding-left:35px;">
-                        <li>Against all odds (take a look at me now) / Phil Collins</li>
-                        <li>Anything for you / Gloria Estefan and Miami Sound Machine</li>
-                        <li>At last / Etta James -- Because you loved me (theme from Up close and personal / Celine Dion</li>
-                        <li>Blue velvet / Bobby Vinton -- Bridge over troubled water / Simon & Garfunkel -- A case of you / Joni Mitchell</li>
-                        <li>Colour my world /Chicago</li>
-                        <li>Cupid / Sam Cooke</li>
-                        <li>Do you want to know a secret / The Beatles</li>
-                        <li>Evergreen (love theme from A star is born / Barbra Streisand</li>
-                        <li>Faithfully / Journey -- Falling slowly (from Once) / Glen Hansard and Markéta Irglová)</li>
-                        <li>Feelings (Dime) / Morris Albert</li>
-                        <li>Glory of love (theme from The karate kid Part II) / Peter Cetera</li>
-                        <li>The greatest love of all / Whitney Houston </li>
-                        <li>Hold me, thrill me, kiss me / Mel Carter</li>
-                        <li> How do I live / LeAnn Rimes</li>
-                        <li>How do you keep the music playing? (from Best friends) / James Ingram</li>
-                        <li>I believe in love (from A star Is born) / Kenny Loggins</li>
-                        <li>Everything I do) I do it for you / Bryan Adams</li>
-                        <li>Theme from Ice Castles (Through the eyes of love) / Melissa Manchester </li>
-                        <li>If you leave me now / Chicago</li>
-                        <li> I'll stand by you / The Pretenders</li>
-                        <li>Just the way you are (amazing) / Bruno Mars</li>
-                        <li>Laura /Standard</li>
-                        <li>Look what you've done to me / Boz Scaggs</li>
-                        <li> Love is a many splendored thing / Standard</li>
-                        <li>love song / Anne Murray</li>
-                        <li>Marry me / Train</li>
-                        <li>Moonlight / Sting</li>
-                        <li>Nobody does it better (from The spy who loved me) / Carly Simon</li>
-                        <li>Open arms / Journey</li>
-                        <li>Roses are red (my love) / Bobby Vinton)</li>
-                        <li>The shadow of your smile (from The sandpiper) / Standard</li>
-                        <li>She / Elvis Costello</li>
-                        <li>She loves you / The Beatles -- Somewhere my love (Lara's theme) (from Doctor Zhivago) </li>
-                        <li>A summer song / Chad & Jeremy </li>
-                        <li>The summer knows (theme from Summer of '42) / Barbra Streisand</li>
-                        <li>Superstar / The Carpenters</li>
-                        <li>That's the way I feel about 'cha / Bobby Womack</li>
-                        <li>To make you feel my love / Adele</li>
-                        <li>What are you doing the rest of your life? / Standard</li>
-                        <li>Wild horses / The Rolling Stones</li>
-                        <li>(What a) wonderful world / Sam Cooke</li>
-                        <li> Words get in the way / Gloria Estefan and Miami Sound Machine</li>
-                        <li>You don't have to say you love me / Dusty Springfield</li>
-                        <li>You send me / Sam Cooke</li>
+                    <p>
+                    Against all odds (take a look at me now) / Phil Collins -- Anything for you / Gloria Estefan and Miami Sound Machine -- At last / Etta James -- Because you loved me (theme from Up close and personal / Celine Dion -- Blue velvet / Bobby Vinton -- Bridge over troubled water / Simon & Garfunkel -- A case of you / Joni Mitchell -- Colour my world /Chicago -- Cupid / Sam Cooke -- Do you want to know a secret / The Beatles -- Evergreen (love theme from A star is born / Barbra Streisand -- Faithfully / Journey -- Falling slowly (from Once) / Glen Hansard and Markéta Irglová) -- Feelings (Dime) / Morris Albert -- Glory of love (theme from The karate kid Part II) / Peter Cetera -- The greatest love of all / Whitney Houston -- Hold me, thrill me, kiss me / Mel Carter -- How do I live / LeAnn Rimes -- How do you keep the music playing? (from Best friends) / James Ingram -- I believe in love (from A star Is born) / Kenny Loggins -- (Everything I do) I do it for you / Bryan Adams -- Theme from Ice Castles (Through the eyes of love) / Melissa Manchester -- If you leave me now / Chicago -- I'll stand by you / The Pretenders -- Just the way you are (amazing) / Bruno Mars -- Laura /Standard -- Look what you've done to me / Boz Scaggs -- Love is a many splendored thing / Standard -- A love song / Anne Murray -- Marry me / Train -- Moonlight / Sting -- Nobody does it better (from The spy who loved me) / Carly Simon -- Open arms / Journey -- Roses are red (my love) / Bobby Vinton) -- The shadow of your smile (from The sandpiper) / Standard -- She / Elvis Costello -- She loves you / The Beatles -- Somewhere my love (Lara's theme) (from Doctor Zhivago) -- A summer song / Chad & Jeremy -- The summer knows (theme from Summer of '42) / Barbra Streisand -- Superstar / The Carpenters -- That's the way I feel about 'cha / Bobby Womack -- To make you feel my love / Adele -- What are you doing the rest of your life? / Standard -- Wild horses / The Rolling Stones -- (What a) wonderful world / Sam Cooke -- Words get in the way / Gloria Estefan and Miami Sound Machine -- You don't have to say you love me / Dusty Springfield -- You send me / Sam Cooke.
+                    </p>
+<!--
+                    <ol style="margin-left:25px;">
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Against all odds (take a look at me now) / Phil Collins</li>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<li>Anything for you / Gloria Estefan and Miami Sound Machine</li>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<li>At last / Etta James -- Because you loved me (theme from Up close and personal / Celine Dion</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Blue velvet / Bobby Vinton -- Bridge over troubled water / Simon & Garfunkel -- A case of you / Joni Mitchell</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Colour my world /Chicago</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <li>Cupid / Sam Cooke</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Do you want to know a secret / The Beatles</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Evergreen (love theme from A star is born / Barbra Streisand</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Faithfully / Journey -- Falling slowly (from Once) / Glen Hansard and Markéta Irglová)</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Feelings (Dime) / Morris Albert</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Glory of love (theme from The karate kid Part II) / Peter Cetera</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>The greatest love of all / Whitney Houston </li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Hold me, thrill me, kiss me / Mel Carter</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li> How do I live / LeAnn Rimes</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>How do you keep the music playing? (from Best friends) / James Ingram</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>I believe in love (from A star Is born) / Kenny Loggins</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Everything I do) I do it for you / Bryan Adams</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Theme from Ice Castles (Through the eyes of love) / Melissa Manchester </li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>If you leave me now / Chicago</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li> I'll stand by you / The Pretenders</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Just the way you are (amazing) / Bruno Mars</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Laura /Standard</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Look what you've done to me / Boz Scaggs</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li> Love is a many splendored thing / Standard</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>love song / Anne Murray</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Marry me / Train</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Moonlight / Sting</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Nobody does it better (from The spy who loved me) / Carly Simon</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Open arms / Journey</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Roses are red (my love) / Bobby Vinton)</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>The shadow of your smile (from The sandpiper) / Standard</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>She / Elvis Costello</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>She loves you / The Beatles -- Somewhere my love (Lara's theme) (from Doctor Zhivago) </li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>A summer song / Chad & Jeremy </li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>The summer knows (theme from Summer of '42) / Barbra Streisand</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Superstar / The Carpenters</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>That's the way I feel about 'cha / Bobby Womack</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>To make you feel my love / Adele</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>What are you doing the rest of your life? / Standard</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>Wild horses / The Rolling Stones</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>(What a) wonderful world / Sam Cooke</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li> Words get in the way / Gloria Estefan and Miami Sound Machine</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>You don't have to say you love me / Dusty Springfield</li>
+                       &nbsp;&nbsp;&nbsp;&nbsp; <li>You send me / Sam Cooke</li>
                     </ol> 
+-->
                      
               
               
                </div>
-       
-       
+        <div id="send">
+              <br>
+                   View Charpter 1 &nbsp;&nbsp;<hr style='display:inline-block; width:650px; opacity:0.5;' />
+                   
+                   <p><b style="color:black">Against all odds (take a look at me now) / Phil Collins</b><br><br>
+                   How can I just let you walk away ? 我怎能讓你離開?<br>
+Just let you leave without a trace. 讓你消失得無影無蹤<br>
+When I stand here taking every breath with you,ooh! 當我站在這兒和你一起呼吸的時候。<br>
+you're the only one.你是唯一一個。<br>
+Who really knew me at all. 真正瞭解我的人！<br>
+How can you just walk away from me ? 你怎能就這樣離開我?<br>
+When all I can do is watch you leave. 我只能無奈的看著你走。<br>
+'Cos we've shared the laughter and the pain. 因為我們曾一起同甘共苦。<br>
+And even shared the tears. 甚至那淚水也一起分享。<br>
+you're the only one who really knew me at all. 你是唯一真正懂我的人！<br>
+So take a look at me now ! 所以現在再看我一眼吧 !<br>
+'Cos there's just an empty space. 這兒只剩下空洞的一片<br>
+And there's nothing left here to remind me. 現在再也沒什麼值得我回憶。<br>
+Just the memory of your face. 除了你的面容！<br>
+Take a look at me now. 現在看我一眼吧 !<br>
+'Cos there's just an empty space. 這兒只剩下空洞的一片<br>
+And you coming back to me. 你會回到我身邊吧？<br>
+Is against all odds and that's what I've got to face. 儘管我必須要面對重重困難。<br>
+I wish I could just make you turn around. 我希望我能使你轉過身來<br>
+Turn around and see me cry. 轉過身來看到我在哭泣。<br>
+There's so much I need to say to you. 我有太多的話要對你說。<br>
+So many reasons why. 太多的理由。<br>
+you're the only one who really knew me at all. 你是唯一真正懂我的人！<br>
+So take a look at me now ! 所以現在再看我一眼吧 !<br>
+'Cos there's just an empty space. 這兒只剩下空洞的一片<br>
+And there's nothing left here to remind me. 現在再也沒什麼值得我回憶。<br>
+Just the memory of your face. 除了你的面容！<br>
+So take a look at me now ! 所以現在再看我一眼吧 !<br>
+'Cos there's just an empty space. 這兒只剩下空洞的一片<br>
+But to wait for U. 我在等你回來。<br>
+Well that's all I can do and that's what I've got to face. 這我所能做的和必須面對的。<br>
+Take a look at me now. 現在看我一眼吧 !<br>
+'Cos I'll still be standing here. 因為我還站在這裡等你。<br>
+And you coming back to me is against all odds. 儘管困難重重，你會回到我身邊。<br>
+That's the chance I've got to take,oh ! 這是個機會我必須抓住。<br>
+take a look at me now. 哦，就再看我一眼吧！
+                    
+                     
+                       </p>
+                   
+                   
+        </div>
     </div>
     
     

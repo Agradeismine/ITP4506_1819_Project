@@ -6,8 +6,9 @@ body{
 #details{
     background-color: white;
     margin-top: 25px;
-    margin-left: 80px;
+    margin-left: 60px;
     margin-bottom: 25px;
+    margin-right: 25px;
     width: auto;
     height: auto;
         
@@ -15,10 +16,10 @@ body{
 }
 
 #image{
+    margin-left: 10px;
     float:left;
-    margin-right: 50px;
-    
-    height: 1800px;
+    width: 200px;
+    height: 2000px;
 }
 
 #title{
@@ -39,5 +40,5 @@ body{
 }
 
 #button{
-    position:fixed;
+    
 }
