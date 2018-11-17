@@ -241,6 +241,30 @@
        <div class="send" id="sendDiv">
            Send To &nbsp;&nbsp;<hr style='display:inline-block; width:650px; opacity:0.5;' />
            
+           <br>
+           <br>
+           <div class="item" >
+           
+           <a href="https://access.clarivate.com/#/login?app=endnote" target="_blank"><img src="images/file-icon.jpg" width="50px" height="50px "> ENDNOTE</a>
+           </div>
+           
+             <div class="item" >
+              <a href=""><img src="images/email.png" width="50px" height="50px ">EMAIL </a>
+                </div>
+                
+                   
+             <div class="item" >
+              <a href=""><img src="images/print_icon.gif" width="50px" height="50px ">PRINT </a>
+                </div>
+                
+                   
+             <div class="item" >
+              <a href=""><img src="images/Permalink_logo.png" width="50px" height="50px ">PERMALINK </a>
+                </div>
+         <br>
+         <br>
+         <br>
+         <br>
        </div>
        
        <div class="send" id="getDiv">

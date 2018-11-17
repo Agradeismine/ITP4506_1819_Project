@@ -129,6 +129,15 @@ body{
    box-shadow: 60px -16px teal;
 }
 
+div.item{
+     vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+    float: left;
+      margin-left: 55px;
+}
 
-
-
+.caption {
+    margin-left: 55px;
+}
