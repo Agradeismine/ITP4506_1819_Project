@@ -20,22 +20,130 @@
    <script>
         $(function(){
             
-          var elementPosition = $('#button').offset();
+          var elementPosition = $('.button').offset();
 
         $(window).scroll(function(){
             
                 if($(window).scrollTop() > elementPosition.top){
-                      $('#button').css('position','fixed').css('top','30px');
+                      $('.button').css('position','fixed').css('top','30px');
+//                    $("#goTop").click(function () {
+//                       $("html, body").animate({scrollTop: 0}, 1000);
+//                    });
                 } else {
-                    $('#button').css('position','static');
+                    $('.button').css('position','static');
                 }    
             
             
         });
+            $("#request").hide();
+            $("#Navailable").hide();
+            $("#Nsuccess").hide();
+                var bool = true;
+                var succ = false;
+                var count = 0;
+            $("#requestBtn").click(function(e) {
+                
+                if(bool==true && succ==false){
+                    $( "#status" ).fadeOut( "fast" );
+                     $( "#available" ).fadeOut( "fast" );
+                    $( "#request" ).fadeIn( "slow" );
+                    $("#br").show();
+                       $("#success").hide();
+                    $("#Nsuccess").hide();
+                    bool = false;
+                }
+                else if(bool==true && succ==true){
+                    $( "#status" ).fadeOut( "fast" );
+                     $( "#Navailable" ).fadeOut( "fast" );
+                    $( "#request" ).fadeIn( "slow" );
+                    $("#br").show();
+                       $("#success").hide();
+                    $("#Nsuccess").hide();
+                    bool = false;
+                }
+                else if(bool==false && succ==true){
+                      $( "#request" ).fadeOut( "fast" );
+                    $( "#status" ).fadeIn( "slow" );
+                    $( "#Navailable" ).fadeIn( "slow" );
+                    $("#br").hide();
+                    $("#success").hide();
+                    $("#Nsuccess").hide();
+                    bool = true;
+                }
+                else{
+                      $( "#request" ).fadeOut( "fast" );
+                    $( "#status" ).fadeIn( "slow" );
+                    $( "#available" ).fadeIn( "slow" );
+                    $("#br").hide();
+                    $("#success").hide();
+                    $("#Nsuccess").hide();
+                    bool = true;
+                }
+                e.preventDefault();
+            });  
+            $("#success").hide();
+            $("#sendR").click(function() {
+                if(count==0){
+                    $("#request").hide();
+                    $("#success").show();
+                }
+                else{
+                    $("#request").hide();
+                    $("#Nsuccess").show();
+                }
+                succ = true;
+                count++;
+            });
+            
+            $("#back").click(function() {
+                $("#status").fadeIn( "slow" );
+                 $( "#Navailable" ).fadeIn( "slow" );
+                $("#success").hide();
+                  $("#br").hide();
+            });
+            $("#back2").click(function() {
+                $("#status").fadeIn( "slow" );
+                 $( "#Navailable" ).fadeIn( "slow" );
+                $("#Nsuccess").hide();
+                  $("#br").hide();
+            });
+                $("#goTop").on('click', function () {
+                    $("html, body").animate({scrollTop: 0}, 400);
+                });     
+                $("#forward").click(function() {
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $("#sendDiv").offset().top
+                    }, 400);
+                });
+                   $("#get").click(function() {
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $("#getDiv").offset().top
+                    }, 400);
+                });
+                $("#detail").click(function() {
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $("#detialDiv").offset().top
+                    }, 400);
+                });
+                    $("#content").click(function() {
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $("#contentDiv").offset().top
+                    }, 400);
+                });
+                               $("#charpter").click(function() {
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $("#charpterDiv").offset().top
+                    }, 400);
+                });
+
+
+        
+        window.onscroll = function() {scrollFunction()};
             
     });
   
-      
+       
+       
    </script>
 <body>
      <div class="navbar">
@@ -83,15 +191,15 @@
     <div id="details">
      
       <span id="image">
-       <img class="thumbnail"  src="1.jpg" height="150px" width="120px"> 
-       <div id="button">
+       <img class="thumbnail"  src="1.jpg" height="150px" width="165px"> 
+       <div class="button">
           
-           <input type="button" value="Top" ><br>
-            <input type="button" value="Send To" ><br>
-            <input type="button" value="Get It" ><br>
-            <input type="button" value="Details" ><br>
-             <input type="button" value="View content page " ><br>
-              <input type="button" value="View the first charpter" ><br>
+           <input type="button" value="Top"  id="goTop" class="all"><br>
+            <input id="forward" type="button" value="Send To" class="all"><br>
+            <input id="get" type="button" value="Get It" class="all"><br>
+            <input id="detail" type="button" value="Details" class="all"><br>
+             <input id="content" type="button" value="View content page " class="all"><br>
+              <input id="charpter" type="button" value="View the first charpter" class="all"><br>
            
        </div>
        </span>
@@ -100,22 +208,76 @@
        2016<br>
        ISBN: 9781470632366
        
-       <div id="send">
+       <div class="send" id="sendDiv">
            Send To &nbsp;&nbsp;<hr style='display:inline-block; width:650px; opacity:0.5;' />
            
        </div>
        
-       <div id="send">
+       <div class="send" id="getDiv">
            Get It &nbsp;&nbsp;<hr style='display:inline-block; width:650px; opacity:0.5;' />
            <p>
-               <b style="color:black"> No requests</b>
+               <b style="color:black; "> REQUEST: </b> &nbsp;&nbsp;<input type="button" value="Request" id="requestBtn">
            </p>
-           <p style="color:green;">
+           <p style="color:darkgreen;" id="available">
             Available   <br>
             (2 copies, 2 available, 0 requests)
+            <br>
            </p>
-           <br><br><br>
-           Details &nbsp;&nbsp;<hr style='display:inline-block; width:650px; opacity:0.5;' />
+                <p style="color:darkgreen;" id="Navailable">
+            Available   <br>
+            (2 copies, 1 available, 1 requests)
+            <br>
+           </p>
+            <center><div id="status">
+                <br>
+                <b>Status: Available</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Copy no.: 1 <br>
+                Policy: 4 Week Loan<br>
+                Material Type: Book &nbsp;&nbsp;&nbsp;&nbsp; Barcode: 31111040873521<br>
+                <br>
+            </div></center>
+            
+            <div id="request">
+                Material Type:<br><u>Book</u>
+                <br>
+                   <div><br>
+                   You have to ‘pick up’ the items within 3 working days.
+                   <br><br>
+                    <b style="font-size:9;color:red">*Select the day:</b><input type="date" value="<?php echo date('Y-m-d'); ?>" />
+                    </div>
+                    <br>
+                    
+                    <input type="submit" id="sendR" value="Send Request" class="all" style="float:right; margin-right:5px;">
+              
+            <br><br>
+            </div>
+            <div id="success" style="text-align:center; color:black; background-color:lightgreen;float: left; width:65%; height:150px;">
+                 <br> <br><b>Your request was successfully placed</b>
+                 <div>
+                    <br>
+                    <br>
+                    <br>
+                     <input type="button" id="back" value="Back" class="all" style="float:right; margin-right:5px; background-color:f1f1f1">
+                 </div>
+                 
+            </div>
+               <div id="Nsuccess" style="text-align:center; color:black; background-color:red;float: left; width:65%; height:150px;">
+                 <br> <br><b>Failed! You have already sent a request!</b>
+                 <div>
+                    <br>
+                    <br>
+                    <br>
+                     <input type="button" id="back2" value="Back" class="all" style="float:right; margin-right:5px; background-color:f1f1f1">
+                 </div>
+                 
+            </div>
+            
+            
+           <br>
+            </div>
+            <div class="send" id="detialDiv">
+           
+            
+            <div id="br" style="display:none"><br><br><br><br><br><br><br><br></div>Details &nbsp;&nbsp;<hr style='display:inline-block; width:650px; opacity:0.5;' />
            <p style="color:black;">
                <b>Title</b>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Best romance songs : 49 timeless love classics <br>
                <b>Author</b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Withers, Laurence K.<br>
@@ -125,7 +287,7 @@
                <br>
                 <b>Description</b> <br> Piano, vocal, guitar. Includes notation, tablature, chord symbols, chord diagrams, and lyrics. If you're in the mood for romance and your boyfriend / girlfriend / Tinder / chocolate isn't doing it for you, please enjoy this handy list of loved-up songs that will make you turn into a literal puddle. And we're not talking basics.
               </div>
-              <div id="send">
+              <div class="send" id="contentDiv">
               <br>
                    View content page &nbsp;&nbsp;<hr style='display:inline-block; width:650px; opacity:0.5;' />
                     <br>
@@ -184,7 +346,7 @@
               
               
                </div>
-        <div id="send">
+        <div class="send" id="charpterDiv">
               <br>
                    View Charpter 1 &nbsp;&nbsp;<hr style='display:inline-block; width:650px; opacity:0.5;' />
                    
