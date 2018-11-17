@@ -42,3 +42,15 @@ body{
 #button{
     
 }
+
+
+.thumbnail:hover {
+    position:relative;
+    top:-25px;
+    left:-35px;
+    width:200px;
+    height:200px;
+    display:block;
+    z-index:999;
+}
+

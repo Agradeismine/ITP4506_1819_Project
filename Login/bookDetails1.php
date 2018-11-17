@@ -83,8 +83,7 @@
     <div id="details">
      
       <span id="image">
-       <img src="1.jpg" height="150px" width="120px" style="margin-left:10px;"> 
-       
+       <img class="thumbnail"  src="1.jpg" height="150px" width="120px"> 
        <div id="button">
           
            <input type="button" value="Top" ><br>
