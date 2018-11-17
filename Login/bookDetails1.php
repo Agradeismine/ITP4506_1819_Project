@@ -59,6 +59,8 @@
             
             
         });
+            
+            
             $("#request").hide();
             $("#Navailable").hide();
             $("#Nsuccess").hide();
@@ -107,6 +109,11 @@
             });  
             $("#success").hide();
             $("#sendR").click(function() {
+                   <?php
+                      if (!isset($_COOKIE['stuRequest0'])) {
+                            setcookie("stuRequest0", "", time() + (60 * 30), "/");
+                      }
+                    ?>
                 if(count==0){
                     $("#request").hide();
                     $("#success").show();
@@ -162,11 +169,10 @@
 
 
         
-        window.onscroll = function() {scrollFunction()};
             
     });
   
-       
+//          window.onscroll = function() {scrollFunction()};
        
    </script>
 <body>
