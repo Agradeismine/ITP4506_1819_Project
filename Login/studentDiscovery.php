@@ -99,40 +99,52 @@
             var r = confirm("Are you really want to cancel this request?");
             if (r == true) {
                 txt = "This request is cancelled";
-                document.getElementById(requestRs).style.display = "none";
+                alert(txt);
+                window.location.href = "studentDiscovery.php?delRequestRs=" + requestRs;
+                removeElement(requestRs);
+                //document.getElementById(requestRs).style.display = "none";
             }
         }
+
+        function removeElement(id) {
+			var elem = document.getElementById(id);
+			return elem.parentNode.removeChild(elem);
+		}
 
         $(document).ready(function() {
 
         <?php
-                if(isset($_COOKIE["stuRequest0"])){     //stuRequest0
-                    //echo"stuRequest".$i;    //for test ?>
-                    $('#requestForm').append("<div id='requestRs0' style='border:1px #FFAC55 solid; padding:10px 10px;'><table>"
-                +"<tr>"
-                    +"<td rowspan='5'><input type='checkbox' id='request0' value=''></td>"
-                    +"<td width='600' rowspan='5' style='color: #00008B;'>Best romance songs : 49 timeless love classics</td>"
-                    +"<td width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Request: In Process...</td>"
-                    +"<td width='250' rowspan='5' class='example'><Button id='cancelrequest0' onclick='hideThisRequest(\"requestRs0\")'>Cancel</button></td>"
-                    +"<td width='50' rowspan='5'><img src='images/showMoreBtn.png' id='showMoreBtn0' onclick='sendData(\"requestData0\")' alt='Show more information'></td>"
-                +"</tr>"
-                +"<tr hidden class='requestData0'>"
-                    +"<td  width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Pick up from: CCTV(KW)</td>"
-                +"</tr>"
-                +"<tr hidden class='requestData0'>"
-                    +"<td  width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Happy Training Council</td>"
-                +"</tr>"
-                +"<tr hidden class='requestData0'>"
-                    +"<td  width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Request Date: 30/11/2018</td>"
-                +"</tr>"             
-                +"<tr hidden class='requestData0'>"
-                    +"<td  width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Request Id: 2478313660004681</td>"
-                +"</tr>"
-            +"</table>"
-        +"</div>");
+            extract($_GET);
+            if(isset($delRequestRs)){
+                setcookie($delRequestRs, "delRes", time() + (60 * 30), "/"); // 86400 = 1 day
+                header("Location: studentDiscovery.php");
+            }
 
-                <?php 
-                }
+            if(isset($_COOKIE["stuRequest0"])){     //stuRequest0 ?>
+                $('#requestForm').append("<div id='requestRs0' style='border:1px #FFAC55 solid; padding:10px 10px;'><table>"
+                    +"<tr>"
+                        +"<td rowspan='5'><input type='checkbox' id='request0' value=''></td>"
+                        +"<td width='600' rowspan='5' style='color: #00008B;'>Best romance songs : 49 timeless love classics</td>"
+                        +"<td width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Request: In Process...</td>"
+                        +"<td width='250' rowspan='5' class='example'><Button id='cancelrequest0' onclick='hideThisRequest(\"requestRs0\")'>Cancel</button></td>"
+                        +"<td width='50' rowspan='5'><img src='images/showMoreBtn.png' id='showMoreBtn0' onclick='sendData(\"requestData0\")' alt='Show more information'></td>"
+                    +"</tr>"
+                    +"<tr hidden class='requestData0'>"
+                        +"<td  width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Pick up from: CCTV(KW)</td>"
+                    +"</tr>"
+                    +"<tr hidden class='requestData0'>"
+                        +"<td  width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Happy Training Council</td>"
+                    +"</tr>"
+                    +"<tr hidden class='requestData0'>"
+                        +"<td  width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Request Date: 30/11/2018</td>"
+                    +"</tr>"             
+                    +"<tr hidden class='requestData0'>"
+                        +"<td  width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Request Id: 2478313660004681</td>"
+                    +"</tr>"
+                    +"</table>"
+                +"</div>");
+            <?php 
+            }
         ?>
         });
 
@@ -195,16 +207,30 @@
             </select>
         </div>  <!--end of requestMenu-->
         Reserved Books<br><br><br>
-        <input type="checkbox" id="allRequests" value=""> <a id="totalRequests">0 request</a><br><br/>
+        <?php
+            $cookieCnt=0;   //count the cookie and show the total requests.
+            for($i=2; $i<6; $i++){
+                if(!isset($_COOKIE["stuRequestRs".$i])){
+                    $cookieCnt+=1;
+                }
+            }
+            if (isset($_COOKIE["stuRequest0"])) {
+                $cookieCnt+=1;
+            }
+
+            
+        ?>
+        <input type="checkbox" id="allRequests" value=""> <a id="totalRequests"><?php echo $cookieCnt ?> request</a><br><br/>
 
         <div id="requestForm" style="padding:1px 10px;">
-        <div id='requestRs2' style="border:1px #FFAC55 solid; padding:10px 10px;">    <!--requestRs2-->
+        <?php if(!isset($_COOKIE["stuRequestRs2"])){ ?>
+        <div id='stuRequestRs2' style="border:1px #FFAC55 solid; padding:10px 10px;">    <!--stuRequestRs2-->
                 <table>
                     <tr>
                         <td rowspan="5"><input type="checkbox" id="request2" value=""></td>
                         <td width="600" rowspan="5" style="color: #00008B;">World of History</td>
                         <td width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request: In Process...</td>
-                        <td width="250" rowspan="5" class='example'><Button id='cancelrequest4' onclick='hideThisRequest("requestRs2")'>Cancel</button></td>
+                        <td width="250" rowspan="5" class='example'><Button id='cancelrequest4' onclick='hideThisRequest("stuRequestRs2")'>Cancel</button></td>
                         <td width="50" rowspan="5"><img src="images/showMoreBtn.png" id='showMoreBtn' onclick='sendData("requestData2")' alt="Show more information"></td>
                     </tr>
                     <tr hidden class="requestData2">
@@ -220,14 +246,15 @@
                         <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request Id: 6552389523673</td>
                     </tr>
                 </table>
-            </div>  <!--end of requestRs2 -->
-            <div id='requestRs3' style="border:1px #FFAC55 solid; padding:10px 10px;">    <!--requestRs3-->
+        </div>  <!--end of requestRs2 --> <?php } ?>
+        <?php if(!isset($_COOKIE["stuRequestRs3"])){ ?>
+            <div id='stuRequestRs3' style="border:1px #FFAC55 solid; padding:10px 10px;">    <!--stuRequestRs3-->
                 <table>
                     <tr>
                         <td rowspan="5"><input type="checkbox" id="request4" value=""></td>
                         <td width="600" rowspan="5" style="color: #00008B;">21 Lessons for the 21st Century</td>
                         <td width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request: In Process...</td>
-                        <td width="250" rowspan="5" class='example'><Button id='cancelrequest3' onclick='hideThisRequest("requestRs3")'>Cancel</button></td>
+                        <td width="250" rowspan="5" class='example'><Button id='cancelrequest3' onclick='hideThisRequest("stuRequestRs3")'>Cancel</button></td>
                         <td width="50" rowspan="5"><img src="images/showMoreBtn.png" id='showMoreBtn' onclick='sendData("requestData3")' alt="Show more information"></td>
                     </tr>
                     <tr hidden class="requestData3">
@@ -244,13 +271,15 @@
                     </tr>
                 </table>
             </div>  <!--end of requestRs3 -->
-            <div id='requestRs4' style="border:1px #FFAC55 solid; padding:10px 10px;">    <!--requestRs4-->
+        <?php } ?>
+        <?php if(!isset($_COOKIE["stuRequestRs4"])){ ?>
+            <div id='stuRequestRs4' style="border:1px #FFAC55 solid; padding:10px 10px;">    <!--stuRequestRs4-->
                 <table>
                     <tr>
                         <td rowspan="5"><input type="checkbox" id="request4" value=""></td>
                         <td width="600" rowspan="5" style="color: #00008B;">Computer-Aided Design</td>
                         <td width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request: In Process...</td>
-                        <td width="250" rowspan="5" class='example'><Button id='cancelrequest4' onclick='hideThisRequest("requestRs4")'>Cancel</button></td>
+                        <td width="250" rowspan="5" class='example'><Button id='cancelrequest4' onclick='hideThisRequest("stuRequestRs4")'>Cancel</button></td>
                         <td width="50" rowspan="5"><img src="images/showMoreBtn.png" id='showMoreBtn' onclick='sendData("requestData4")' alt="Show more information"></td>
                     </tr>
                     <tr hidden class="requestData4">
@@ -267,13 +296,15 @@
                     </tr>
                 </table>
             </div>  <!--end of requestRs4 -->
-            <div id='requestRs5' style="border:1px #FFAC55 solid; padding:10px 10px;">    <!--requestRs5-->
+        <?php } ?>
+        <?php if(!isset($_COOKIE["stuRequestRs5"])){ ?>
+            <div id='stuRequestRs5' style="border:1px #FFAC55 solid; padding:10px 10px;">    <!--stuRequestRs5-->
                 <table>
                     <tr>
                         <td rowspan="5"><input type="checkbox" id="request5" value=""></td>
                         <td width="600" rowspan="5" style="color: #00008B;">International Journal of Computer Mathematics</td>
                         <td width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request: In Process...</td>
-                        <td width="250" rowspan="5" class='example'><Button id='cancelrequest5' onclick='hideThisRequest("requestRs5")'>Cancel</button></td>
+                        <td width="250" rowspan="5" class='example'><Button id='cancelrequest5' onclick='hideThisRequest("stuRequestRs5")'>Cancel</button></td>
                         <td width="50" rowspan="5"><img src="images/showMoreBtn.png" id='showMoreBtn' onclick='sendData("requestData5")' alt="Show more information"></td>
                     </tr>
                     <tr hidden class="requestData5">
@@ -290,6 +321,7 @@
                     </tr>
                 </table>
             </div>  <!--end of requestRs5 -->
+        <?php } ?>
 
         </div>
 

@@ -111,7 +111,7 @@
             $("#sendR").click(function() {
                    <?php
                       if (!isset($_COOKIE['stuRequest0'])) {
-                            setcookie("stuRequest0", "", time() + (60 * 30), "/");
+                            setcookie("stuRequest0", "resCreated", time() + (60 * 30), "/"); // 86400 = 1 day
                       }
                     ?>
                 if(count==0){
