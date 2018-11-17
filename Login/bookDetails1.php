@@ -405,42 +405,42 @@
                    View Charpter 1 &nbsp;&nbsp;<hr style='display:inline-block; width:650px; opacity:0.5;' />
                    
                    <p><b style="color:black">Against all odds (take a look at me now) / Phil Collins</b><br><br>
-                   How can I just let you walk away ? 我怎能讓你離開?<br>
-Just let you leave without a trace. 讓你消失得無影無蹤<br>
-When I stand here taking every breath with you,ooh! 當我站在這兒和你一起呼吸的時候。<br>
-you're the only one.你是唯一一個。<br>
-Who really knew me at all. 真正瞭解我的人！<br>
-How can you just walk away from me ? 你怎能就這樣離開我?<br>
-When all I can do is watch you leave. 我只能無奈的看著你走。<br>
-'Cos we've shared the laughter and the pain. 因為我們曾一起同甘共苦。<br>
-And even shared the tears. 甚至那淚水也一起分享。<br>
-you're the only one who really knew me at all. 你是唯一真正懂我的人！<br>
-So take a look at me now ! 所以現在再看我一眼吧 !<br>
-'Cos there's just an empty space. 這兒只剩下空洞的一片<br>
-And there's nothing left here to remind me. 現在再也沒什麼值得我回憶。<br>
-Just the memory of your face. 除了你的面容！<br>
-Take a look at me now. 現在看我一眼吧 !<br>
-'Cos there's just an empty space. 這兒只剩下空洞的一片<br>
-And you coming back to me. 你會回到我身邊吧？<br>
-Is against all odds and that's what I've got to face. 儘管我必須要面對重重困難。<br>
-I wish I could just make you turn around. 我希望我能使你轉過身來<br>
-Turn around and see me cry. 轉過身來看到我在哭泣。<br>
-There's so much I need to say to you. 我有太多的話要對你說。<br>
-So many reasons why. 太多的理由。<br>
-you're the only one who really knew me at all. 你是唯一真正懂我的人！<br>
-So take a look at me now ! 所以現在再看我一眼吧 !<br>
-'Cos there's just an empty space. 這兒只剩下空洞的一片<br>
-And there's nothing left here to remind me. 現在再也沒什麼值得我回憶。<br>
-Just the memory of your face. 除了你的面容！<br>
-So take a look at me now ! 所以現在再看我一眼吧 !<br>
-'Cos there's just an empty space. 這兒只剩下空洞的一片<br>
-But to wait for U. 我在等你回來。<br>
-Well that's all I can do and that's what I've got to face. 這我所能做的和必須面對的。<br>
-Take a look at me now. 現在看我一眼吧 !<br>
-'Cos I'll still be standing here. 因為我還站在這裡等你。<br>
-And you coming back to me is against all odds. 儘管困難重重，你會回到我身邊。<br>
-That's the chance I've got to take,oh ! 這是個機會我必須抓住。<br>
-take a look at me now. 哦，就再看我一眼吧！
+                   How can I just let you walk away ? <br>
+Just let you leave without a trace. <br>
+When I stand here taking every breath with you,ooh! <br>
+you're the only one.<br>
+Who really knew me at all. <br>
+How can you just walk away from me ? <br>
+When all I can do is watch you leave. <br>
+'Cos we've shared the laughter and the pain. <br>
+And even shared the tears. <br>
+you're the only one who really knew me at all. <br>
+So take a look at me now ! <br>
+'Cos there's just an empty space. <br>
+And there's nothing left here to remind me. <br>
+Just the memory of your face. <br>
+Take a look at me now. <br>
+'Cos there's just an empty space. <br>
+And you coming back to me. <br>
+Is against all odds and that's what I've got to face. <br>
+I wish I could just make you turn around. <br>
+Turn around and see me cry. <br>
+There's so much I need to say to you. <br>
+So many reasons why. 。<br>
+you're the only one who really knew me at all.<br>
+So take a look at me now ! <br>
+'Cos there's just an empty space. <br>
+And there's nothing left here to remind me. <br>
+Just the memory of your face. <br>
+So take a look at me now ! <br>
+'Cos there's just an empty space.<br>
+But to wait for U. <br>
+Well that's all I can do and that's what I've got to face. <br>
+Take a look at me now. <br>
+'Cos I'll still be standing here.<br>
+And you coming back to me is against all odds. <br>
+That's the chance I've got to take,oh ! <br>
+take a look at me now. 
                     
                      
                        </p>
