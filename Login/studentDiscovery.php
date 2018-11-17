@@ -7,6 +7,7 @@
     <title>Library System: Student Page</title>
     <link rel="stylesheet" type="text/css" href="css/mainpage.css">
     <link rel="stylesheet" type="text/css" href="css/discovery.css">
+
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
@@ -64,7 +65,12 @@
                     scrollTop: 0
                 }, 400);
             });
+
         });
+
+         $.showMoreThisInfo = function() {
+            $('.'+id).toggle(300);
+         };
 
         window.onscroll = function () {
             scrollFunction()
@@ -83,6 +89,56 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
+    
+        var id; // global variable
+        function sendData(valueId){
+            id = valueId;
+            $.showMoreThisInfo();
+        }
+
+        function hideThisRequest(requestRs){
+            var r = confirm("Are you really want to cancel this request?");
+            if (r == true) {
+                txt = "This request is cancelled";
+                document.getElementById(requestRs).style.display = "none";
+            }
+        }
+
+        $(document).ready(function() {
+
+        <?php
+            for ($i = 0; $i <5; $i++) {
+                //if(isset($_COOKIE["stuRequest".$i])){
+                    //echo"stuRequest".$i;    //for test ?>
+                            $('#requestForm').append("<div id='requestRs"+<?php echo $i ?>+"' style='border:1px #FFAC55 solid; padding:10px 10px;'><table>"
+                +"<tr>"
+                    +"<td rowspan='5'><input type='checkbox' id='request1' value=''></td>"
+                    +"<td width='600' rowspan='5' style='color: #00008B;'>Best romance songs : 49 timeless love classics</td>"
+                    +"<td width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Request: In Process...</td>"
+                    +"<td width='250' rowspan='5' class='example'><Button id='cancelrequest"+<?php echo $i ?>+"' onclick='hideThisRequest(\"requestRs"+<?php echo $i ?>+"\")'>Cancel</button></td>"
+                    +"<td width='50' rowspan='5'><img src='images/showMoreBtn.png' id='showMoreBtn"+<?php echo $i ?>+"' onclick='sendData(\"requestData"+<?php echo $i ?>+"\")' alt='Show more information'></td>"
+                +"</tr>"
+                +"<tr hidden class='requestData"+<?php echo $i ?>+"'>"
+                    +"<td  width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Pick up from: CCTV(KW)</td>"
+                +"</tr>"
+                +"<tr hidden class='requestData"+<?php echo $i ?>+"'>"
+                    +"<td  width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Happy Training Council</td>"
+                +"</tr>"
+                +"<tr hidden class='requestData"+<?php echo $i ?>+"'>"
+                    +"<td  width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Request Date: 30/11/2018</td>"
+                +"</tr>"             
+                +"<tr hidden class='requestData"+<?php echo $i ?>+"'>"
+                    +"<td  width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Request Id: 2478313660004681</td>"
+                +"</tr>"
+            +"</table>"
+        +"</div>");
+
+                <?php }
+                //}
+        ?>
+        });
+
+        
     </script>
 </head>
 
@@ -144,27 +200,29 @@
         <input type="checkbox" id="allRequests" value=""> <a id="totalRequests">0 request</a><br><br/>
 
         <div id="requestForm" style="padding:1px 10px;">
-        <div  id="requestData" style="border:1px #FFAC55 solid; padding:10px 10px;">    <!--loop this-->
-
-            <table border='1'>  <!--It should be loop to print -->
+        <!--<div style="border:1px #FFAC55 solid; padding:10px 10px;">    
+            <table>  It should be loop to print 
                 <tr>
-                    <td rowspan="4"><input type="checkbox" id="request1" value=""></td>
-                    <td width="650" rowspan="4">Best romance songs : 49 timeless love classics</td>
-                    <td width="350">Request: In Process...</td>
-                    <td width="300" rowspan="4">Cancel</td>
-                    <td width="50" rowspan="4"><img src="images/showMoreBtn.png" alt="Show more information"></td>
+                    <td rowspan="5"><input type="checkbox" id="request1" value=""></td>
+                    <td width="600" rowspan="5" style="color: #00008B;">Best romance songs : 49 timeless love classics</td>
+                    <td width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request: In Process...</td>
+                    <td width="250" rowspan="5" class='example'><Button id='cancelrequest1' >Cancel</button></td>
+                    <td width="50" rowspan="5"><img src="images/showMoreBtn.png" id='showMoreBtn' onclick='sendData("requestData1")' alt="Show more information"></td>
                 </tr>
-                <tr>
-                    <td width="350">Pick up from: IVE(TY)</td>
+                <tr hidden class="requestData1">
+                    <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Pick up from: CCTV(KW)</td>
                 </tr>
-                <tr>
-                    <td width="350">Pick up from: IVE(TY)</td>
+                <tr hidden class="requestData1">
+                    <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Happy Training Council</td>
                 </tr>
-                <tr>
-                    <td width="350">Pick up from: IVE(TY)</td>
+                <tr hidden class="requestData1">
+                    <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request Date: 30/11/2018</td>
+                </tr>                
+                <tr hidden class="requestData1">
+                    <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request Id: 2478313660004681</td>
                 </tr>
             </table>
-        </div>
+        </div>  -->
 
         </div>
 
