@@ -7,3 +7,17 @@
   background: #f1f1f1;
   height: 30px;
 }
+.example button {
+  float: left;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+.example button:hover {
+  background: #0b7dda;
+}
