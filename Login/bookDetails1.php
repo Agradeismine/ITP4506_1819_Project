@@ -18,6 +18,30 @@
     <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 </head>
    <script>
+         function showdropdown(id) {
+            document.getElementById(id).classList.toggle("show");
+        }
+          window.onclick = function(e) {  //drop on off
+            if (!e.target.matches('.dropbtn')) {
+                var CategoryDropdown = document.getElementById("CategoryDropdown");
+                var MenuDropdown = document.getElementById("MenuDropdown");
+                var DDDropdown = document.getElementById("DDDropdown");
+                
+
+                if (CategoryDropdown.classList.contains('show')) {
+                    CategoryDropdown.classList.remove('show');
+                }
+                if (MenuDropdown.classList.contains('show')) {
+                    MenuDropdown.classList.remove('show');
+                }
+                if (DDDropdown.classList.contains('show')) {
+                    DDDropdown.classList.remove('show');
+                }
+            }
+        }
+       
+       
+       
         $(function(){
             
           var elementPosition = $('.button').offset();
