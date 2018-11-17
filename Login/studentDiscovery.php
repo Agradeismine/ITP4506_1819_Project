@@ -26,7 +26,6 @@
                 var MenuDropdown = document.getElementById("MenuDropdown");
                 var DDDropdown = document.getElementById("DDDropdown");
 
-
                 if (CategoryDropdown.classList.contains('show')) {
                     CategoryDropdown.classList.remove('show');
                 }
@@ -107,34 +106,33 @@
         $(document).ready(function() {
 
         <?php
-            for ($i = 0; $i <5; $i++) {
-                //if(isset($_COOKIE["stuRequest".$i])){
+                if(isset($_COOKIE["stuRequest0"])){     //stuRequest0
                     //echo"stuRequest".$i;    //for test ?>
-                            $('#requestForm').append("<div id='requestRs"+<?php echo $i ?>+"' style='border:1px #FFAC55 solid; padding:10px 10px;'><table>"
+                    $('#requestForm').append("<div id='requestRs0' style='border:1px #FFAC55 solid; padding:10px 10px;'><table>"
                 +"<tr>"
-                    +"<td rowspan='5'><input type='checkbox' id='request1' value=''></td>"
+                    +"<td rowspan='5'><input type='checkbox' id='request0' value=''></td>"
                     +"<td width='600' rowspan='5' style='color: #00008B;'>Best romance songs : 49 timeless love classics</td>"
                     +"<td width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Request: In Process...</td>"
-                    +"<td width='250' rowspan='5' class='example'><Button id='cancelrequest"+<?php echo $i ?>+"' onclick='hideThisRequest(\"requestRs"+<?php echo $i ?>+"\")'>Cancel</button></td>"
-                    +"<td width='50' rowspan='5'><img src='images/showMoreBtn.png' id='showMoreBtn"+<?php echo $i ?>+"' onclick='sendData(\"requestData"+<?php echo $i ?>+"\")' alt='Show more information'></td>"
+                    +"<td width='250' rowspan='5' class='example'><Button id='cancelrequest0' onclick='hideThisRequest(\"requestRs0\")'>Cancel</button></td>"
+                    +"<td width='50' rowspan='5'><img src='images/showMoreBtn.png' id='showMoreBtn0' onclick='sendData(\"requestData0\")' alt='Show more information'></td>"
                 +"</tr>"
-                +"<tr hidden class='requestData"+<?php echo $i ?>+"'>"
+                +"<tr hidden class='requestData0'>"
                     +"<td  width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Pick up from: CCTV(KW)</td>"
                 +"</tr>"
-                +"<tr hidden class='requestData"+<?php echo $i ?>+"'>"
+                +"<tr hidden class='requestData0'>"
                     +"<td  width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Happy Training Council</td>"
                 +"</tr>"
-                +"<tr hidden class='requestData"+<?php echo $i ?>+"'>"
+                +"<tr hidden class='requestData0'>"
                     +"<td  width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Request Date: 30/11/2018</td>"
                 +"</tr>"             
-                +"<tr hidden class='requestData"+<?php echo $i ?>+"'>"
+                +"<tr hidden class='requestData0'>"
                     +"<td  width='400' style='padding: 3px; font-size: 20px; color: #666666;'>Request Id: 2478313660004681</td>"
                 +"</tr>"
             +"</table>"
         +"</div>");
 
-                <?php }
-                //}
+                <?php 
+                }
         ?>
         });
 
@@ -200,29 +198,98 @@
         <input type="checkbox" id="allRequests" value=""> <a id="totalRequests">0 request</a><br><br/>
 
         <div id="requestForm" style="padding:1px 10px;">
-        <!--<div style="border:1px #FFAC55 solid; padding:10px 10px;">    
-            <table>  It should be loop to print 
-                <tr>
-                    <td rowspan="5"><input type="checkbox" id="request1" value=""></td>
-                    <td width="600" rowspan="5" style="color: #00008B;">Best romance songs : 49 timeless love classics</td>
-                    <td width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request: In Process...</td>
-                    <td width="250" rowspan="5" class='example'><Button id='cancelrequest1' >Cancel</button></td>
-                    <td width="50" rowspan="5"><img src="images/showMoreBtn.png" id='showMoreBtn' onclick='sendData("requestData1")' alt="Show more information"></td>
-                </tr>
-                <tr hidden class="requestData1">
-                    <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Pick up from: CCTV(KW)</td>
-                </tr>
-                <tr hidden class="requestData1">
-                    <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Happy Training Council</td>
-                </tr>
-                <tr hidden class="requestData1">
-                    <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request Date: 30/11/2018</td>
-                </tr>                
-                <tr hidden class="requestData1">
-                    <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request Id: 2478313660004681</td>
-                </tr>
-            </table>
-        </div>  -->
+        <div id='requestRs2' style="border:1px #FFAC55 solid; padding:10px 10px;">    <!--requestRs2-->
+                <table>
+                    <tr>
+                        <td rowspan="5"><input type="checkbox" id="request2" value=""></td>
+                        <td width="600" rowspan="5" style="color: #00008B;">World of History</td>
+                        <td width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request: In Process...</td>
+                        <td width="250" rowspan="5" class='example'><Button id='cancelrequest4' onclick='hideThisRequest("requestRs2")'>Cancel</button></td>
+                        <td width="50" rowspan="5"><img src="images/showMoreBtn.png" id='showMoreBtn' onclick='sendData("requestData2")' alt="Show more information"></td>
+                    </tr>
+                    <tr hidden class="requestData2">
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Pick up from: IVE(HW)</td>
+                    </tr>
+                    <tr hidden class="requestData2">
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Vocational Training Council</td>
+                    </tr>
+                    <tr hidden class="requestData2">
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request Date: 28/11/2018</td>
+                    </tr>                
+                    <tr hidden class="requestData2">
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request Id: 6552389523673</td>
+                    </tr>
+                </table>
+            </div>  <!--end of requestRs2 -->
+            <div id='requestRs3' style="border:1px #FFAC55 solid; padding:10px 10px;">    <!--requestRs3-->
+                <table>
+                    <tr>
+                        <td rowspan="5"><input type="checkbox" id="request4" value=""></td>
+                        <td width="600" rowspan="5" style="color: #00008B;">21 Lessons for the 21st Century</td>
+                        <td width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request: In Process...</td>
+                        <td width="250" rowspan="5" class='example'><Button id='cancelrequest3' onclick='hideThisRequest("requestRs3")'>Cancel</button></td>
+                        <td width="50" rowspan="5"><img src="images/showMoreBtn.png" id='showMoreBtn' onclick='sendData("requestData3")' alt="Show more information"></td>
+                    </tr>
+                    <tr hidden class="requestData3">
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Pick up from: Thei(ST)</td>
+                    </tr>
+                    <tr hidden class="requestData3">
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Vocational Training Council</td>
+                    </tr>
+                    <tr hidden class="requestData3">
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request Date: 28/11/2018</td>
+                    </tr>                
+                    <tr hidden class="requestData3">
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request Id: 783647867324</td>
+                    </tr>
+                </table>
+            </div>  <!--end of requestRs3 -->
+            <div id='requestRs4' style="border:1px #FFAC55 solid; padding:10px 10px;">    <!--requestRs4-->
+                <table>
+                    <tr>
+                        <td rowspan="5"><input type="checkbox" id="request4" value=""></td>
+                        <td width="600" rowspan="5" style="color: #00008B;">Computer-Aided Design</td>
+                        <td width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request: In Process...</td>
+                        <td width="250" rowspan="5" class='example'><Button id='cancelrequest4' onclick='hideThisRequest("requestRs4")'>Cancel</button></td>
+                        <td width="50" rowspan="5"><img src="images/showMoreBtn.png" id='showMoreBtn' onclick='sendData("requestData4")' alt="Show more information"></td>
+                    </tr>
+                    <tr hidden class="requestData4">
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Pick up from: ISIS(HK)</td>
+                    </tr>
+                    <tr hidden class="requestData4">
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Hong Kong Computer Union</td>
+                    </tr>
+                    <tr hidden class="requestData4">
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request Date: 29/11/2018</td>
+                    </tr>                
+                    <tr hidden class="requestData4">
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request Id: 3264723652742</td>
+                    </tr>
+                </table>
+            </div>  <!--end of requestRs4 -->
+            <div id='requestRs5' style="border:1px #FFAC55 solid; padding:10px 10px;">    <!--requestRs5-->
+                <table>
+                    <tr>
+                        <td rowspan="5"><input type="checkbox" id="request5" value=""></td>
+                        <td width="600" rowspan="5" style="color: #00008B;">International Journal of Computer Mathematics</td>
+                        <td width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request: In Process...</td>
+                        <td width="250" rowspan="5" class='example'><Button id='cancelrequest5' onclick='hideThisRequest("requestRs5")'>Cancel</button></td>
+                        <td width="50" rowspan="5"><img src="images/showMoreBtn.png" id='showMoreBtn' onclick='sendData("requestData5")' alt="Show more information"></td>
+                    </tr>
+                    <tr hidden class="requestData5">
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Pick up from: Thei(TY)</td>
+                    </tr>
+                    <tr hidden class="requestData5">
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Vocational Training Council</td>
+                    </tr>
+                    <tr hidden class="requestData5">
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request Date: 29/11/2018</td>
+                    </tr>                
+                    <tr hidden class="requestData5">
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Request Id: 3746254824623</td>
+                    </tr>
+                </table>
+            </div>  <!--end of requestRs5 -->
 
         </div>
 
