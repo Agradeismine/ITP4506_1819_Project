@@ -387,9 +387,9 @@ function hrefLink(link) {
                             for (var i = 0; i < (rs.length); i++) {
                                 if(rs[i].bookname=="World of History"){  //hard code this book which has hyperlink, bookDetails3.php
                                     $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a href="bookDetails3.php">'+rs[i].bookname+'</a></h3>'+
-                                    '<table width="600" >'+
-                                    '<tr class="item"><td>Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
-                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
+                                    '<table border=\'1\' >'+    //width="600" 
+                                    '<tr class="item"><td width="250">Type: '+rs[i].type+'</td><td width="250">Year: '+rs[i].year+'</td><td></td><td width="100"></td></tr>'+
+                                    '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td width="450">Publisher: '+rs[i].Publisher+'</td></tr>'+
                                     '</table><br>'+
                                     'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
                                     '</div>');
