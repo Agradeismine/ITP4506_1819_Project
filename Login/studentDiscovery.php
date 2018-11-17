@@ -141,22 +141,31 @@
             </select>
         </div>  <!--end of requestMenu-->
         Reserved Books<br><br><br>
-        <div id="requestForm" style="padding:1px 10px;">
-            <input type="checkbox" id="allRequests" value=""> <a id="totalRequests">0 request</a><br><br/>
-            <div  id="requestData" style="border:1px #FFAC55 solid; padding:10px 10px;">
+        <input type="checkbox" id="allRequests" value=""> <a id="totalRequests">0 request</a><br><br/>
 
-                <table>  <!--It should be loop to print -->
+        <div id="requestForm" style="padding:1px 10px;">
+        <div  id="requestData" style="border:1px #FFAC55 solid; padding:10px 10px;">    <!--loop this-->
+
+            <table border='1'>  <!--It should be loop to print -->
                 <tr>
-                    <td  width="600" rowspan="2"><input type="checkbox" id="request1" value="">Best romance songs : 49 timeless love classics</td>
+                    <td rowspan="4"><input type="checkbox" id="request1" value=""></td>
+                    <td width="650" rowspan="4">Best romance songs : 49 timeless love classics</td>
                     <td width="350">Request: In Process...</td>
-                    <td width="350" rowspan="2">Cancel</td>
+                    <td width="300" rowspan="4">Cancel</td>
+                    <td width="50" rowspan="4"><img src="images/showMoreBtn.png" alt="Show more information"></td>
                 </tr>
                 <tr>
                     <td width="350">Pick up from: IVE(TY)</td>
                 </tr>
-                </table>
-                
-            </div>
+                <tr>
+                    <td width="350">Pick up from: IVE(TY)</td>
+                </tr>
+                <tr>
+                    <td width="350">Pick up from: IVE(TY)</td>
+                </tr>
+            </table>
+        </div>
+
         </div>
 
     </div>
