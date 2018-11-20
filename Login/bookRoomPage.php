@@ -62,18 +62,27 @@
                     scrollTop: 0
                 }, 400);
             });
-
+            
+            var bookCount = 0;
+            var bookMax = 2;
             $("td a").click(function(){
                 if($(this).text()=="***Booked***"){
+                    bookCount-=1;
                     alert("Cancel booking successfully.");
                     $(this).html("<img width='13' height='13' src='images/add.png' alt=''>");
                     $(this).parent().css("background-color", "");
 
                 }else{
+                    if(bookCount<bookMax){  //can book
+                    bookCount+=1;
                     alert("The room is booked successfully.");
                     $(this).html("***Booked***");
                     $(this).parent().css("background-color", "#FFFF99");
+                    }else{      //can't book
+                        alert("You can maximum book 2 hours.");
+                    }
                 }
+                
             });
         });
 
@@ -101,6 +110,7 @@
     <div class="navbar">
         <a href="student.php">Home</a>
         <a href="#news">News</a>
+        <a href="bookRoomPage.php">Study Room Booking</a>
         <div class="dropdown">
             <button class="dropbtn" onclick="showdropdown('DDDropdown')" style="width:200px;">Learning Resources
                 <i class="fa fa-caret-down"></i>
@@ -141,7 +151,7 @@
     </div> <!-- end of navbar -->
     <img src="arrow.png" id="myBtn" title="Go to top" style="width:25px; height=25px ">
     
-    <h1 style='padding: 0px 75px;'><B>Learning Resources Center (TY)</B></h1>
+    <h1 style='padding: 0px 75px;'><B>Study Room Booking System</B></h1>
     <center>
     <table cellspacing="0" border='1' width="90%">
         <tr style='background-color: #999999; color: #fff'>
@@ -175,8 +185,8 @@
         <tr align="center" >
             <td style='padding: 10px; background-color: #ffffed;'>12:00AM - 01:00PM</td>
             <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
-            <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
-            <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
+            <td bgcolor="#FFFF99">***Booked***</td>
+            <td bgcolor="#FFFF99">***Booked***</td>
             <td style='padding: 10px; background-color: #ffffed;'>12:00AM - 01:00PM</td>
         </tr>
         <tr align="center" >
@@ -218,14 +228,14 @@
             <td style='padding: 10px; background-color: #ffffed;'>06:00PM - 07:00PM</td>
             <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
             <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
-            <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
+            <td bgcolor="#FFFF99">***Booked***</td>
             <td style='padding: 10px; background-color: #ffffed;'>06:00PM - 07:00PM</td>
         </tr>
         <tr align="center" >
             <td style='padding: 10px; background-color: #ffffed;'>07:00PM - 08:00PM</td>
             <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
-            <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
-            <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
+            <td bgcolor="#FFFF99">***Booked***</td>
+            <td bgcolor="#FFFF99">***Booked***</td>
             <td style='padding: 10px; background-color: #ffffed;'>07:00PM - 08:00PM</td>
         </tr>
         <tr align="center" >
