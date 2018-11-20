@@ -68,7 +68,7 @@
                   alert("E-mail has been sent successfully!");
             });
                $('#copyTo').click(function(){
-                  alert("Copy successfully!");
+                   $("#copyTo").prop('value', 'Success!');
             });
           });
 
@@ -302,11 +302,10 @@
                    <div class="test" style="font-size:18px; height:70px;"> 
                    <br>
                    <b style="color:black;">http://localhost/ITP4506_1819_Project/Login/bookDetails1.php?</b><br> <br>
-                   <form action="bookDetails1.php">
                    
                    <br><br>
-                   <input type="submit" value="Copy" class="all" style="opacity:1" id="copyTo">
-                   </form>
+                   <input type="button" value="Copy" class="all" style="opacity:1" id="copyTo">
+                   
                    </div></center>
                    
             </div>
