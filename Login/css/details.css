@@ -19,7 +19,7 @@ body{
     margin-left: 10px;
     float:left;
     width: 200px;
-    height: 2000px;
+    height: 2200px;
 }
 
 #title{
@@ -140,4 +140,21 @@ div.item{
 
 .caption {
     margin-left: 55px;
+}
+
+.format{
+    height:300px;
+   width:65%;
+    background-color: rgba(255,255,255,0.5); 
+    text-align: center;
+    float:left;
+    display:none;
+}
+
+.test{
+    background-color: white;
+     width:85%;
+     height:200px;
+      border-style: solid;
+    border-color: coral;
 }

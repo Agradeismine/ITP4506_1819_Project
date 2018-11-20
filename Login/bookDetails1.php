@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="css/moreResultLoading.css">
     <link rel="stylesheet" type="text/css" href="css/details.css">
    
-   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
     <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -39,7 +38,40 @@
                 }
             }
         }
-       
+          
+ 
+          $(document).ready(function() {
+            $('.btnPrint').click(function(){
+                   window.print();
+                       return false;
+            });
+             $('#letsgo').click(function(e){
+                   $("#copying").hide();
+                 $("#br3").hide();
+                 
+                   $("#formatting").toggle();
+                 $("#br2").toggle();
+                  e.preventDefault();
+            });  
+              
+            $('#copy').click(function(e){
+                 $("#formatting").hide();
+                 $("#br2").hide();
+                
+                  $("#formatting").hide();
+                   $("#copying").toggle();
+                 $("#br3").toggle();
+                  e.preventDefault();
+            });  
+              
+                $('#sendEmail').click(function(){
+                  alert("E-mail has been sent successfully!");
+            });
+               $('#copyTo').click(function(){
+                  alert("Copy successfully!");
+            });
+          });
+
        
        
         $(function(){
@@ -249,24 +281,59 @@
            </div>
            
              <div class="item" >
-              <a href=""><img src="images/email.png" width="50px" height="50px ">EMAIL </a>
+              <a href="" id="letsgo"><img src="images/email.png" width="50px" height="50px ">EMAIL </a>
+               
+               
                 </div>
                 
                    
              <div class="item" >
-              <a href=""><img src="images/print_icon.gif" width="50px" height="50px ">PRINT </a>
+              <a href="" class="btnPrint"><img src="images/print_icon.gif" width="50px" height="50px ">PRINT </a>
                 </div>
                 
                    
              <div class="item" >
-              <a href=""><img src="images/Permalink_logo.png" width="50px" height="50px ">PERMALINK </a>
+              <a href="" id="copy"><img src="images/Permalink_logo.png" width="50px" height="50px ">PERMALINK </a>
                 </div>
+                 <div class="format" id="copying" style="height:250px;">
+                   <br><br>
+                   
+                   <center>
+                   <div class="test" style="font-size:18px; height:70px;"> 
+                   <br>
+                   <b style="color:black;">http://localhost/ITP4506_1819_Project/Login/bookDetails1.php?</b><br> <br>
+                   <form action="bookDetails1.php">
+                   
+                   <br><br>
+                   <input type="submit" value="Copy" class="all" style="opacity:1" id="copyTo">
+                   </form>
+                   </div></center>
+                   
+            </div>
+             <div id="br3" style="display:none"> <br><br><br><br><br><br><br> </div>
+                
          <br>
          <br>
+             <div class="format" id="formatting">
+                   <br><br>
+                   
+                   <center>
+                   <div class="test">
+                   <b style="color:black;">Subject:<br>
+                   Item(s) sent by Ex Libris Discovery</b><br> <br>
+                    <form action="bookDetails1.php">
+                   <input type="email" style="background: transparent; border: none;    border-bottom: 1px solid #000000; width:250px; font-size:18px;" placeholder="To:">
+                   <br><br>
+                   <input type="submit" value="Send" class="all" style="opacity:1" id="sendEmail">
+                       </form>
+                   </div></center>
+                   
+            </div>
+   
          <br>
          <br>
        </div>
-       
+        <div id="br2" style="display:none"> <br><br><br><br><br><br><br><br><br><br><br><br><br><br> </div>
        <div class="send" id="getDiv">
            Get It &nbsp;&nbsp;<hr style='display:inline-block; width:650px; opacity:0.5;' />
            <p>
@@ -296,7 +363,16 @@
                    <div><br>
                    You have to ‘pick up’ the items within 3 working days.
                    <br><br>
-                    <b style="font-size:9;color:red">*Select the day:</b><input type="date" value="<?php echo date('Y-m-d'); ?>" />
+                    <b style="font-size:9;color:red">*Select the day You will come to pick up the book:</b>
+                    <select>
+                        <option value="1/12/2018">1/12/2018</option>
+                        <option value="2/12/2018">2/12/2018</option>
+                        <option value="3/12/2018">3/12/2018</option>
+                        <option value="4/12/2018">4/12/2018</option>
+                        <option value="5/12/2018">5/12/2018</option>
+                        <option value="6/12/2018">6/12/2018</option>
+                        <option value="7/12/2018">7/12/2018</option>
+                    </select>
                     </div>
                     <br>
                     
@@ -304,11 +380,13 @@
               
             <br><br>
             </div>
-            <div id="success" style="text-align:center; color:black; background-color:lightgreen;float: left; width:65%; height:150px;">
-                 <br> <br><b>Your request was successfully placed</b>
+            <div id="success" style="text-align:center; color:black; background-color:lightgreen;float: left; width:65%; height:200px;">
+                 <br> <br><b>Your request was successfully placed</b><br>
+                         <b>You have to ‘pick up’ the items in these 3 days.</b><br>
+                         <b>3/12 (MON), 4/12(TUES), 5/12(WED)</b>
+                         
                  <div>
-                    <br>
-                    <br>
+                 <br>
                     <br>
                      <input type="button" id="back" value="Back" class="all" style="float:right; margin-right:5px; background-color:f1f1f1">
                  </div>

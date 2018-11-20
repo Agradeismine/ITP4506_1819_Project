@@ -866,15 +866,15 @@ function topFunction() {
             <h2>Publication Date</h2>
               <form >
             <p>
-<<<<<<< HEAD
+
               
             <label for="amount">Range：</label>
             <input type="text" id="amount" style="font-weight:bold;">
                       
-=======
+
             <label for="range">Range：</label>
             <input type="text" id="range" style="font-weight:bold;">
->>>>>>> 84fea343d9afdbcbf85f5f322ea11bee646fd723
+
             </p>
               
             <div id="slider-range"></div>
