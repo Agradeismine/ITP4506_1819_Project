@@ -67,17 +67,20 @@
             var bookMax = 2;
             $("td a").click(function(){
                 if($(this).text()=="***Booked***"){
-                    bookCount-=1;
-                    alert("Cancel booking successfully.");
-                    $(this).html("<img width='13' height='13' src='images/add.png' alt=''>");
-                    $(this).parent().css("background-color", "");
-
+                    var r = confirm("Do you want to cancel the booking?");
+                    if(r==true){
+                        bookCount-=1;
+                        $(this).html("<img width='13' height='13' src='images/add.png' alt=''>");
+                        $(this).parent().css("background-color", "");
+                    }
                 }else{
                     if(bookCount<bookMax){  //can book
-                    bookCount+=1;
-                    alert("The room is booked successfully.");
-                    $(this).html("***Booked***");
-                    $(this).parent().css("background-color", "#FFFF99");
+                        var r = confirm("Do you want to book this room?");
+                        if(r==true){
+                            bookCount+=1;
+                            $(this).html("***Booked***");
+                            $(this).parent().css("background-color", "#FFFF99");
+                        }
                     }else{      //can't book
                         alert("You can maximum book 2 hours.");
                     }
@@ -150,8 +153,12 @@
         <img src="images/studentIcon.png" style="float:right; width:45px; height:45px;">
     </div> <!-- end of navbar -->
     <img src="arrow.png" id="myBtn" title="Go to top" style="width:25px; height=25px ">
-    
-    <h1 style='padding: 0px 75px;'><B>Study Room Booking System</B></h1>
+    <a style="float:right; padding:20px 80px; font-size:20px" href="cancel_booking.php">Booking list</a>
+
+    <h1 style='padding: 0px 70px;'><B>Study Room Booking System</B></h1>
+
+    <h2 align="center">Friday 30 November 2018</h2>
+    <a style=" padding:10px 80px; font-size:20px" href="bookingGuideline.php">Online Booking Guideline</a>
     <center>
     <table cellspacing="0" border='1' width="90%">
         <tr style='background-color: #999999; color: #fff'>
@@ -185,8 +192,8 @@
         <tr align="center" >
             <td style='padding: 10px; background-color: #ffffed;'>12:00AM - 01:00PM</td>
             <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
-            <td bgcolor="#FFFF99">***Booked***</td>
-            <td bgcolor="#FFFF99">***Booked***</td>
+            <td style='background-color: #FFFF99; color: #D7D7D7;'>***Booked***</td>
+            <td style='background-color: #FFFF99; color: #D7D7D7;'>***Booked***</td>
             <td style='padding: 10px; background-color: #ffffed;'>12:00AM - 01:00PM</td>
         </tr>
         <tr align="center" >
@@ -228,14 +235,14 @@
             <td style='padding: 10px; background-color: #ffffed;'>06:00PM - 07:00PM</td>
             <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
             <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
-            <td bgcolor="#FFFF99">***Booked***</td>
+            <td style='background-color: #FFFF99; color: #D7D7D7;'>***Booked***</td>
             <td style='padding: 10px; background-color: #ffffed;'>06:00PM - 07:00PM</td>
         </tr>
         <tr align="center" >
             <td style='padding: 10px; background-color: #ffffed;'>07:00PM - 08:00PM</td>
             <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
-            <td bgcolor="#FFFF99">***Booked***</td>
-            <td bgcolor="#FFFF99">***Booked***</td>
+            <td style='background-color: #FFFF99; color: #D7D7D7;'>***Booked***</td>
+            <td style='background-color: #FFFF99; color: #D7D7D7;'>***Booked***</td>
             <td style='padding: 10px; background-color: #ffffed;'>07:00PM - 08:00PM</td>
         </tr>
         <tr align="center" >
@@ -266,8 +273,10 @@
             <td bgcolor="#FF6666"><img width="13" height="13" src="images/x.png" alt=""></td>
             <td style='padding: 10px; background-color: #ffffed;'>11:00PM - 12:00PM</td>
         </tr>
-    </table>    
-    </center><br>
+    </table>
+    </center>
+    <a style='float: right; padding: 0px 80px' href="">View bookings for next day</a>
+    <br>
     <table border="0" style='padding: 0px 75px;'>
         <tr>
             <td class="D" bgcolor="#FFFF99">Booked</td>
