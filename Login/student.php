@@ -423,7 +423,7 @@ function hrefLink(link) {
                                     'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
                                     '</div>');
                                 } else {
-                                    $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                    $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a>'+rs[i].bookname+'</a></h3>'+
                                     '<table >'+
                                     '<tr class="item"><td width="250">Type: '+rs[i].type+'</td><td width="250">Year: '+rs[i].year+'</td><td></td><td width="100"><a href="#"><img src="images/hyperlink.png" width="25px" height="25px "></a> <a href="#"><img src="images/Citation.png" width="25px" height="25px "></a> <a href="#"><img src="images/requests.png" width="25px" height="25px "></a></td></tr>'+
                                     '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td width="450">Publisher: '+rs[i].Publisher+'</td></tr>'+
@@ -460,7 +460,7 @@ function hrefLink(link) {
                                     'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
                                     '</div>');
                                 } else{
-                                    $('#bookResults').append('<div class="filter'+(i+14)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                    $('#bookResults').append('<div class="filter'+(i+14)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a>'+rs[i].bookname+'</a></h3>'+
                                     '<table>'+
                                     '<tr class="item"><td width="250">Type: '+rs[i].type+'</td><td width="250">Year: '+rs[i].year+'</td><td width="450"></td><td width="100"><a href="#"><img src="images/hyperlink.png" width="25px" height="25px "></a> <a href="#"><img src="images/Citation.png" width="25px" height="25px "></a> <a href="#"><img src="images/requests.png" width="25px" height="25px "></a></td></tr>'+
                                     '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>OS: '+rs[i].OS+'</td></tr>'+
@@ -497,7 +497,7 @@ function hrefLink(link) {
                                     'Description:&emsp;'+rs[i].Description+'<br><br><br><hr>'+
                                     '</div>');
                                 } else{
-                                    $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                    $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a>'+rs[i].bookname+'</a></h3>'+
                                     '<table >'+
                                     '<tr class="item"><td width="250">Type: '+rs[i].type+'</td><td width="250">Year: '+rs[i].year+'</td><td width="450">ISBN: '+rs[i].ISBN+'</td><td width="100"><a href="#"><img src="images/hyperlink.png" width="25px" height="25px "></a> <a href="#"><img src="images/Citation.png" width="25px" height="25px "></a> <a href="#"><img src="images/requests.png" width="25px" height="25px "></a></td></tr>'+
                                     '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
@@ -517,7 +517,7 @@ function hrefLink(link) {
                         $('#bookResults').html("");
                         $.getJSON('jslib/software.json', function(rs) {
                             for (var i = 0; i < (rs.length); i++) {
-                                $('#bookResults').append('<div class="filter'+(i+14)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                $('#bookResults').append('<div class="filter'+(i+14)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a>'+rs[i].bookname+'</a></h3>'+
                                 '<table>'+
                                 '<tr class="item"><td width="250">Type: '+rs[i].type+'</td><td width="250">Year: '+rs[i].year+'</td><td width="450"></td><td width="100"><a href="#"><img src="images/hyperlink.png" width="25px" height="25px "></a> <a href="#"><img src="images/Citation.png" width="25px" height="25px "></a> <a href="#"><img src="images/requests.png" width="25px" height="25px "></a></td></tr>'+
                                 '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>OS: '+rs[i].OS+'</td></tr>'+
@@ -528,7 +528,7 @@ function hrefLink(link) {
                         });
                         $.getJSON('jslib/book.json', function(rs) {
                             for (var i = 8; i < rs.length; i++) {
-                                $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a>'+rs[i].bookname+'</a></h3>'+
                                 '<table >'+
                                 '<tr class="item"><td width="250">Type: '+rs[i].type+'</td><td width="250">Year: '+rs[i].year+'</td><td width="450">ISBN: '+rs[i].ISBN+'</td><td width="100"><a href="#"><img src="images/hyperlink.png" width="25px" height="25px "></a> <a href="#"><img src="images/Citation.png" width="25px" height="25px "></a> <a href="#"><img src="images/requests.png" width="25px" height="25px "></a></td></tr>'+
                                 '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
@@ -548,7 +548,7 @@ function hrefLink(link) {
                         $('#bookResults').html("");
                         $.getJSON('jslib/Magazines.json', function(rs) {
                             for (var i = 0; i < 3; i++) {
-                                $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a>'+rs[i].bookname+'</a></h3>'+
                                 '<table >'+
                                 '<tr class="item"><td width="250">Type: '+rs[i].type+'</td><td>Year: '+rs[i].year+'</td></tr>'+
                                 '<tr class="item"><td>Language: '+rs[i].Language+'</td><td width="250">Author: '+rs[i].Author+'</td><td width="450">Publisher: '+rs[i].Publisher+'</td><td width="100"><a href="#"><img src="images/hyperlink.png" width="25px" height="25px "></a> <a href="#"><img src="images/Citation.png" width="25px" height="25px "></a> <a href="#"><img src="images/requests.png" width="25px" height="25px "></a></td></tr>'+
@@ -591,7 +591,7 @@ function hrefLink(link) {
                                     searchRsCount++;
                                 }
                                 else{
-                                    $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                    $('#bookResults').append('<div class="filter'+i+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a>'+rs[i].bookname+'</a></h3>'+
                                     '<table>'+
                                     '<tr class="item"><td width="250">Type: '+rs[i].type+'</td><td width="250">Year: '+rs[i].year+'</td><td width="450">ISBN: '+rs[i].ISBN+'</td><td width="100"><a href="#"><img src="images/hyperlink.png" width="25px" height="25px "></a> <a href="#"><img src="images/Citation.png" width="25px" height="25px "></a> <a href="#"><img src="images/requests.png" width="25px" height="25px "></a></td></tr>'+
                                     '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
@@ -615,7 +615,7 @@ function hrefLink(link) {
                                         '</div>');
                                         searchRsCount++;
                                     }else {
-                                        $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                        $('#bookResults').append('<div class="filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a>'+rs[i].bookname+'</a></h3>'+
                                         '<table>'+
                                         '<tr class="item"><td width="250">Type: '+rs[i].type+'</td><td width="250">Year: '+rs[i].year+'</td><td width="450"></td><td width="100"><a href="#"><img src="images/hyperlink.png" width="25px" height="25px "></a> <a href="#"><img src="images/Citation.png" width="25px" height="25px "></a> <a href="#"><img src="images/requests.png" width="25px" height="25px "></a></td></tr>'+
                                         '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
@@ -639,7 +639,7 @@ function hrefLink(link) {
                                         '</div>');
                                         searchRsCount++;
                                     }else{
-                                        $('#bookResults').append('<div style=" display: none;" class="hiddenRs filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                        $('#bookResults').append('<div style=" display: none;" class="hiddenRs filter'+(i+9)+'"> <img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a>'+rs[i].bookname+'</a></h3>'+
                                         '<table>'+
                                         '<tr class="item"><td width="250">Type: '+rs[i].type+'</td><td width="250">Year: '+rs[i].year+'</td><td width="450"></td><td width="100"><a href="#"><img src="images/hyperlink.png" width="25px" height="25px "></a> <a href="#"><img src="images/Citation.png" width="25px" height="25px "></a> <a href="#"><img src="images/requests.png" width="25px" height="25px "></a></td></tr>'+
                                         '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>Author: '+rs[i].Author+'</td><td>Publisher: '+rs[i].Publisher+'</td></tr>'+
@@ -654,7 +654,7 @@ function hrefLink(link) {
                         $.getJSON('jslib/software.json', function(rs) {
                             for (var i = 0; i < (rs.length); i++) {
                                 if(searchRsCount<10){
-                                    $('#bookResults').append('<div class="filter'+(i+16)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                    $('#bookResults').append('<div class="filter'+(i+16)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a>'+rs[i].bookname+'</a></h3>'+
                                     '<table >'+
                                     '<tr class="item"><td width="250">Type: '+rs[i].type+'</td><td width="250">Year: '+rs[i].year+'</td><td width="450"></td><td width="100"><a href="#"><img src="images/hyperlink.png" width="25px" height="25px "></a> <a href="#"><img src="images/Citation.png" width="25px" height="25px "></a> <a href="#"><img src="images/requests.png" width="25px" height="25px "></a></td></tr>'+
                                     '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>OS: '+rs[i].OS+'</td></tr>'+
@@ -682,7 +682,7 @@ function hrefLink(link) {
                                         '</div>');
                                         searchRsCount++;
                                     }else{
-                                        $('#bookResults').append('<div style=" display: none;" class="hiddenRs filter'+(i+16)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3>'+rs[i].bookname+'</h3>'+
+                                        $('#bookResults').append('<div style=" display: none;" class="hiddenRs filter'+(i+16)+'"><img src="'+rs[i].img+'" title="'+rs[i].bookname+'" style="width:100px; height=125px; float: left; margin-left: 10px; margin-right: 30px; margin-bottom: 10px;"> <h3><a>'+rs[i].bookname+'</a></h3>'+
                                         '<table>'+
                                         '<tr class="item"><td width="250">Type: '+rs[i].type+'</td><td width="250">Year: '+rs[i].year+'</td><td width="450"></td><td width="100"><a href="#"><img src="images/hyperlink.png" width="25px" height="25px "></a> <a href="#"><img src="images/Citation.png" width="25px" height="25px "></a> <a href="#"><img src="images/requests.png" width="25px" height="25px "></a></td></tr>'+
                                         '<tr class="item"><td>Language: '+rs[i].Language+'</td><td>OS: '+rs[i].OS+'</td></tr>'+
@@ -706,6 +706,7 @@ function hrefLink(link) {
     <div class="navbar">
         <a href="student.php">Home</a>
         <a href="#news">News</a>
+        <a href="bookRoomPage.php">Study Room Booking</a>
         <div class="dropdown">
             <button class="dropbtn" onclick="showdropdown('DDDropdown')" style="width:200px;">Learning Resources 
                 <i class="fa fa-caret-down"></i>
