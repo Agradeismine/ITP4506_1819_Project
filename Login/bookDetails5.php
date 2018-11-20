@@ -257,7 +257,7 @@
     <div id="details">
       <span id="image">
       <b style="color:orange;">Click to Preview</b>
-       <img class="thumbnail"  src="4.jpg" height="150px" width="165px" id="preview"> 
+       <img class="thumbnail"  src="5.jpg" height="150px" width="165px" id="preview"> 
        <div class="button">
           
            <input type="button" value="Top"  id="goTop" class="all"><br>
@@ -269,7 +269,7 @@
            
        </div>
        </span>
-       <div id="title">21 Lessons for the 21st Century</div>
+       <div id="title">Computer-Aided Design</div>
        Author A<br>
        2018<br>
        
@@ -410,13 +410,13 @@
             
             <div id="br" style="display:none"><br><br><br><br><br><br><br><br></div>Details &nbsp;&nbsp;<hr style='display:inline-block; width:650px; opacity:0.5;' />
            <p style="color:black;">
-               <b>Title</b>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21 Lessons for the 21st Century <br>
+               <b>Title</b>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Computer-Aided Design <br>
                <b>Author</b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yuval Noah Harari<br>
                
                <b>Language</b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;English<br>
                <b>Publisher</b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vintage Publishing<br>
                <br>
-                <b>Description</b> <br> Yuval Noah Harari returns in August 2018 with a new book, 21 Lessons for the 21st Century. In bringing his focus to the here and now, Harari will help us to grapple with a world that is increasingly hard to comprehend, encouraging us to focus our minds on the essential questions we should be asking ourselves today.
+                <b>Description</b> <br> Corrigendum to Delaunay Hodge star [Comput. Aided Des. 45 (2013) 540–544]Computer-aided or computer-assisted is an adjectival phrase that hints of the use of a computer as an indispensable tool in a certain field, usually derived from more traditional fields of science and engineering. Instead of the phrase computer-aided or computer-assisted, in some cases the suffix management system is used.
 .
               </div>
               <div class="send" id="contentDiv">

@@ -257,7 +257,7 @@
     <div id="details">
       <span id="image">
       <b style="color:orange;">Click to Preview</b>
-       <img class="thumbnail"  src="4.jpg" height="150px" width="165px" id="preview"> 
+       <img class="thumbnail"  src="6.jpg" height="150px" width="165px" id="preview"> 
        <div class="button">
           
            <input type="button" value="Top"  id="goTop" class="all"><br>
@@ -269,9 +269,9 @@
            
        </div>
        </span>
-       <div id="title">21 Lessons for the 21st Century</div>
+       <div id="title">International Journal of Computer Mathematics</div>
        Author A<br>
-       2018<br>
+       2012<br>
        
        <div class="send" id="sendDiv">
            Send To &nbsp;&nbsp;<hr style='display:inline-block; width:650px; opacity:0.5;' />
@@ -410,14 +410,13 @@
             
             <div id="br" style="display:none"><br><br><br><br><br><br><br><br></div>Details &nbsp;&nbsp;<hr style='display:inline-block; width:650px; opacity:0.5;' />
            <p style="color:black;">
-               <b>Title</b>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21 Lessons for the 21st Century <br>
-               <b>Author</b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yuval Noah Harari<br>
+               <b>Title</b>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; International Journal of Computer Mathematics <br>
+               <b>Author</b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Author A<br>
                
                <b>Language</b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;English<br>
-               <b>Publisher</b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vintage Publishing<br>
+               <b>Publisher</b>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Editorial Projects in Education, Inc<br>
                <br>
-                <b>Description</b> <br> Yuval Noah Harari returns in August 2018 with a new book, 21 Lessons for the 21st Century. In bringing his focus to the here and now, Harari will help us to grapple with a world that is increasingly hard to comprehend, encouraging us to focus our minds on the essential questions we should be asking ourselves today.
-.
+                <b>Description</b> <br> In this article, similarity between time series obtained from chaotic systems is considered as a measure of similarity between them; however, it is well known that this method is not suitable for chaotic systems.
               </div>
               <div class="send" id="contentDiv">
               <br>
