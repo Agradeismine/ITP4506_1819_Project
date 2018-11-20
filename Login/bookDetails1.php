@@ -70,6 +70,10 @@
                $('#copyTo').click(function(){
                    $("#copyTo").prop('value', 'Success!');
             });
+              
+              $('#preview').click(function(){
+                   window.open('pdf/music1-converted.pdf','_blank');
+            });
           });
 
        
@@ -251,9 +255,9 @@
     
     
     <div id="details">
-     
       <span id="image">
-       <img class="thumbnail"  src="1.jpg" height="150px" width="165px"> 
+      <b style="color:orange;">Click to Preview</b>
+       <img class="thumbnail"  src="1.jpg" height="150px" width="165px" id="preview"> 
        <div class="button">
           
            <input type="button" value="Top"  id="goTop" class="all"><br>
