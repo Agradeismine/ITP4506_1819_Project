@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/advancedForm.css">
     <link rel="stylesheet" type="text/css" href="css/loading.css">
     <link rel="stylesheet" type="text/css" href="css/moreResultLoading.css">
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">     
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
@@ -39,11 +40,31 @@
 
         function myFunction2() {
             myVar2 = setTimeout(showPage2, 2000);
+
         }
 
+        $.showPage2Info = function() {
+            $("#bookResults div").hide();
+            $("#loadMoreBtn").hide();
+            $(".hiddenRs:lt(10)").show();
+        };
+        $.showPage3Info = function() {
+            $("#bookResults div").hide();
+            $("#loadMoreBtn").hide();
+            $(".hiddenRs:gt(9)").show();
+        };
         function showPage2() {
           document.getElementById("loader2").style.display = "none";
           document.getElementById("data").style.display = "block";
+          <?php 
+            if(isset($_SERVER["QUERY_STRING"])){
+                extract($_GET);
+                if (isset($page2)) {    ?>
+                    $.showPage2Info();
+                <?php }else if(isset($page3)){ ?>
+                    $.showPage3Info();
+                <?php }
+            } ?>
         }
       
 
@@ -415,7 +436,7 @@ function hrefLink(link) {
                     });
                 </script>
             <?php
-            } else if (isset($Software)) {
+            } elseif (isset($Software)) {
                 ?>
                 <script type="text/javascript">
                     $(document).ready(function() {
@@ -489,7 +510,7 @@ function hrefLink(link) {
                     });
                 </script>
             <?php
-            } else if (isset($Technology)) {
+            } elseif (isset($Technology)) {
                 ?>
                 <script type="text/javascript">
                     $(document).ready(function() {
@@ -546,7 +567,7 @@ function hrefLink(link) {
                         var searchRsCount = 0;
                         //alert("searchRsCount: "+searchRsCount);     //test
                         $('#bookResults').html("");
-                        $('#bookResults').append('&ensp;<b>Page 1</b>');
+                        $('#bookResults').append('&ensp;<div><b>Page 1</b></div>');
                         // $('#bookResults').html("");
                         $.getJSON('jslib/book.json', function(rs) {
                             for (var i = 0; i < rs.length; i++) {
@@ -678,6 +699,8 @@ function hrefLink(link) {
             <?php
             }
         } //(isset($_SERVER["QUERY_STRING"])) end tag?>    
+
+
     <div id="loader"></div>
     <div id="main" style="display:none">
     <div class="navbar">
@@ -1041,6 +1064,26 @@ function hrefLink(link) {
             <article id="bookResults">
             </article>
                 <article>
+                    <table align='right' border='1' style="border-collapse: collapse;"><tr>
+                        <?php if(isset($page2)){ //in page 2 ?>
+                        <td align= 'center' width='20'><a href='student.php'><i class="zmdi zmdi-arrow-left zmdi-hc-2x"></i></a></td>
+                        <?php } else if(isset($page3)){ //in page3 ?>
+                            <td align= 'center' width='20'><a href='?page2'><i class="zmdi zmdi-arrow-left zmdi-hc-2x"></i></a></td>
+                        <?php } else { //in page 1 ?>   
+                            <td align= 'center' width='20'><a ><i class="zmdi zmdi-arrow-left zmdi-hc-2x"></i></a></td>
+                        <?php } ?>
+                        <td align = 'center' width='20' style="font-size:20px"><a href="?page1">1</a></td>
+                        <td align = 'center' width='20' style="font-size:20px"><a href="?page2">2</a></td>
+                        <td align = 'center' width='20' style="font-size:20px"><a href="?page3">3</a></td>
+                        <?php if(isset($page2)){ //in page 2 ?>
+                        <td align = 'center' width='20'><a href="?page3"><i class="zmdi zmdi-arrow-right zmdi-hc-2x"></i></a></td>
+                        <?php } else if(isset($page3)){ //in page 3  ?>
+                            <td align = 'center' width='20'><a ><i class="zmdi zmdi-arrow-right zmdi-hc-2x"></i></a></td>
+                        <?php } else { //in page 1 ?>   
+                        <td align = 'center' width='20'><a href="?page2"><i class="zmdi zmdi-arrow-right zmdi-hc-2x"></i></a></td>
+                        <?php } ?>
+
+                    </tr></table>
                     <center>
                         <button id="loadMoreBtn" type="button" style="padding: 8px 16px; text-align:center; background-color: #0058b1; color: white; border: 1px;">Load More...</button>
                         <p><div id="moreResultLoader" style="display: none"></div></p>
