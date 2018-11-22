@@ -706,7 +706,7 @@ function hrefLink(link) {
     <div class="navbar">
         <a href="student.php">Home</a>
         <a href="#news">News</a>
-        <a href="bookRoomPage.php">Study Room Booking</a>
+        <a href="selectTime.php">Study Room Booking</a>
         <div class="dropdown">
             <button class="dropbtn" onclick="showdropdown('DDDropdown')" style="width:200px;">Learning Resources 
                 <i class="fa fa-caret-down"></i>

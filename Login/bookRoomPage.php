@@ -158,7 +158,9 @@
     <h1 style='padding: 0px 70px;'><B>Study Room Booking System</B></h1>
 
     <h2 align="center">Friday 30 November 2018</h2>
-    <a style=" padding:10px 80px; font-size:20px" href="bookingGuideline.php">Online Booking Guideline</a>
+    <a style=" padding:10px 80px; font-size:20px" href="selectTime.php">Select Other day</a><br>
+    <a style=" padding:10px 80px; font-size:20px" href="bookingGuideline.php">Online Booking Guideline</a><br>
+    <b style=" padding:10px 80px; color: green;">Click add button to book room</b>
     <center>
     <table cellspacing="0" border='1' width="90%">
         <tr style='background-color: #999999; color: #fff'>

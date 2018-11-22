@@ -11,6 +11,12 @@
   
 }
 
+.block{
+  width: 400px;
+  display: block;
+  margin:5px 0;
+}
+
 
 /* Full-width input fields */
 .form-container select {
@@ -125,4 +131,10 @@
 
 #forSearch{
   display: none;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
 }

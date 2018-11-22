@@ -4,8 +4,9 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <title>Booking List</title>
+    <title>Equipment Booking</title>
     <link rel="stylesheet" type="text/css" href="css/mainpage.css">
+    <link rel="stylesheet" type="text/css" href="css/advancedForm.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
@@ -129,36 +130,35 @@
         <img src="images/studentIcon.png" style="float:right; width:45px; height:45px;">
     </div> <!-- end of navbar -->
     <img src="arrow.png" id="myBtn" title="Go to top" style="width:25px; height=25px ">
-    
-    <h1 style='padding: 0px 75px;'><B>Study Room Booking System</B></h1>
-    <h2 align="center">Friday 30 November 2018</h2>
-    <center>
-    <table cellspacing="0" border='1' width="90%">
-        <tr style='background-color: #999999; color: #fff'>
-            <th width="17%"><font size="2px" style="font-family:arial" ;="">Create by</font></th>
-            <th width="17%"><font size="2px" style="font-family:arial" ;="">Room Booked</font></th>
-            <th width="17%"><font size="2px" style="font-family:arial" ;="">From</font></th>
-            <th width="17%"><font size="2px" style="font-family:arial" ;="">To</font></th>
-            <th width="17%"><font size="2px" style="font-family:arial" ;="">Request</font></th>
-            <th width="17%"><font size="2px" style="font-family:arial" ;="">Action</font></th>
-        </tr>
-        <tr align="center" >
-        <td style='padding: 10px; '>Yip Yiu Cheung</td>
-        <td style='padding: 10px; '>Meeting Room 1</td>
-        <td style='padding: 10px; '>09:00AM</td>
-        <td style='padding: 10px; '>10:00AM</td>
-        <td style='padding: 10px; '><a href="bookAddition.php">Book Addition Equipments</a></td>
-        <td style='padding: 10px; '><a href="#">Cancel</a></td>
-        </tr>
-        <tr align="center" >
-        <td style='padding: 10px; '>Yip Yiu Cheung</td>
-        <td style='padding: 10px; '>Class Room C356</td>
-        <td style='padding: 10px; '>10:00AM</td>
-        <td style='padding: 10px; '>11:00AM</td>
-        <td style='padding: 10px; '><a href="bookAddition.php">Book Addition Equipments</a></td>
-        <td style='padding: 10px; '><a href="#">Cancel</a></td>
-        </tr>
-    </table>
+
+    <form id="advanced" class="form-container">
+        <div class="">
+                <div class="">
+                    <label style='width:200px'>Appointment Student:</label>&emsp;<input type="text" id="txt_name" value='Yip Yiu Cheung' disabled/><br>
+                    <label style='width:200px'>Student ID:</label>&emsp;<input type="text" id="txt_id" value='170138992' disabled /><br>
+                    <label style='width:200px'>Device type:</label>&emsp; 
+                        <select style="width: 170px;" name="deviceType" id="deviceType">
+                            <option label='Musical instruments' value="Musical instruments"></option>
+                            <option label='Electronic devices' value="Electronic devices"></option>
+                            <option label='Gadget' value="Gadget"></option>
+                        </select><br>
+                    <label style='width:200px'>Reservation device:</label>&emsp;
+                        <select style="width: 170px;" name="devices" id="devices">
+                            <option label='Triangle' value="Triangle"></option>
+                            <option label='Oboe' value="Oboe"></option>
+                            <option label='Violin' value="Violin"></option>
+                            <option label='Cello' value="Cello"></option>
+                            <option label='Guitar' value="Guitar"></option>
+                            <option label='Acoustic Guitar' value="Acoustic Guitar"></option>
+                            <option label='Electric bass' value="Electric bass"></option>
+                            <option label='Electric piano' value="Electric piano"></option>
+                        </select>&emsp;<label style='width:100px'>Quantity:</label>&emsp; <input type="number"><br>
+
+                        Are you sure you wouldn't crash the devices?
+                </div>
+        </div>
+    </form>
+
 
 
 </body>

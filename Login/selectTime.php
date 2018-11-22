@@ -4,12 +4,25 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <title>Booking List</title>
+    <title>Library System: Student Page</title>
     <link rel="stylesheet" type="text/css" href="css/mainpage.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/discovery.css">
 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+    <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <!-- <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+  <script src="jquery-ui-1.12.1/jquery-1.12.4.js"></script>
+  <script src="jquery-ui-1.12.1/jquery-ui.js"></script> -->
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+
+    });
+  } );
+  </script>
     <script>
         /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
         function showdropdown(id) {
@@ -22,7 +35,6 @@
                 var CategoryDropdown = document.getElementById("CategoryDropdown");
                 var MenuDropdown = document.getElementById("MenuDropdown");
                 var DDDropdown = document.getElementById("DDDropdown");
-
 
                 if (CategoryDropdown.classList.contains('show')) {
                     CategoryDropdown.classList.remove('show');
@@ -62,8 +74,18 @@
                     scrollTop: 0
                 }, 400);
             });
-            
+
+
+            $('#allRequests').click(function() {
+                var c = this.checked;
+                $(':checkbox').prop('checked',c);
+            });
+
         });
+
+         $.showMoreThisInfo = function() {
+            $('.'+id).toggle(300);
+         };
 
         window.onscroll = function () {
             scrollFunction()
@@ -82,6 +104,27 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
+    
+        var id; // global variable
+        function sendData(valueId){
+            id = valueId;
+            $.showMoreThisInfo();
+        }
+
+
+        function removeElement(id) {
+			var elem = document.getElementById(id);
+			return elem.parentNode.removeChild(elem);
+		}
+
+        $(document).ready(function() {
+            $("#confirmDate").click(function(){
+                window.location.href = "bookRoomPage.php";
+            });
+        });
+
+      
+        
     </script>
 </head>
 
@@ -128,39 +171,18 @@
         <a style="float:right">Student Name: Yip Yiu Cheung</a>
         <img src="images/studentIcon.png" style="float:right; width:45px; height:45px;">
     </div> <!-- end of navbar -->
-    <img src="arrow.png" id="myBtn" title="Go to top" style="width:25px; height=25px ">
+    <div id="datepicker" align="center" style="font-size:30px">
+    <p>Select a date
+</p>
+    </div>
+    <p></p>
+    <div align="center" style="font-size:20px">
+    <button id='confirmDate'>Confirm</button>
     
-    <h1 style='padding: 0px 75px;'><B>Study Room Booking System</B></h1>
-    <h2 align="center">Friday 30 November 2018</h2>
-    <center>
-    <table cellspacing="0" border='1' width="90%">
-        <tr style='background-color: #999999; color: #fff'>
-            <th width="17%"><font size="2px" style="font-family:arial" ;="">Create by</font></th>
-            <th width="17%"><font size="2px" style="font-family:arial" ;="">Room Booked</font></th>
-            <th width="17%"><font size="2px" style="font-family:arial" ;="">From</font></th>
-            <th width="17%"><font size="2px" style="font-family:arial" ;="">To</font></th>
-            <th width="17%"><font size="2px" style="font-family:arial" ;="">Request</font></th>
-            <th width="17%"><font size="2px" style="font-family:arial" ;="">Action</font></th>
-        </tr>
-        <tr align="center" >
-        <td style='padding: 10px; '>Yip Yiu Cheung</td>
-        <td style='padding: 10px; '>Meeting Room 1</td>
-        <td style='padding: 10px; '>09:00AM</td>
-        <td style='padding: 10px; '>10:00AM</td>
-        <td style='padding: 10px; '><a href="bookAddition.php">Book Addition Equipments</a></td>
-        <td style='padding: 10px; '><a href="#">Cancel</a></td>
-        </tr>
-        <tr align="center" >
-        <td style='padding: 10px; '>Yip Yiu Cheung</td>
-        <td style='padding: 10px; '>Class Room C356</td>
-        <td style='padding: 10px; '>10:00AM</td>
-        <td style='padding: 10px; '>11:00AM</td>
-        <td style='padding: 10px; '><a href="bookAddition.php">Book Addition Equipments</a></td>
-        <td style='padding: 10px; '><a href="#">Cancel</a></td>
-        </tr>
-    </table>
+    </div>
 
 
+    <img src="arrow.png" id="myBtn" title="Go to top" style="width:25px; height=25px ">
 </body>
 
 </html>
