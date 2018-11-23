@@ -159,6 +159,7 @@
 
     <h2 align="center">Friday 30 November 2018</h2>
     <a style=" padding:10px 80px; font-size:20px" href="selectTime.php">Select Other day</a><br>
+    <a style=" padding:10px 80px; font-size:20px"  href="#">Book book type:<select name="" id=""><option value="Meeting room">Meeting room</option><option value="Class room">Class room</option><option value="Music room">Music room</option></select></a><br>
     <a style=" padding:10px 80px; font-size:20px" href="bookingGuideline.php">Online Booking Guideline</a><br>
     <b style=" padding:10px 80px; color: green;">Click add button to book room</b>
     <center>
@@ -251,7 +252,7 @@
             <td style='padding: 10px; background-color: #ffffed;'>08:00PM - 09:00PM</td>
             <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
             <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
-            <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
+            <td style='background-color: #C0E0FF; '>***Department use***</td>
             <td style='padding: 10px; background-color: #ffffed;'>08:00PM - 09:00PM</td>
         </tr>
         <tr align="center" >

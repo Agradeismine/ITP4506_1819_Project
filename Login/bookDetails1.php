@@ -213,8 +213,9 @@
    </script>
 <body>
      <div class="navbar">
-        <a href="#home">Home</a>
+     <a href="student.php">Home</a>
         <a href="#news">News</a>
+        <a href="bookRoomPage.php">Study Room Booking</a>
         <div class="dropdown">
             <button class="dropbtn" onclick="showdropdown('DDDropdown')">Learning Resources 
                 <i class="fa fa-caret-down"></i>
@@ -242,10 +243,11 @@
             <button class="dropbtn" onclick="showdropdown('MenuDropdown')">Menu
                 <i class="fa fa-caret-down"></i>
             </button>
-            <div class="dropdown-content" id="MenuDropdown">
-                <a href="#">Profile</a>
-                <a href="#">Setting</a>
-                <a href="#" onclick="logoutAlert('Do you want to logout?');">Logout</a>
+            <div class="dropdown-content" id="MenuDropdown" style="width:115px;">
+                <a href="#"><img src="images/profile.png" style="float:left; width:20px; height=20px; ">Profile</a>
+                <a href="studentDiscovery.php"><img src="images/requests.png" style="float:left; width:20px; height=20px; ">Requests</a>
+                <a href="#"><img src="images/setting.png" style="float:left; width:20px; height=20px; ">Setting</a>
+                <a href="#" onclick="logoutAlert('Do you want to logout?');"><img src="images/logout.png" style="float:left; width:20px; height=20px; ">Logout</a>
             </div>
         </div>
         <a style="float:right">Student Name: Yip Yiu Cheung</a>
