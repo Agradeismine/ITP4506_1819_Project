@@ -209,8 +209,9 @@
         <div id="requestMenu" class="form-container" style="float:right; font-size: 18px;">
             Sort By &nbsp; &nbsp;
             <select id="sortField">
-                <option value="English">Status</option>
-                <option value="Chinese">Title</option>
+                <option value="Status">Status</option>
+                <option value="Title">Title</option>
+                <option value="Reserve date">Reserve date</option>
             </select>
         </div>  <!--end of requestMenu-->
         Reserved Books<br><br><br>
