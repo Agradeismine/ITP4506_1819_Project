@@ -242,7 +242,7 @@
                         <td width="50" rowspan="5"><img src="images/showMoreBtn.png" id='showMoreBtn' onclick='sendData("requestData2")' alt="Show more information"></td>
                     </tr>
                     <tr hidden class="requestData2">
-                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Pick up from: IVE(HW)</td>
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Pick up from: ABC(HW)</td>
                     </tr>
                     <tr hidden class="requestData2">
                         <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Vocational Training Council</td>
@@ -266,7 +266,7 @@
                         <td width="50" rowspan="5"><img src="images/showMoreBtn.png" id='showMoreBtn' onclick='sendData("requestData3")' alt="Show more information"></td>
                     </tr>
                     <tr hidden class="requestData3">
-                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Pick up from: Thei(ST)</td>
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Pick up from: CCTV(ST)</td>
                     </tr>
                     <tr hidden class="requestData3">
                         <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Vocational Training Council</td>
@@ -316,7 +316,7 @@
                         <td width="50" rowspan="5"><img src="images/showMoreBtn.png" id='showMoreBtn' onclick='sendData("requestData5")' alt="Show more information"></td>
                     </tr>
                     <tr hidden class="requestData5">
-                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Pick up from: Thei(TY)</td>
+                        <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Pick up from: CCTV(TY)</td>
                     </tr>
                     <tr hidden class="requestData5">
                         <td  width="400" style="padding: 3px; font-size: 20px; color: #666666;">Vocational Training Council</td>
