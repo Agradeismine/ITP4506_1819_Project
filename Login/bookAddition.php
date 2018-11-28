@@ -79,7 +79,7 @@
                         "<option label='Acoustic Guitar' value='Acoustic Guitar'></option>"+
                         "<option label='Electric bass' value='Electric bass'></option>"+
                         "<option label='Electric piano' value='Electric piano'></option>"+
-                        "</select>&emsp;<label style='width:100px'>Quantity:</label>&emsp; <input type='number' max='3'><br>");
+                        "</select>&emsp;<label style='width:100px'>Quantity:</label>&emsp; <input style='width:100px;' type='number' max='3'><br>");
                         $("#addMore").hide();
                 }else if($("#devices").val()=="Electric piano"){
                     $("#additionForm").append("<label style='width:200px'>Device type:</label>&emsp;"+
@@ -95,7 +95,7 @@
                         "<option label='Guitar' value='Guitar'></option>"+
                         "<option label='Acoustic Guitar' value='Acoustic Guitar'></option>"+
                         "<option label='Electric bass' value='Electric bass'></option>"+
-                        "</select>&emsp;<label style='width:100px'>Quantity:</label>&emsp; <input type='number' min='0' max='3'><br>");
+                        "</select>&emsp;<label style='width:100px'>Quantity:</label>&emsp; <input style='width:100px;' type='number' min='0' max='3'><br>");
                         $("#addMore").hide();
                 }
             });
@@ -203,7 +203,7 @@
                             <option label='Acoustic Guitar' value="Acoustic Guitar"></option>
                             <option label='Electric bass' value="Electric bass"></option>
                             <option label='Electric piano' value="Electric piano"></option>
-                        </select>&emsp;<label style='width:100px'>Quantity:</label>&emsp; <input type="number" min='0' max='3'><br>
+                        </select>&emsp;<label style='width:100px'>Quantity:</label>&emsp; <input style='width:100px;' type="number" min='0' max='3'><br>
                 </div>
                 <input type="button" id='addMore'value='Add more'>
                 <br><br><br>

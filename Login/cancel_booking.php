@@ -148,7 +148,7 @@
         <td style='padding: 10px; '>09:00AM</td>
         <td style='padding: 10px; '>10:00AM</td>
         <td style='padding: 10px; '><a href="bookAddition.php">Book Addition Equipments</a></td>
-        <td style='padding: 10px; '><a href="#">Cancel</a></td>
+        <td style='padding: 10px; '><a style="color:red;" href="#">Cancel</a></td>
         </tr>
         <tr align="center" >
         <td style='padding: 10px; '>Yip Yiu Cheung</td>
@@ -156,7 +156,7 @@
         <td style='padding: 10px; '>10:00AM</td>
         <td style='padding: 10px; '>11:00AM</td>
         <td style='padding: 10px; '><a href="bookAddition.php">Book Addition Equipments</a></td>
-        <td style='padding: 10px; '><a href="#">Cancel</a></td>
+        <td style='padding: 10px; '><a style="color:red;" href="#">Cancel</a></td>
         </tr>
     </table>
 
