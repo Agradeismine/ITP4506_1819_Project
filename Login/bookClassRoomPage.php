@@ -16,6 +16,8 @@
             document.getElementById(id).classList.toggle("show");
         }
 
+
+
         // Close the dropdown if the user clicks outside of it
         window.onclick = function (e) { //drop on off
             if (!e.target.matches('.dropbtn')) {
@@ -164,16 +166,16 @@
 
     <h2 align="center">Friday 30 November 2018</h2>
     <a style=" padding:10px 80px; font-size:20px" href="selectTime.php">Select Other day</a><br><br>
-    <a style=" padding:10px 80px; font-size:20px" href="roomType.html" >Book room type:</a><select name="" id="BookRoomType"><option value="bookRoomPage.php">Meeting room</option><option value="bookClassRoomPage.php">Class room</option><option value="bookMusicRoomPage.php">Music room</option></select><br><br>
+    <a style=" padding:10px 80px; font-size:20px" href="roomType.html" >Book room type:</a><select name="" id="BookRoomType"><option value="bookClassRoomPage.php">Class room</option><option value="bookMusicRoomPage.php">Music room</option><option value="bookRoomPage.php">Meeting room</option></select><br><br>
     <a style=" padding:10px 80px; font-size:20px" href="bookingGuideline.php">Online Booking Guideline</a><br>
     <b style=" padding:10px 80px; color: green;">Click add button to book room</b>
     <center>
     <table cellspacing="0" border='1' width="90%">
         <tr style='background-color: #999999; color: #fff'>
             <th width="13%">Time:</th>
-            <th width="17%"><font size="2px" style="font-family:arial" ;="">Meeting Room 1<br>Capacity: 6 persons</font></th>
-            <th width="17%"><font size="2px" style="font-family:arial" ;="">Meeting Room 2<br>Capacity: 6 persons</font></th>
-            <th width="17%"><font size="2px" style="font-family:arial" ;="">Meeting Room 3<br>Capacity: 6 persons</font></th>
+            <th width="17%"><font size="2px" style="font-family:arial" ;="">Class Room 101<br>Capacity: 30 persons</font></th>
+            <th width="17%"><font size="2px" style="font-family:arial" ;="">Class Room 201<br>Capacity: 30 persons</font></th>
+            <th width="17%"><font size="2px" style="font-family:arial" ;="">Class Room 301<br>Capacity: 30 persons</font></th>
             <th width="13%">Time:</th>
         </tr>
         <tr align="center" >

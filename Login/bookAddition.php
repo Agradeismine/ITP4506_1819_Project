@@ -66,35 +66,39 @@
 
             $("#addMore").click(function(){
                 if($("#devices").val()=="Guitar"){
-                    $("#additionForm").append("<label style='width:200px'>Device type:</label>&emsp;"+
+                    $("#additionForm").append("<div style='width:115px; display: inline-block;'>Device type:</div>&emsp;&emsp;&emsp;&emsp;&emsp;"+
                         "<select style='width: 170px;' name='deviceType' id='deviceType'>"+
-                        "<option label='Musical instruments' value='Musical instruments'></option>"+
-                        "<option label='Electronic devices' value='Electronic devices'></option></select><br>"+
-                        "<label style='width:200px'>Reservation device:</label>&emsp;"+
+                            "<option label='Musical instruments' value='Musical instruments'></option>"+
+                            "<option label='Electronic devices' value='Electronic devices'></option>"+
+                            "<option label='Gadget' value='Gadget'></option>"+
+                        "</select><br>"+
+                    "<div style='width:200px; display: inline-block;'>Reservation device:</div>&emsp;"+
                         "<select style='width: 170px;' name='devices' id='devices'>"+
-                        "<option label='Triangle' value='Triangle'></option>"+
-                        "<option label='Oboe' value='Oboe'></option>"+
-                        "<option label='Violin' value='Violin'></option>"+
-                        "<option label='Cello' value='Cello'></option>"+
-                        "<option label='Acoustic Guitar' value='Acoustic Guitar'></option>"+
-                        "<option label='Electric bass' value='Electric bass'></option>"+
-                        "<option label='Electric piano' value='Electric piano'></option>"+
-                        "</select>&emsp;<label style='width:100px'>Quantity:</label>&emsp; <input style='width:100px;' type='number' max='3'><br>");
+                            "<option label='Triangle' value='Triangle'></option>"+
+                            "<option label='Oboe' value='Oboe'></option>"+
+                            "<option label='Violin' value='Violin'></option>"+
+                            "<option label='Cello' value='Cello'></option>"+
+                            "<option label='Acoustic Guitar' value='Acoustic Guitar'></option>"+
+                            "<option label='Electric bass' value='Electric bass'></option>"+
+                            "<option label='Electric piano' value='Electric piano'></option>"+
+                        "</select>&emsp;<label style='width:100px'>Quantity:</label>&emsp; <input style='width:100px;' type='number' min='0' max='3'><br>");
                         $("#addMore").hide();
                 }else if($("#devices").val()=="Electric piano"){
-                    $("#additionForm").append("<label style='width:200px'>Device type:</label>&emsp;"+
+                    $("#additionForm").append("<div style='width:115px; display: inline-block;'>Device type:</div>&emsp;&emsp;&emsp;&emsp;&emsp;"+
                         "<select style='width: 170px;' name='deviceType' id='deviceType'>"+
-                        "<option label='Musical instruments' value='Musical instruments'></option>"+
-                        "<option label='Electronic devices' value='Electronic devices'></option></select><br>"+
-                        "<label style='width:200px'>Reservation device:</label>&emsp;"+
+                            "<option label='Musical instruments' value='Musical instruments'></option>"+
+                            "<option label='Electronic devices' value='Electronic devices'></option>"+
+                            "<option label='Gadget' value='Gadget'></option>"+
+                        "</select><br>"+
+                    "<div style='width:200px; display: inline-block;'>Reservation device:</div>&emsp;"+
                         "<select style='width: 170px;' name='devices' id='devices'>"+
-                        "<option label='Triangle' value='Triangle'></option>"+
-                        "<option label='Oboe' value='Oboe'></option>"+
-                        "<option label='Violin' value='Violin'></option>"+
-                        "<option label='Cello' value='Cello'></option>"+
-                        "<option label='Guitar' value='Guitar'></option>"+
-                        "<option label='Acoustic Guitar' value='Acoustic Guitar'></option>"+
-                        "<option label='Electric bass' value='Electric bass'></option>"+
+                            "<option label='Triangle' value='Triangle'></option>"+
+                            "<option label='Oboe' value='Oboe'></option>"+
+                            "<option label='Violin' value='Violin'></option>"+
+                            "<option label='Cello' value='Cello'></option>"+
+                            "<option label='Guitar' value='Guitar'></option>"+
+                            "<option label='Acoustic Guitar' value='Acoustic Guitar'></option>"+
+                            "<option label='Electric bass' value='Electric bass'></option>"+
                         "</select>&emsp;<label style='width:100px'>Quantity:</label>&emsp; <input style='width:100px;' type='number' min='0' max='3'><br>");
                         $("#addMore").hide();
                 }
@@ -184,30 +188,30 @@
 
     <form id="advanced" class="form-container" style="margin-top:25px; padding: 25px 25px 25px 25px;">
         <div class="" >
-                <div id='additionForm' class="">
-                    <label style='width:200px'>Appointment Student:</label>&emsp;<input type="text" id="txt_name" value='Yip Yiu Cheung' disabled/><br>
-                    <label style='width:105px'>Student ID:</label>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;<input type="text" id="txt_id" value='170138992' disabled /><br>
-                    <label style='width:115px'>Device type:</label>&emsp;&emsp;&emsp;&emsp;&emsp;
-                        <select style="width: 170px;" name="deviceType" id="deviceType">
-                            <option label='Musical instruments' value="Musical instruments"></option>
-                            <option label='Electronic devices' value="Electronic devices"></option>
+                <div id='additionForm' class=''>
+                    <div style='width:200px; display: inline-block;'>Appointment Student:</div>&emsp;<input type='text' id='txt_name' value='Yip Yiu Cheung' disabled/><br>
+                    <div style='width:105px; display: inline-block;'>Student ID:</div>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;<input type='text' id='txt_id' value='170138992' disabled /><br>
+                    <div style='width:115px; display: inline-block;'>Device type:</div>&emsp;&emsp;&emsp;&emsp;&emsp;
+                        <select style='width: 170px;' name='deviceType' id='deviceType'>
+                            <option label='Musical instruments' value='Musical instruments'></option>
+                            <option label='Electronic devices' value='Electronic devices'></option>
                             <option label='Gadget' value="Gadget"></option>
                         </select><br>
-                    <label style='width:135px'>Reservation device:</label>&emsp;
-                        <select style="width: 170px;" name="devices" id="devices">
-                            <option label='Triangle' value="Triangle"></option>
-                            <option label='Oboe' value="Oboe"></option>
-                            <option label='Violin' value="Violin"></option>
-                            <option label='Cello' value="Cello"></option>
-                            <option label='Guitar' value="Guitar"></option>
-                            <option label='Acoustic Guitar' value="Acoustic Guitar"></option>
-                            <option label='Electric bass' value="Electric bass"></option>
-                            <option label='Electric piano' value="Electric piano"></option>
-                        </select>&emsp;<label style='width:100px'>Quantity:</label>&emsp; <input style='width:100px;' type="number" min='0' max='3'><br>
+                    <div style='width:200px; display: inline-block;'>Reservation device:</div>&emsp;
+                        <select style='width: 170px;' name='devices' id='devices'>
+                            <option label='Triangle' value='Triangle'></option>
+                            <option label='Oboe' value='Oboe'></option>
+                            <option label='Violin' value='Violin'></option>
+                            <option label='Cello' value='Cello'></option>
+                            <option label='Guitar' value='Guitar'></option>
+                            <option label='Acoustic Guitar' value='Acoustic Guitar'></option>
+                            <option label='Electric bass' value='Electric bass'></option>
+                            <option label='Electric piano' value='Electric piano'></option>
+                        </select>&emsp;<label style='width:100px'>Quantity:</label>&emsp; <input style='width:100px;' type='number' min='0' max='3'><br>
                 </div>
                 &emsp;<input type="button" id='addMore'value='Add more' class="all">
                 <br><br><br>
-                Are you sure you wouldn't crash the devices and return the equipment on time? <input type="checkbox" id ='confirmBox1'>
+                Are you sure you wouldn't crash the devices and return the equipment on time? <input type='checkbox' id ='confirmBox1'>
                 <br><br>
                 <center>
                 <input id='Back' type="button" value='Back' class="all">
