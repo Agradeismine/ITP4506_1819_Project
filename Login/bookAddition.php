@@ -45,6 +45,8 @@
         }
 
         $(document).ready(function () {
+            $("#advanced").fadeIn(2200);
+
             $(window).scroll(function () {
                 var top = $("#myBtn");
                 if ($('body').height() <= ($(window).height() + $(window).scrollTop() + 200)) {
@@ -186,7 +188,7 @@
     </div> <!-- end of navbar -->
     <img src="arrow.png" id="myBtn" title="Go to top" style="width:25px; height=25px ">
 
-    <form id="advanced" class="form-container" style="margin-top:25px; padding: 25px 25px 25px 25px;">
+    <form hidden id="advanced" class="form-container" style="margin-top:25px; padding: 25px 25px 25px 25px;">
         <div class="" >
                 <div id='additionForm' class=''>
                     <div style='width:200px; display: inline-block;'>Appointment Student:</div>&emsp;<input type='text' id='txt_name' value='Yip Yiu Cheung' disabled/><br>
