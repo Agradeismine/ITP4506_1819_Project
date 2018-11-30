@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="css/details.css">
     <script>
         /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
         function showdropdown(id) {
@@ -182,18 +182,18 @@
     </div> <!-- end of navbar -->
     <img src="arrow.png" id="myBtn" title="Go to top" style="width:25px; height=25px ">
 
-    <form id="advanced" class="form-container">
-        <div class="">
+    <form id="advanced" class="form-container" style="margin-top:25px; padding: 25px 25px 25px 25px;">
+        <div class="" >
                 <div id='additionForm' class="">
                     <label style='width:200px'>Appointment Student:</label>&emsp;<input type="text" id="txt_name" value='Yip Yiu Cheung' disabled/><br>
-                    <label style='width:200px'>Student ID:</label>&emsp;<input type="text" id="txt_id" value='170138992' disabled /><br>
-                    <label style='width:200px'>Device type:</label>&emsp; 
+                    <label style='width:105px'>Student ID:</label>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;<input type="text" id="txt_id" value='170138992' disabled /><br>
+                    <label style='width:115px'>Device type:</label>&emsp;&emsp;&emsp;&emsp;&emsp;
                         <select style="width: 170px;" name="deviceType" id="deviceType">
                             <option label='Musical instruments' value="Musical instruments"></option>
                             <option label='Electronic devices' value="Electronic devices"></option>
                             <option label='Gadget' value="Gadget"></option>
                         </select><br>
-                    <label style='width:200px'>Reservation device:</label>&emsp;
+                    <label style='width:135px'>Reservation device:</label>&emsp;
                         <select style="width: 170px;" name="devices" id="devices">
                             <option label='Triangle' value="Triangle"></option>
                             <option label='Oboe' value="Oboe"></option>
@@ -205,12 +205,13 @@
                             <option label='Electric piano' value="Electric piano"></option>
                         </select>&emsp;<label style='width:100px'>Quantity:</label>&emsp; <input style='width:100px;' type="number" min='0' max='3'><br>
                 </div>
-                <input type="button" id='addMore'value='Add more'>
+                &emsp;<input type="button" id='addMore'value='Add more' class="all">
                 <br><br><br>
                 Are you sure you wouldn't crash the devices and return the equipment on time? <input type="checkbox" id ='confirmBox1'>
+                <br><br>
                 <center>
-                <input id='Back' type="button" value='Back'>
-                <input type="button" id='confirm' value='Confirm'>
+                <input id='Back' type="button" value='Back' class="all">
+                <input type="button" id='confirm' value='Confirm' class="all">
                 </center>
         </div>
     </form>
