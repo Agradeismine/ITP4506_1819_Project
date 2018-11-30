@@ -7,7 +7,7 @@
     <title>Library System: Student Page</title>
     <link rel="stylesheet" type="text/css" href="css/mainpage.css">
     <link rel="stylesheet" type="text/css" href="css/discovery.css">
-
+    <link rel="stylesheet" type="text/css" href="css/details.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
@@ -176,8 +176,8 @@
 </p>
     </div>
     <p></p>
-    <div align="center" style="font-size:20px">
-    <button id='confirmDate'>Confirm</button>
+    <div align="center" style="font-size:20px; margin-bottom:20px;">
+    <button id='confirmDate' class="all">Confirm</button>
     
     </div>
 
