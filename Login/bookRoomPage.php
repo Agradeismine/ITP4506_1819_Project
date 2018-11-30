@@ -207,7 +207,7 @@
         <tr align="center" >
             <td style='padding: 10px; background-color: #ffffed;'>01:00PM - 02:00PM</td>
             <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
-            <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
+            <td><a href="confirmRoom.php"><img width="13" height="13" src="images/add.png" alt=""></a></td>
             <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
             <td style='padding: 10px; background-color: #ffffed;'>01:00PM - 02:00PM</td>
         </tr>
