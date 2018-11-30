@@ -159,9 +159,7 @@
 
     <h2 align="center">Friday 30 November 2018</h2>
     <a style=" padding:10px 80px; font-size:20px" href="selectTime.php">Select Other day</a><br><br>
-    <a style=" padding:10px 80px; font-size:20px" href="roomType.html" >Book room type:<select name="" id="" style="border-color: inherit;
-  -webkit-box-shadow: none;
-  box-shadow: none;"><option value="Me eting room">Meeting room</option><option value="Class room">Class room</option><option value="Music room">Music room</option></select></a><br><br>
+    <a style=" padding:10px 80px; font-size:20px" href="roomType.html" >Book room type:</a><select name="" id=""><option value="Me eting room">Meeting room</option><option value="Class room">Class room</option><option value="Music room">Music room</option></select><br><br>
     <a style=" padding:10px 80px; font-size:20px" href="bookingGuideline.php">Online Booking Guideline</a><br>
     <b style=" padding:10px 80px; color: green;">Click add button to book room</b>
     <center>
