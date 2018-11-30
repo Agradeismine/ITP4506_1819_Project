@@ -67,10 +67,6 @@
                     scrollTop: 0
                 }, 400);
             });
-
-            $("#confirm1").click(function(){
-                window.location.href="confirmRoom.html";
-            });
             
             var bookCount = 0;
             var bookMax = 2;
@@ -211,7 +207,7 @@
         <tr align="center" >
             <td style='padding: 10px; background-color: #ffffed;'>01:00PM - 02:00PM</td>
             <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
-            <td><div id='confirm1'><img width="13" height="13" src="images/add.png" alt=""></div></td>
+            <td style='background-color: #FFFF99;'><a href="#">***Booked***</a></td>
             <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
             <td style='padding: 10px; background-color: #ffffed;'>01:00PM - 02:00PM</td>
         </tr>

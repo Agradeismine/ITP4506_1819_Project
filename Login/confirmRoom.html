@@ -45,6 +45,9 @@
         }
 
         $(document).ready(function () {
+            $("#advanced").fadeIn(2500);
+
+
             $(window).scroll(function () {
                 var top = $("#myBtn");
                 if ($('body').height() <= ($(window).height() + $(window).scrollTop() + 200)) {
@@ -108,7 +111,7 @@
                 var r= confirm("Book the room?");
                 if(r){
                     alert("The room(s) will be ready soon.");
-                    window.location.href='bookRoomPage.php';
+                    window.location.href='bookRoomPage1.php';
                 }
                 }else{
                     alert("Please agree the requirements!");
@@ -182,7 +185,7 @@
     </div> <!-- end of navbar -->
     <img src="arrow.png" id="myBtn" title="Go to top" style="width:25px; height=25px ">
 
-    <form id="advanced" class="form-container" style="margin-top:25px; padding: 25px 25px 25px 25px;">
+    <form hidden id="advanced" class="form-container" style="margin-top:25px; padding: 25px 25px 25px 25px;">
         <div class="" >
                 <div id='additionForm' class="">
                     <label style='width:200px'>Appointment Student:</label>&emsp;<input type="text" id="txt_name" value='Yip Yiu Cheung' disabled/><br>
