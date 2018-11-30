@@ -212,9 +212,10 @@
        
    </script>
 <body>
-     <div class="navbar">
-        <a href="#home">Home</a>
+    <div class="navbar">
+        <a href="student.php">Home</a>
         <a href="#news">News</a>
+        <a href="bookRoomPage.php">Study Room Booking</a>
         <div class="dropdown">
             <button class="dropbtn" onclick="showdropdown('DDDropdown')">Learning Resources 
                 <i class="fa fa-caret-down"></i>
@@ -222,7 +223,6 @@
             <div class="dropdown-content" id="DDDropdown">
                 <a href="#">Exam Past Paper</a>
                 <a href="#">Programme Materials</a>
-
             </div>
         </div>
 
