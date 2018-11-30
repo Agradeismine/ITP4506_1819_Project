@@ -44,6 +44,7 @@
             }
         }
 
+        
         $(document).ready(function () {
             $(window).scroll(function () {
                 var top = $("#myBtn");
@@ -63,7 +64,25 @@
                     scrollTop: 0
                 }, 400);
             });
+            
+        
+ $('img').hover(function() {
+                $(this).css("cursor", "pointer");
+                $(this).animate({
+                    width: "400px",
+                    height: "300px"
+                }, 'slow');
 
+            }, function() {
+                $(this).animate({
+                    width:"350px",
+                    height: "200px"
+                }, 'slow');
+
+            });
+            
+            
+            
             $("#addMore").click(function(){
                 if($("#devices").val()=="Guitar"){
                     $("#additionForm").append("<div style='width:115px; display: inline-block;'>Device type:</div>&emsp;&emsp;&emsp;&emsp;&emsp;"+
