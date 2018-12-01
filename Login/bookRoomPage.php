@@ -72,7 +72,7 @@
                 window.location.href="confirmRoom.html";
             });
             
-            var bookCount = 0;
+            var bookCount = 1;
             var bookMax = 2;
             $("td a").click(function(){
                 if($(this).text()=="***Booked***"){
@@ -218,7 +218,7 @@
         <tr align="center" >
             <td style='padding: 10px; background-color: #ffffed;'>02:00PM - 03:00PM</td>
             <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
-            <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
+            <td style='background-color: #FFFF99;'><a href="#">***Booked***</a></td>
             <td><a href="#"><img width="13" height="13" src="images/add.png" alt=""></a></td>
             <td style='padding: 10px; background-color: #ffffed;'>02:00PM - 03:00PM</td>
         </tr>

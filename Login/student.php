@@ -269,6 +269,7 @@
             });
  
             $("#searchBtn").click(function(event) {
+                document.getElementById("pageJump").style.display = "none";
                 document.getElementById("loader2").style.display = "block";
                 document.getElementById("bookResults").style.opacity = "0";
                 document.getElementById("noResultNotice").style.opacity = "0";
@@ -277,6 +278,7 @@
                 $("#loadMoreBtn").hide();   //唔知岩唔岩
                 setTimeout(function(){
                     document.getElementById("bookResults").style.opacity = "1";
+                    document.getElementById("pageJump").style.display = "block";
                     document.getElementById("loader2").style.display = "none";
                     document.getElementById("noResultNotice").style.opacity = "1";
                     $("article").css("background-color", "#f1f1f1");
@@ -1065,7 +1067,7 @@ function hrefLink(link) {
             <article id="bookResults">
             </article>
                 <article>
-                    <table align='right' border='1' style="border-collapse: collapse;"><tr>
+                    <table id='pageJump' align='right' border='1' style="border-collapse: collapse;"><tr>
                         <?php if(isset($page2)){ //in page 2 ?>
                         <td align= 'center' width='20'><a href='student.php'><i class="zmdi zmdi-arrow-left zmdi-hc-2x"></i></a></td>
                         <?php } else if(isset($page3)){ //in page3 ?>
